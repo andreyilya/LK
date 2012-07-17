@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b06279f-c2a9-4e21-a17c-834ae57178bd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/SubCategory.java" />
+    <list default="true" id="1b06279f-c2a9-4e21-a17c-834ae57178bd" name="Default" comment="DAO for">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__asm_asm_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__cglib_cglib_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__com_sun_faces_jsf_api_2_0_3_b05.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__com_sun_xml_bind_jaxb_impl_2_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__commons_collections_commons_collections_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__commons_lang_commons_lang_2_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javassist_javassist_3_12_0_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_activation_activation_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_enterprise_cdi_api_1_0_SP4.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_inject_javax_inject_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_javaee_web_api_6_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_jws_jsr181_api_1_0_MR1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_mail_mail_1_4_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_servlet_jstl_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_transaction_jta_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_validation_validation_api_1_0_0_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_xml_bind_jaxb_api_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_xml_jaxrpc_api_1_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__javax_xml_stream_stax_api_1_0_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__junit_junit_4_8_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__log4j_log4j_1_2_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__mysql_mysql_connector_java_5_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_hibernate_hibernate_commons_annotations_3_2_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_hibernate_hibernate_core_3_6_8_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_hibernate_hibernate_entitymanager_3_6_8_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_hibernate_hibernate_validator_4_0_2_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_hibernate_javax_persistence_hibernate_jpa_2_0_api_1_0_1_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_resteasy_jaxrs_api_2_1_0_GA.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_annotation_jboss_annotations_api_1_1_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_ejb_jboss_ejb_api_3_1_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_el_jboss_el_api_2_2_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_enterprise_deploy_jboss_jad_api_1_2_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_interceptor_jboss_interceptors_api_1_1_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_jms_jboss_jms_api_1_1_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_resource_jboss_connector_api_1_5_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_security_auth_message_jboss_jaspi_api_1_0_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_security_jacc_jboss_jacc_api_1_4_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_servlet_jboss_servlet_api_3_0_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_servlet_jsp_jboss_jsp_api_2_2_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_1_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_xml_bind_jboss_jaxb_api_2_2_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_xml_registry_jboss_jaxr_api_1_0_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_xml_rpc_jboss_jaxrpc_api_1_1_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_xml_soap_jboss_saaj_api_1_3_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_jboss_spec_javax_xml_ws_jboss_jaxws_api_2_2_spec_1_0_0_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_slf4j_slf4j_api_1_6_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__org_slf4j_slf4j_log4j12_1_6_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__stax_stax_api_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\work\TestProjects\LK\.idea\libraries\Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="" />
     </list>
     <list id="db7cf186-2631-4adb-9e9a-aeb80395256f" name="not for commit" comment="Structure refactiring">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -30,19 +81,6 @@
   </component>
   <component name="DebuggerManager">
     <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java" line="12" class="com.liniyakamnya.engine.dao.AbstractEntityDao" package="com.liniyakamnya.engine.dao">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/EntityManagerHolder.java" line="18" class="com.liniyakamnya.engine.dao.EntityManagerHolder" package="com.liniyakamnya.engine.dao">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
@@ -97,51 +135,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/User.java">
+      <file leaf-file-name="AbstractEntityDAO.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="6" selection-start="409" selection-end="575" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Category.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/Category.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="11" selection-start="331" selection-end="518" vertical-scroll-proportion="0.0">
+            <state line="32" column="46" selection-start="817" selection-end="817" vertical-scroll-proportion="0.02170767">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubCategory.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/SubCategory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="5" selection-start="468" selection-end="468" vertical-scroll-proportion="1.2631578">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hello.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/webapp/hello.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="52" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WEB.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui/src/main/webapp/WEB-INF/WEB.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -160,6 +160,7 @@
   </component>
   <component name="GitLogSettings">
     <option name="myStructureFilterPaths" />
+    <option name="myShowDetails" value="false" />
   </component>
   <component name="GradleLocalSettings">
     <option name="expandStates">
@@ -171,22 +172,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/Main.java" />
-        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/UserEntityDao.java" />
-        <option value="$PROJECT_DIR$/engine/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/database.sql" />
-        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/EntityManagerHolder.java" />
-        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="/Data Source2" />
         <option value="/Data Source" />
         <option value="$PROJECT_DIR$/ui/src/main/webapp/hello.html" />
         <option value="$PROJECT_DIR$/ui/pom.xml" />
         <option value="$PROJECT_DIR$/engine/src/test/java/com/liniyakamnya/engine/dao/UserEntityDaoTest.java" />
         <option value="$PROJECT_DIR$/engine/pom.xml" />
         <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/User.java" />
+        <option value="$PROJECT_DIR$/engine/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/EntityDao.java" />
+        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/UserEntityDao.java" />
+        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/CategoryEntityDAO.java" />
+        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/SubCategoryEntityDAO.java" />
+        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java" />
         <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/Category.java" />
         <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/SubCategory.java" />
+        <option value="$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDAO.java" />
+        <option value="$PROJECT_DIR$/engine/src/test/java/com/liniyakamnya/engine/dao/CategoryEntityDAOTest.java" />
       </list>
     </option>
   </component>
@@ -209,58 +210,20 @@
           <option name="myItemId" value="" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="LK" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Liniyakamnya: ui" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Liniyakamnya: ui" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
       </PATH>
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1064" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="false" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
     <OptionsSetting value="true" id="Undo Check Out" />
@@ -284,6 +247,23 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LK" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,103 +292,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="parent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -497,6 +381,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -570,23 +462,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/engine/src/main/java" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/engine/src/test/java/com/liniyakamnya/engine/dao" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
@@ -616,11 +495,14 @@
       <recent name="com.liniyakamnya.engine.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\TestProjects\LK\ui" />
+      <recent name="D:\work\TestProjects\LK\engine" />
+      <recent name="D:\work\TestProjects\LK\parent" />
       <recent name="D:\dev\svn\LK\engine\src\main" />
       <recent name="D:\dev\svn\LK\engine\src\test" />
-      <recent name="D:\dev\svn\LK\engine\src\main\java\resources\META-INF" />
-      <recent name="D:\dev\svn\LK\engine\src\test\java" />
-      <recent name="D:\dev\svn\LK\engine\src\main\META-INF" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\dev\svn\LK\engine\src\main\resources\META-INF" />
@@ -628,9 +510,6 @@
       <recent name="D:\dev\svn\LK\engine\src\main\java" />
       <recent name="D:\dev\svn\LK\engine\src\main\resources\META_INF" />
       <recent name="D:\dev\svn\LK\engine\src\main\java\resources\META-INF" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.UserEntityDaoTest.testUpdate">
@@ -1038,7 +917,15 @@
       <created>1342516982417</created>
       <updated>1342516982417</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="DAO for entities, relations">
+      <created>1342549879819</created>
+      <updated>1342549879819</updated>
+    </task>
+    <task id="LOCAL-00024" summary="test for category dao">
+      <created>1342551603307</created>
+      <updated>1342551603307</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1062,29 +949,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1064" extended-state="1" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23931624" sideWeight="0.6700337" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.55586594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.21885522" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39955106" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35241303" sideWeight="0.5005342" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35055867" sideWeight="0.49806702" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.4974227" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18696581" sideWeight="0.6700337" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.189433" sideWeight="0.6700337" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946581" sideWeight="0.6700337" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24935567" sideWeight="0.6703911" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35241303" sideWeight="0.4957265" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.21885522" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1130,7 +1017,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="System Entities" />
+    <option name="LAST_COMMIT_MESSAGE" value="DAO for entities, relations between categories" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1152,6 +1039,9 @@
     <MESSAGE value="Structure refactiring" />
     <MESSAGE value="Refactiring" />
     <MESSAGE value="System Entities" />
+    <MESSAGE value="DAO for entities, relations" />
+    <MESSAGE value="test for category dao" />
+    <MESSAGE value="DAO for entities, relations between categories" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1195,99 +1085,84 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/engine/src/test/resources/META-INF/persistence.xml">
+    <entry file="file://$PROJECT_DIR$/parent/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/EntityDao.java">
+    <entry file="file://$PROJECT_DIR$/engine/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="29" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/UserEntityDao.java">
+    <entry file="file://$PROJECT_DIR$/ui/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="41" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.5475763" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/EntityManagerHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="368" selection-end="374" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" />
+        <state line="10" column="13" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/src/main/resources/META-INF/database.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="46" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="14" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="50" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="37" selection-start="1907" selection-end="1907" vertical-scroll-proportion="0.20111732" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/test/java/com/liniyakamnya/engine/dao/UserEntityDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="32" selection-start="398" selection-end="398" vertical-scroll-proportion="0.26181817" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="6" selection-start="409" selection-end="575" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/webapp/hello.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="52" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui/src/main/webapp/WEB-INF/WEB.xml">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/EntityDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" />
       </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/UserEntityDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="30" selection-start="855" selection-end="855" vertical-scroll-proportion="0.0" />
       </provider>
-      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/SubCategoryEntityDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="30" selection-start="906" selection-end="906" vertical-scroll-proportion="0.7597684" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/Category.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="11" selection-start="331" selection-end="518" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="37" column="11" selection-start="739" selection-end="739" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/SubCategory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="5" selection-start="468" selection-end="468" vertical-scroll-proportion="1.2631578">
+        <state line="35" column="0" selection-start="644" selection-end="680" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="24" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="65" selection-start="1557" selection-end="1557" vertical-scroll-proportion="-16.875" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/CategoryEntityDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="21" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/test/java/com/liniyakamnya/engine/dao/UserEntityDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/test/java/com/liniyakamnya/engine/dao/CategoryEntityDAOTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="35" selection-start="451" selection-end="451" vertical-scroll-proportion="0.39073807" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="46" selection-start="817" selection-end="817" vertical-scroll-proportion="0.02170767">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
