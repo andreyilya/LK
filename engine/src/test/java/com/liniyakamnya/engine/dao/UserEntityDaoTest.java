@@ -15,7 +15,7 @@ public class UserEntityDaoTest {
     @Test
     public void testCreate() throws Exception {
         UserEntityDao userEntityDao = new UserEntityDao();
-       userEntityDao.create(new User());
+        userEntityDao.create(new User());
         assertTrue(true);
     }
 
