@@ -1,17 +1,14 @@
 package com.liniyakamnya.engine.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author a.radkov
  *         Date: 16.07.12
  */
 @Entity
-public class User {
+public class User implements Serializable {
     private int id;
     private String login;
     private String password;

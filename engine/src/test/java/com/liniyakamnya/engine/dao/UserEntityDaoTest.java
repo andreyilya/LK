@@ -14,7 +14,7 @@ import static junit.framework.Assert.assertTrue;
 public class UserEntityDaoTest {
     @Test
     public void testCreate() throws Exception {
-        UserEntityDao userEntityDao = new UserEntityDao();
+        UserEntityDAO userEntityDao = new UserEntityDAO();
         userEntityDao.create(new User());
         assertTrue(true);
     }

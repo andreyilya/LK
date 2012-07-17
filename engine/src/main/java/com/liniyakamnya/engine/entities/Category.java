@@ -1,11 +1,8 @@
 package com.liniyakamnya.engine.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author a.radkov
@@ -15,6 +12,7 @@ import java.io.Serializable;
 public class Category implements Serializable {
     private int id;
     private String name;
+    private List<SubCategory> subCategories;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,5 +31,14 @@ public class Category implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY)
+    public List<SubCategory> getSubCategories() {
+        return subCategories;
+    }
+
+    public void setSubCategories(List<SubCategory> subCategories) {
+        this.subCategories = subCategories;
     }
 }
