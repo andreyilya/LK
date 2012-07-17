@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="1b06279f-c2a9-4e21-a17c-834ae57178bd" name="Default" comment="LK pom" />
-    <list default="true" id="db7cf186-2631-4adb-9e9a-aeb80395256f" name="not for commit" comment="first commit test">
+    <list default="true" id="db7cf186-2631-4adb-9e9a-aeb80395256f" name="not for commit" comment="Structure refactiring">
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\artifacts\ui_war.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\artifacts\ui_war_exploded.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\copyright\profiles_settings.xml" afterPath="" />
@@ -162,7 +162,7 @@
       <file leaf-file-name="AbstractEntityDao.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="41" selection-start="132" selection-end="132" vertical-scroll-proportion="0.29612222">
+            <state line="10" column="31" selection-start="209" selection-end="209" vertical-scroll-proportion="0.4524237">
               <folding />
             </state>
           </provider>
@@ -427,20 +427,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LK" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="parent" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -530,6 +516,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -637,18 +631,18 @@
       <recent name="D:\dev\svn\LK\engine\src\test\java" />
       <recent name="D:\dev\svn\LK\engine\src\main\META-INF" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dev\svn\LK\engine\src\main\resources\META-INF" />
+      <recent name="D:\dev\svn\LK\engine\src\main\resources" />
+      <recent name="D:\dev\svn\LK\engine\src\main\java" />
+      <recent name="D:\dev\svn\LK\engine\src\main\resources\META_INF" />
+      <recent name="D:\dev\svn\LK\engine\src\main\java\resources\META-INF" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\dev\svn\LK\engine\src\main\resources\META_INF" />
-      <recent name="D:\dev\svn\LK\engine\src\main\java\resources\META-INF" />
-      <recent name="D:\dev\svn\LK\engine\src\main\java\com\liniyakamnya\engine" />
-      <recent name="D:\dev\svn\LK\engine\src\test\java\resourses\META-INF" />
-      <recent name="D:\dev\svn\LK\engine\src\main\java\resources\META-INF\META_INF" />
-    </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserEntityDaoTest.testCreate">
+  <component name="RunManager">
     <configuration default="false" name="UserEntityDaoTest.testCreate" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -933,7 +927,7 @@
       <changelist id="db7cf186-2631-4adb-9e9a-aeb80395256f" name="not for commit" comment="" />
       <changelist id="1b06279f-c2a9-4e21-a17c-834ae57178bd" name="Default" comment="LK pom" />
       <created>1342417196543</created>
-      <updated>1342430171717</updated>
+      <updated>1342510058961</updated>
     </task>
     <task id="LOCAL-00001" summary="LK pom">
       <created>1342419955206</created>
@@ -983,7 +977,15 @@
       <created>1342509648385</created>
       <updated>1342509648385</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="first commit test">
+      <created>1342509675435</created>
+      <updated>1342509675435</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Structure refactiring">
+      <created>1342510027273</created>
+      <updated>1342510027273</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1012,7 +1014,7 @@
     <layout>
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23931624" sideWeight="0.6700337" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32996634" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.21885522" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1075,7 +1077,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Structure refactiring" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1092,6 +1094,7 @@
     <MESSAGE value="first commit 2" />
     <MESSAGE value="first commit" />
     <MESSAGE value="first commit test" />
+    <MESSAGE value="Structure refactiring" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1211,16 +1214,9 @@
         <state line="61" column="41" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/database.sql">
+    <entry file="file://$PROJECT_DIR$/engine/src/main/resources/META-INF/database.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="46" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1239,13 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/engine/src/test/java/com/liniyakamnya/engine/dao/UserEntityDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="38" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="14" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
@@ -1253,9 +1242,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/test/java/com/liniyakamnya/engine/dao/UserEntityDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="38" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="26" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="41" selection-start="132" selection-end="132" vertical-scroll-proportion="0.29612222">
+        <state line="10" column="31" selection-start="209" selection-end="209" vertical-scroll-proportion="0.4524237">
           <folding />
         </state>
       </provider>
