@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list id="1b06279f-c2a9-4e21-a17c-834ae57178bd" name="Default" comment="LK pom" />
     <list default="true" id="db7cf186-2631-4adb-9e9a-aeb80395256f" name="not for commit" comment="first commit test">
-      <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\ant.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\artifacts\ui_war.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\artifacts\ui_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\compiler.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\dataSources.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\dictionaries\a_radkov.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\encodings.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\libraries\Maven__antlr_antlr_2_7_6.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\libraries\Maven__asm_asm_3_1.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\libraries\Maven__cglib_cglib_2_2.xml" afterPath="" />
@@ -63,11 +59,7 @@
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\libraries\Maven__org_slf4j_slf4j_log4j12_1_6_1.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\libraries\Maven__stax_stax_api_1_0_1.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\libraries\Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\modules.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\scopes\scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\vcs.xml" afterPath="" />
       <change type="DELETED" beforePath="D:\dev\svn\LK\.idea\workspace.xml" afterPath="" />
     </list>
     <ignored path="LK.iws" />
@@ -170,7 +162,7 @@
       <file leaf-file-name="AbstractEntityDao.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="38" selection-start="102" selection-end="102" vertical-scroll-proportion="0.21151586">
+            <state line="5" column="27" selection-start="102" selection-end="102" vertical-scroll-proportion="0.21151586">
               <folding />
             </state>
           </provider>
@@ -983,7 +975,11 @@
       <created>1342509001421</created>
       <updated>1342509001421</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="first commit test">
+      <created>1342509085124</created>
+      <updated>1342509085124</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1255,7 +1251,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="38" selection-start="102" selection-end="102" vertical-scroll-proportion="0.21151586">
+        <state line="5" column="27" selection-start="102" selection-end="102" vertical-scroll-proportion="0.21151586">
           <folding />
         </state>
       </provider>
