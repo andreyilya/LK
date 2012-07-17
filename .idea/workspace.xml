@@ -162,7 +162,7 @@
       <file leaf-file-name="AbstractEntityDao.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="27" selection-start="102" selection-end="102" vertical-scroll-proportion="0.21151586">
+            <state line="7" column="41" selection-start="132" selection-end="132" vertical-scroll-proportion="0.29612222">
               <folding />
             </state>
           </provider>
@@ -979,7 +979,11 @@
       <created>1342509085124</created>
       <updated>1342509085124</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="first commit test">
+      <created>1342509648385</created>
+      <updated>1342509648385</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1251,7 +1255,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/engine/src/main/java/com/liniyakamnya/engine/dao/AbstractEntityDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="102" selection-end="102" vertical-scroll-proportion="0.21151586">
+        <state line="7" column="41" selection-start="132" selection-end="132" vertical-scroll-proportion="0.29612222">
           <folding />
         </state>
       </provider>
