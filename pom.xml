@@ -8,6 +8,9 @@
     <artifactId>LK</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+
+    <name>LK: Aggregate</name>
+
     <modules>
         <module>parent</module>
         <module>engine</module>
