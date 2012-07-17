@@ -12,6 +12,7 @@ import javax.persistence.Id;
 @Entity
 public class User {
     private int id;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int getId() {
