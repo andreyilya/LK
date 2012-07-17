@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
  *         Date: 16.07.12
  */
 public abstract class AbstractEntityDao implements EntityDao{
-    EntityManagerHolder entityManagerHolder = new EntityManagerHolder();
 
     @Override
     public void create(Object entity) {
