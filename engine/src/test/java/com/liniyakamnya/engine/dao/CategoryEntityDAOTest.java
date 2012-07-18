@@ -13,8 +13,8 @@ import org.junit.Test;
 public class CategoryEntityDAOTest {
     @Test
     public void testCreate() throws Exception {
-     //   CategoryEntityDAO entityDAO = new CategoryEntityDAO();
-     //   Category category = entityDAO.safeOrUpdate(new Category());
-      //  assertNotNull(category);
+        CategoryEntityDAO entityDAO = new CategoryEntityDAO();
+        Category category = entityDAO.safeOrUpdate(new Category());
+        assertNotNull(category);
     }
 }
