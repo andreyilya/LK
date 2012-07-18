@@ -10,17 +10,17 @@ import java.util.List;
  */
 public class UserEntityDAO extends AbstractEntityDAO<User> {
     @Override
-    public void create(Object entity) {
+    public void create(User entity) {
         super.create(entity);
     }
 
     @Override
-    public void update(Object entity) {
+    public void update(User entity) {
         super.update(entity);
     }
 
     @Override
-    public void delete(Object entity) {
+    public void delete(User entity) {
         super.delete(entity);
     }
 

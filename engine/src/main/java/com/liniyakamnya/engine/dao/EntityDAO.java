@@ -8,13 +8,13 @@ import java.util.List;
  *         Date: 16.07.12
  */
 public interface EntityDAO<T extends Serializable> {
-    void create(Object entity);
+    void create(T entity);
 
-    void update(Object entity);
+    void update(T entity);
 
     T safeOrUpdate(T entity);
 
-    void delete(Object entity);
+    void delete(T entity);
 
     void delete(Long id);
 

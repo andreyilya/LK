@@ -14,17 +14,17 @@ import java.util.List;
 public abstract class AbstractEntityDAO<T extends Serializable> implements EntityDAO<T> {
 
     @Override
-    public void create(Object entity) {
+    public void create(T entity) {
         getEntityManager().merge(entity);
     }
 
     @Override
-    public void update(Object entity) {
+    public void update(T entity) {
         getEntityManager().merge(entity);
     }
 
     @Override
-    public void delete(Object entity) {
+    public void delete(T entity) {
         getEntityManager().remove(entity);
     }
 

@@ -12,17 +12,17 @@ import java.util.List;
 public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
 
     @Override
-    public void create(Object entity) {
+    public void create(Category entity) {
         super.create(entity);
     }
 
     @Override
-    public void update(Object entity) {
+    public void update(Category entity) {
         super.update(entity);
     }
 
     @Override
-    public void delete(Object entity) {
+    public void delete(Category entity) {
         super.delete(entity);
     }
 

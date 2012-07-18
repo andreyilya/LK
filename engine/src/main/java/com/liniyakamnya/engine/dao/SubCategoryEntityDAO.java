@@ -12,17 +12,17 @@ import java.util.List;
 public class SubCategoryEntityDAO extends AbstractEntityDAO<SubCategory> {
 
     @Override
-    public void create(Object entity) {
+    public void create(SubCategory entity) {
         super.create(entity);
     }
 
     @Override
-    public void update(Object entity) {
+    public void update(SubCategory entity) {
         super.update(entity);
     }
 
     @Override
-    public void delete(Object entity) {
+    public void delete(SubCategory entity) {
         super.delete(entity);
     }
 
