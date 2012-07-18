@@ -25,7 +25,7 @@ public class UserEntityDAO extends AbstractEntityDAO<User> {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Long id) {
         super.delete(id);
     }
 
@@ -35,7 +35,7 @@ public class UserEntityDAO extends AbstractEntityDAO<User> {
     }
 
     @Override
-    public User findById(int id) {
+    public User findById(Long id) {
         return super.findById(id);
     }
 

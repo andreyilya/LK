@@ -5,7 +5,9 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * User: Asus
@@ -13,23 +15,42 @@ import static org.junit.Assert.assertNotNull;
  * Time: 22:08
  */
 public class UserEntityDAOTest {
+    private static UserEntityDAO entityDAO = new UserEntityDAO();
+
     @Test
     public void testCreate() throws Exception {
-        UserEntityDAO entityDAO = new UserEntityDAO();
         entityDAO.create(new User());
     }
 
     @Test
     public void testSafeOrUpdate() throws Exception {
-        UserEntityDAO entityDAO = new UserEntityDAO();
+        EntityManagerHolder.getInstance().getTransaction().begin();
         User user = entityDAO.safeOrUpdate(new User());
+        EntityManagerHolder.getInstance().getTransaction().commit();
 
         assertNotNull(user.getId());
     }
 
     @Test
     public void testGetAll() throws Exception {
-        UserEntityDAO entityDAO = new UserEntityDAO();
         List<User> users = entityDAO.getAll();
+
+        assertTrue(users.size() > 0);
+    }
+
+    @Test
+    public void testComplexCreate() {
+        User user = new User();
+        user.setEmail("email");
+        user.setLogin("login");
+        user.setPassword("pass");
+
+        EntityManagerHolder.getInstance().getTransaction().begin();
+        User created = entityDAO.safeOrUpdate(new User());
+        EntityManagerHolder.getInstance().getTransaction().commit();
+
+        assertEquals(created.getEmail(), user.getEmail());
+        assertEquals(created.getLogin(), user.getLogin());
+        assertEquals(created.getPassword(), user.getPassword());
     }
 }
