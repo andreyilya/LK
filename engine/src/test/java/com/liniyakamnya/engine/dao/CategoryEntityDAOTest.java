@@ -14,7 +14,7 @@ public class CategoryEntityDAOTest {
     @Test
     public void testCreate() throws Exception {
         CategoryEntityDAO entityDAO = new CategoryEntityDAO();
-        entityDAO.create(new Category());
+        entityDAO.safeOrUpdate(new Category());
         assertTrue(true);
     }
 }
