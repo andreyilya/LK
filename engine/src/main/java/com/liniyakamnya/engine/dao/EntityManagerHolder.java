@@ -8,10 +8,10 @@ import javax.persistence.Persistence;
 /**
  * User: a.radkov
  */
-public class EntityManagerHolder {
+public final class EntityManagerHolder {
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("exporter");
 
-    public EntityManagerHolder() {
+    private EntityManagerHolder() {
     }
 
     public static EntityManager getCurrent() {
