@@ -16,9 +16,9 @@ public interface EntityDAO<T extends Serializable> {
 
     void delete(T entity);
 
-    void delete(Long id);
+    void delete(int id);
 
-    T findById(Long id);
+    T findById(int id);
 
     List<T> getAll();
 }

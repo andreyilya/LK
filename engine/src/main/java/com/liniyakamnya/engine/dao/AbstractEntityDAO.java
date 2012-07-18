@@ -29,7 +29,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         getEntityManager().remove(findById(id));
     }
 
@@ -39,7 +39,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
     }
 
     @Override
-    public T findById(Long id) {
+    public T findById(int id) {
         return getEntityManager().find(getDomainClass(), id);
     }
 
