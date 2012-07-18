@@ -18,7 +18,7 @@ public class SubCategory implements Serializable {
     private int id;
     private String name;
     private Category category;
-    private Double price;
+    private double price;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
