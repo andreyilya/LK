@@ -11,11 +11,20 @@ import javax.persistence.Persistence;
 public final class EntityManagerHolder {
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("exporter");
 
+    private static EntityManager instance;
+
+    public static synchronized EntityManager getInstance() {
+        if (instance == null) {
+            instance = getCurrent();
+        }
+
+        return instance;
+    }
+
     private EntityManagerHolder() {
     }
 
-    public static EntityManager getCurrent() {
-
+    private static EntityManager getCurrent() {
         EntityManager em = emf.createEntityManager();
         em.setFlushMode(FlushModeType.COMMIT);
         return em;

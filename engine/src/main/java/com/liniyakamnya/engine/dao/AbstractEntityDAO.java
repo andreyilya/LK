@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.io.Serializable;
 import java.util.List;
 
@@ -15,7 +16,9 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 
     @Override
     public void create(T entity) {
+        getEntityManager().getTransaction().begin();
         getEntityManager().merge(entity);
+        getEntityManager().getTransaction().commit();
     }
 
     @Override
@@ -46,6 +49,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
     @Override
     public List<T> getAll() {
         CriteriaQuery<T> qq = getCriteriaBuilder().createQuery(getDomainClass());
+        Root<T> root = qq.from(getDomainClass());
 
         return criteriaQuery(qq).getResultList();
     }
@@ -61,6 +65,6 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
     }
 
     public EntityManager getEntityManager() {
-        return EntityManagerHolder.getCurrent();
+        return EntityManagerHolder.getInstance();
     }
 }
