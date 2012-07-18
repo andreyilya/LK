@@ -19,6 +19,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
         getEntityManager().getTransaction().begin();
         getEntityManager().merge(entity);
         getEntityManager().getTransaction().commit();
+
     }
 
     @Override
@@ -33,6 +34,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 
     @Override
     public void delete(Long id) {
+
         getEntityManager().remove(findById(id));
     }
 
@@ -43,6 +45,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 
     @Override
     public T findById(Long id) {
+
         return getEntityManager().find(getDomainClass(), id);
     }
 

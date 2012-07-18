@@ -27,7 +27,7 @@ public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(int id) {
         super.delete(id);
     }
 
@@ -37,7 +37,7 @@ public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
     }
 
     @Override
-    public Category findById(Long id) {
+    public Category findById(int id) {
         return super.findById(id);
     }
 
