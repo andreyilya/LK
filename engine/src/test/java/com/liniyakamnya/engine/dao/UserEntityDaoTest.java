@@ -1,6 +1,7 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.User;
+import com.sun.net.ssl.internal.ssl.Debug;
 import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
@@ -15,8 +16,8 @@ public class UserEntityDaoTest {
     @Test
     public void testCreate() throws Exception {
         UserEntityDAO userEntityDao = new UserEntityDAO();
-        userEntityDao.safeOrUpdate(new User());
-        assertTrue(true);
+        User user = userEntityDao.safeOrUpdate(new User());
+        assertNotNull(user);
     }
 
     @Test
