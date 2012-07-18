@@ -12,6 +12,7 @@ public class SubCategory implements Serializable {
     private int id;
     private String name;
     private Category category;
+    private Double price;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,5 +40,14 @@ public class SubCategory implements Serializable {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    @Column
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 }
