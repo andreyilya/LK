@@ -1,9 +1,9 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.Category;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
 
 /**
  * User: Asus
@@ -14,7 +14,7 @@ public class CategoryEntityDAOTest {
     @Test
     public void testCreate() throws Exception {
         CategoryEntityDAO entityDAO = new CategoryEntityDAO();
-        entityDAO.safeOrUpdate(new Category());
-        assertTrue(true);
+        Category category = entityDAO.safeOrUpdate(new Category());
+        assertNotNull(category);
     }
 }
