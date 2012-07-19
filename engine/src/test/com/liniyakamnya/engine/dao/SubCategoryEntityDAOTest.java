@@ -23,15 +23,22 @@ public class SubCategoryEntityDAOTest {
 
     @Test
     public void testFindById() throws Exception {
-        Long id = entityDAO.safeOrUpdate(new SubCategory()).getId();
+        SubCategory subCategory = new SubCategory();
+        Long id = entityDAO.safeOrUpdate(subCategory).getId();
+        SubCategory created = entityDAO.findById(id);
+        assertNotNull(created);
 
-        assertNotNull(entityDAO.findById(id));
+        deleteSubCategory(created);
     }
 
     @Test
     public void testGetAll() throws Exception {
         List<SubCategory> categories = entityDAO.getAll();
 
-        assertTrue(categories.size() > 0);
+        assertNotNull(categories);
+    }
+
+    private void deleteSubCategory(SubCategory subCategory) {
+        entityDAO.delete(subCategory);
     }
 }

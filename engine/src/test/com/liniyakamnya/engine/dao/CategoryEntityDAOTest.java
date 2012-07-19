@@ -8,7 +8,6 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 /**
  * User: Asus
@@ -25,16 +24,19 @@ public class CategoryEntityDAOTest {
 
     @Test
     public void testFindById() throws Exception {
-        Long id = entityDAO.safeOrUpdate(new Category()).getId();
+        Category category = new Category();
+        Long id = entityDAO.safeOrUpdate(category).getId();
+        Category created = entityDAO.findById(id);
+        assertNotNull(created);
 
-        assertNotNull(entityDAO.findById(id));
+        deleteCategory(created);
     }
 
     @Test
     public void testGetAll() throws Exception {
         List<Category> categories = entityDAO.getAll();
 
-        assertTrue(categories.size() > 0);
+        assertNotNull(categories);
     }
 
     @Test
@@ -46,5 +48,10 @@ public class CategoryEntityDAOTest {
 
         assertNull(created.getSubCategories());
         assertEquals(created.getName(), category.getName());
+        deleteCategory(created);
+    }
+
+    private void deleteCategory(Category category) {
+        entityDAO.delete(category);
     }
 }
