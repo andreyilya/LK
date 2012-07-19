@@ -43,7 +43,7 @@ public class UserEntityDAOTest {
         user.setLogin("login");
         user.setPassword("pass");
 
-        User created = entityDAO.safeOrUpdate(new User());
+        User created = entityDAO.safeOrUpdate(user);
 
         assertEquals(created.getEmail(), user.getEmail());
         assertEquals(created.getLogin(), user.getLogin());
