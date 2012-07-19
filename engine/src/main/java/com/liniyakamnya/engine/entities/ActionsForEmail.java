@@ -1,13 +1,14 @@
 package com.liniyakamnya.engine.entities;
 
+import javax.persistence.Access;
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
 
 /**
  * @author a.radkov
  *         Date: 19.07.12
  */
-@Entity
+@Embeddable
 public class ActionsForEmail {
     private boolean createUser;
     private boolean updateUser;

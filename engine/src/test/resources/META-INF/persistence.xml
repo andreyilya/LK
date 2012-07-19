@@ -9,6 +9,7 @@
         <class>com.liniyakamnya.engine.entities.User</class>
         <class>com.liniyakamnya.engine.entities.Category</class>
         <class>com.liniyakamnya.engine.entities.SubCategory</class>
+        <class>com.liniyakamnya.engine.entities.ActionsForEmail</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>

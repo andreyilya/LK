@@ -1,10 +1,12 @@
 package com.liniyakamnya.engine.entities;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.io.Serializable;
 
 /**
@@ -17,6 +19,7 @@ public class User implements Serializable {
     private String login;
     private String password;
     private String email;
+    private ActionsForEmail actionsForEmail = new ActionsForEmail();
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -53,5 +56,14 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Embedded
+    public ActionsForEmail getActionsForEmail() {
+        return actionsForEmail;
+    }
+
+    public void setActionsForEmail(ActionsForEmail actionsForEmail) {
+        this.actionsForEmail = actionsForEmail;
     }
 }
