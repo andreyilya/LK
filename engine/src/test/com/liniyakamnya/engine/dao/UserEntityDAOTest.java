@@ -35,6 +35,7 @@ public class UserEntityDAOTest {
         deleteUser(created);
     }
 
+    @Test
     public void testGetAll() throws Exception {
         List<User> users = entityDAO.getAll();
 
