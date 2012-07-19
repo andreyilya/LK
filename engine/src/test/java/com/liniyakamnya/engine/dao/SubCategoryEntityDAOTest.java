@@ -2,13 +2,14 @@ package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.Category;
 import com.liniyakamnya.engine.entities.SubCategory;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 /**
  * User: Asus
@@ -44,8 +45,28 @@ public class SubCategoryEntityDAOTest {
         assertTrue(updatedCategory.getSubCategories().size() > 0);
 
         categoryEntityDAO.delete(updatedCategory);
-        entityDAO.delete(createdSubCategory);
+    }
 
+    @Test
+    public void testSafeOrUpdateCascadeDeleteSubCategory() throws Exception {
+        Category category = new Category();
+        category.setName("testCategory3");
+
+        SubCategory subCategory = new SubCategory();
+        subCategory.setName("testSubCategory3");
+        subCategory.setCategory(category);
+
+        SubCategory createdSubCategory = entityDAO.safeOrUpdate(subCategory);
+        assertNotNull(createdSubCategory.getCategory().getId());
+        Category createdCategory = categoryEntityDAO.findById(createdSubCategory.getCategory().getId());
+
+        assertEquals(category.getName(), createdCategory.getName());
+        assertNotNull(createdSubCategory);
+        assertNotNull(createdSubCategory.getCategory());
+
+        entityDAO.delete(createdSubCategory);
+        assertNull(entityDAO.findById(createdSubCategory.getId()));
+        assertNotNull(categoryEntityDAO.findById(createdCategory.getId()));
     }
 
     @Test

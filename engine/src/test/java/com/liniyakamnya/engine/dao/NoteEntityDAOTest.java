@@ -25,7 +25,6 @@ public class NoteEntityDAOTest {
 		noteEntityDAO.create(new Note());
 	}
 
-
 	@Test
 	public void testSafeOrUpdate() throws Exception {
 		Category category = new Category();
@@ -64,7 +63,6 @@ public class NoteEntityDAOTest {
 
 		deleteNote(created);
 	}
-
 
 	@Test
 	public void testGetAll() throws Exception {

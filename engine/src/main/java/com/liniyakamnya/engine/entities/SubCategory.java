@@ -1,5 +1,9 @@
 package com.liniyakamnya.engine.entities;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -39,7 +43,8 @@ public class SubCategory implements Serializable {
         this.name = name;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE})
+    @OnDelete(action = OnDeleteAction.CASCADE)
     public Category getCategory() {
         return category;
     }
