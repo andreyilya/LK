@@ -1,8 +1,6 @@
 package com.liniyakamnya.engine.dao;
 
-import com.liniyakamnya.engine.entities.Category;
 import com.liniyakamnya.engine.entities.Note;
-import com.liniyakamnya.engine.entities.SubCategory;
 
 import java.util.List;
 
@@ -10,7 +8,7 @@ import java.util.List;
  * @author a.radkov
  *         Date: 19.07.12
  */
-public class NoteEntityDAO extends AbstractEntityDAO<Note>{
+public class NoteEntityDAO extends AbstractEntityDAO<Note> {
     @Override
     public void create(Note entity) {
         super.create(entity);
