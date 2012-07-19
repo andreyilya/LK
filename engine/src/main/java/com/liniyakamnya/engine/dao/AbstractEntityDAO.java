@@ -40,7 +40,11 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 
     @Override
     public T safeOrUpdate(T entity) {
-        return getEntityManager().merge(entity);
+        getEntityManager().getTransaction().begin();
+        T savedEntity = getEntityManager().merge(entity);
+        getEntityManager().getTransaction().commit();
+
+        return savedEntity;
     }
 
     @Override
@@ -63,7 +67,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
         return getEntityManager().getCriteriaBuilder();
     }
 
-    public <T>TypedQuery<T> criteriaQuery(CriteriaQuery<T> criteriaQuery) {
+    public <T> TypedQuery<T> criteriaQuery(CriteriaQuery<T> criteriaQuery) {
         return getEntityManager().createQuery(criteriaQuery);
     }
 

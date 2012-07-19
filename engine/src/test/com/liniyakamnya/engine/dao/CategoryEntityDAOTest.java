@@ -44,9 +44,7 @@ public class CategoryEntityDAOTest {
         Category category = new Category();
         category.setName("category");
 
-        EntityManagerHolder.getInstance().getTransaction().begin();
         Category created = entityDAO.safeOrUpdate(category);
-        EntityManagerHolder.getInstance().getTransaction().commit();
 
         assertNull(created.getSubCategories());
         assertEquals(created.getName(), category.getName());
