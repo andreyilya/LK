@@ -25,9 +25,7 @@ public class CategoryEntityDAOTest {
 
     @Test
     public void testFindById() throws Exception {
-        EntityManagerHolder.getInstance().getTransaction().begin();
         Long id = entityDAO.safeOrUpdate(new Category()).getId();
-        EntityManagerHolder.getInstance().getTransaction().commit();
 
         assertNotNull(entityDAO.findById(id));
     }

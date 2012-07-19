@@ -24,9 +24,7 @@ public class UserEntityDAOTest {
 
     @Test
     public void testSafeOrUpdate() throws Exception {
-        EntityManagerHolder.getInstance().getTransaction().begin();
         User user = entityDAO.safeOrUpdate(new User());
-        EntityManagerHolder.getInstance().getTransaction().commit();
 
         assertNotNull(user.getId());
     }
@@ -45,9 +43,7 @@ public class UserEntityDAOTest {
         user.setLogin("login");
         user.setPassword("pass");
 
-        EntityManagerHolder.getInstance().getTransaction().begin();
         User created = entityDAO.safeOrUpdate(new User());
-        EntityManagerHolder.getInstance().getTransaction().commit();
 
         assertEquals(created.getEmail(), user.getEmail());
         assertEquals(created.getLogin(), user.getLogin());
