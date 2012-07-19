@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ import java.util.List;
 public class Category implements Serializable {
     private Long id;
     private String name;
-    private List<SubCategory> subCategories;
+    private List<SubCategory> subCategories = new ArrayList<SubCategory>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

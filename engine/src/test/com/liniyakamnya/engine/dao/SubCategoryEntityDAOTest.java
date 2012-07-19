@@ -35,7 +35,6 @@ public class SubCategoryEntityDAOTest {
         subCategory.setCategory(createdCategory);
         SubCategory createdSubCategory = entityDAO.safeOrUpdate(subCategory);
 
-        createdCategory.setSubCategories(new ArrayList<SubCategory>());
         createdCategory.getSubCategories().add(createdSubCategory);
         Category updatedCategory = categoryEntityDAO.safeOrUpdate(createdCategory);
 
