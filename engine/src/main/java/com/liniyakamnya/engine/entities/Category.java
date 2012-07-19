@@ -1,5 +1,6 @@
 package com.liniyakamnya.engine.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -40,7 +41,7 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, orphanRemoval = true)
     public List<SubCategory> getSubCategories() {
         return subCategories;
     }

@@ -1,6 +1,5 @@
 package com.liniyakamnya.engine.entities;
 
-import javax.persistence.Access;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
