@@ -14,9 +14,9 @@ public class ActionsForEmail {
     private boolean updateUser;
     private boolean deleteUser;
 
-    private boolean createNote;
-    private boolean updateNote;
-    private boolean deleteNote;
+    private boolean createNote = true;
+    private boolean updateNote = true;
+    private boolean deleteNote = true;
 
     private boolean createCategory;
     private boolean updateCategory;
