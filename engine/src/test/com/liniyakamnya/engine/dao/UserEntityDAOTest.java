@@ -1,6 +1,8 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.User;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -16,24 +18,27 @@ import static org.junit.Assert.assertTrue;
  */
 public class UserEntityDAOTest {
     private static UserEntityDAO entityDAO = new UserEntityDAO();
+    private User user;
 
     @Test
     public void testCreate() throws Exception {
-        entityDAO.create(new User());
+        initEmptyUser();
+        entityDAO.create(user);
     }
 
     @Test
     public void testSafeOrUpdate() throws Exception {
-        User user = entityDAO.safeOrUpdate(new User());
+        initEmptyUser();
+        User created = entityDAO.safeOrUpdate(user);
 
-        assertNotNull(user.getId());
+        assertNotNull(created);
+        deleteUser(created);
     }
 
-    @Test
     public void testGetAll() throws Exception {
         List<User> users = entityDAO.getAll();
 
-        assertTrue(users.size() > 0);
+        assertNotNull(users);
     }
 
     @Test
@@ -48,5 +53,16 @@ public class UserEntityDAOTest {
         assertEquals(created.getEmail(), user.getEmail());
         assertEquals(created.getLogin(), user.getLogin());
         assertEquals(created.getPassword(), user.getPassword());
+        deleteUser(created);
     }
+
+    private void initEmptyUser() {
+        user = new User();
+    }
+
+    private void deleteUser(User user) {
+        entityDAO.delete(user);
+    }
+
+
 }
