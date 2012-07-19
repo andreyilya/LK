@@ -46,7 +46,7 @@ public class CategoryEntityDAOTest {
 
         Category created = entityDAO.safeOrUpdate(category);
 
-        assertNull(created.getSubCategories());
+        assertNotNull(created.getSubCategories());
         assertEquals(created.getName(), category.getName());
         deleteCategory(created);
     }
