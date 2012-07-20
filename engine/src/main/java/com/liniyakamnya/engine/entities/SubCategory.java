@@ -43,7 +43,7 @@ public class SubCategory implements Serializable {
         this.name = name;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE})
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE })
     @OnDelete(action = OnDeleteAction.CASCADE)
     public Category getCategory() {
         return category;

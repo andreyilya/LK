@@ -41,7 +41,7 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL } , orphanRemoval = true)
     public List<SubCategory> getSubCategories() {
         return subCategories;
     }
