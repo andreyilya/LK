@@ -9,9 +9,9 @@ import org.junit.Test;
  * Time: 20:18
  */
 public class EmailSenderTest {
-	@Test
-	public void testSendMail() throws Exception {
-		EmailSender emailSender = new EmailSender();
-		emailSender.sendMail("liniyakamnya@gmail.com");
-	}
+    @Test
+    public void testSendMail() throws Exception {
+        EmailSender emailSender = new EmailSender();
+        emailSender.sendMail("liniyakamnya@gmail.com", "Test");
+    }
 }

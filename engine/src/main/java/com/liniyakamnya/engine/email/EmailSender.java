@@ -4,40 +4,29 @@ package com.liniyakamnya.engine.email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
-import javax.mail.MessagingException;
 
 /**
- * Created by IntelliJ IDEA.
- * User: user
- * Date: 19.07.12
- * Time: 20:01
+ * User: a.radkov
  */
 public class EmailSender {
-	public EmailSender() {
-		super();
-	}
 
-	/**
-	 * @param to        reciever of the message
-	 */
-	public void sendMail(String to) throws EmailException {
+    private static final String SMTP_MAIL_RU = "smtp.mail.ru";
+    public static final String LINIYAKAMNYA_MAIL_RU = "liniyakamnya@mail.ru";
+    public static final String PASSWORD = "liniyakamnya123";
+    public static final String SUBJECT = "Protocol action on liniyakamnya administration service occured";
 
-			SimpleEmail email = new SimpleEmail();
-			email.setHostName("smtp.mail.ru");
-			email.addTo("liniyakamnya@gmail.com");
-			email.setFrom("liniyakamnya@mail.ru");
-			email.setAuthentication("liniyakamnya@mail.ru", "liniyakamnya123");
-			email.setSubject("subject");
-			String message = createMessage("messagePart");
-			email.setMsg(message);
-			email.send();
+    public EmailSender() {
+        super();
+    }
 
-	}
-
-	private String createMessage(String base) {
-		StringBuilder message = new StringBuilder("");
-		message.append(base);
-		return message.toString();
-	}
-
+    public void sendMail(String to, String message) throws EmailException {
+        SimpleEmail email = new SimpleEmail();
+        email.setHostName(SMTP_MAIL_RU);
+        email.addTo(to);
+        email.setFrom(LINIYAKAMNYA_MAIL_RU);
+        email.setAuthentication(LINIYAKAMNYA_MAIL_RU, PASSWORD);
+        email.setSubject(SUBJECT);
+        email.setMsg(message);
+        email.send();
+    }
 }
