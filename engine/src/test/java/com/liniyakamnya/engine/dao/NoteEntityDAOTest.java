@@ -3,6 +3,7 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.Category;
 import com.liniyakamnya.engine.entities.Note;
 import com.liniyakamnya.engine.entities.SubCategory;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Date;
@@ -26,6 +27,7 @@ public class NoteEntityDAOTest {
 	}
 
 	@Test
+    @Ignore
 	public void testSafeOrUpdate() throws Exception {
 		Category category = new Category();
 		category.setName("testCategory");
@@ -49,10 +51,11 @@ public class NoteEntityDAOTest {
 		assertNotNull(createdNote.getCreatedDate());
 		assertNotNull(createdNote.getCategory());
 		assertNotNull(createdNote.getSubCategory());
-		deleteNote(note);
-		deleteSubCategory(createdSubCategory);
-		categoryEntityDAO.delete(updatedCategory);
-	}
+
+        deleteNote(note);
+        deleteSubCategory(createdSubCategory);
+        categoryEntityDAO.delete(updatedCategory);
+    }
 
 	@Test
 	public void testFindById() throws Exception {
