@@ -2,6 +2,7 @@ package com.liniyakamnya.engine.email;
 
 
 import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.SimpleEmail;
 
 
@@ -20,7 +21,7 @@ public class EmailSender {
     }
 
     public void sendMail(String to, String message) throws EmailException {
-        SimpleEmail email = new SimpleEmail();
+        HtmlEmail email = new HtmlEmail();
         email.setHostName(SMTP_MAIL_RU);
         email.addTo(to);
         email.setFrom(LINIYAKAMNYA_MAIL_RU);

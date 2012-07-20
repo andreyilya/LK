@@ -12,6 +12,6 @@ public class EmailSenderTest {
     @Test
     public void testSendMail() throws Exception {
         EmailSender emailSender = new EmailSender();
-        emailSender.sendMail("liniyakamnya@gmail.com", "Test");
+        emailSender.sendMail("liniyakamnya@gmail.com", "<h1 style=\"font-size:25px;\"><b>Test<b></h1>");
     }
 }
