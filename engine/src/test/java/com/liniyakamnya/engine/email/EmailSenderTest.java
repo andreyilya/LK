@@ -1,5 +1,6 @@
 package com.liniyakamnya.engine.email;
 
+import com.liniyakamnya.engine.entities.Actions;
 import org.junit.Test;
 
 /**
@@ -11,6 +12,6 @@ import org.junit.Test;
 public class EmailSenderTest {
     @Test
     public void testSendMail() throws Exception {
-        EmailMessageHandler.protocolAction("qwerrqwe");
+        EmailMessageHandler.protocolAction(Actions.CREATE_NOTE);
     }
 }

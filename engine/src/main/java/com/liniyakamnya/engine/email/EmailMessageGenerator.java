@@ -1,14 +1,20 @@
 package com.liniyakamnya.engine.email;
 
+import com.liniyakamnya.engine.entities.Actions;
+
 /**
  * @author a.radkov
  *         Date: 20.07.12
  */
 public final class EmailMessageGenerator {
+
+    public static final String OCCURED = " occured";
+    public static final String ACTION = "Action ";
+
     private EmailMessageGenerator() {
     }
 
-    public static String generate(String action) {
-        return action;
+    public static String generate(Actions action) {
+        return ACTION +  action.toString().toLowerCase() + OCCURED;
     }
 }

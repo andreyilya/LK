@@ -1,7 +1,11 @@
 package com.liniyakamnya.engine.email;
 
+import com.liniyakamnya.engine.dao.UserEntityDAO;
+import com.liniyakamnya.engine.entities.Actions;
 import com.liniyakamnya.engine.entities.User;
 import org.apache.commons.mail.EmailException;
+
+import java.util.List;
 
 /**
  * @author a.radkov
@@ -11,13 +15,14 @@ public final class EmailMessageHandler {
     private EmailMessageHandler() {
     }
 
-    public static void protocolAction(String action) throws EmailException {
-        //TODO: cycle for all users
-         User user = new User();
-
-        if (action != null) {
-            String message = EmailMessageGenerator.generate(action);
-            EmailSender.sendMail("liniyakamnya@gmail.com", message);
+    public static void protocolAction(Actions action) throws EmailException {
+        UserEntityDAO userEntityDAO = new UserEntityDAO();
+        List<User> users = userEntityDAO.getAll();
+        for (User user : users) {
+            if (user.getActionsForEmail().isProtocol(action)) {
+                String message = EmailMessageGenerator.generate(action);
+                EmailSender.sendMail(user.getEmail(), message);
+            }
         }
     }
 }

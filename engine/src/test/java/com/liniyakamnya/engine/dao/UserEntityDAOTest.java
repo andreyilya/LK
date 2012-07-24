@@ -43,12 +43,12 @@ public class UserEntityDAOTest {
     @Test
     public void testComplexCreate() {
         User user = new User();
-        user.setEmail("email");
+        user.setEmail("liniyakamnya@yandex.ru");
         user.setLogin("login");
         user.setPassword("pass");
 
         User created = entityDAO.safeOrUpdate(user);
-
+        assertNotNull(created);
         assertEquals(created.getEmail(), user.getEmail());
         assertEquals(created.getLogin(), user.getLogin());
         assertEquals(created.getPassword(), user.getPassword());

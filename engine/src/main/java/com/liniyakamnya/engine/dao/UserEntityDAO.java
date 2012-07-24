@@ -9,6 +9,7 @@ import java.util.List;
  *         Date: 16.07.12
  */
 public class UserEntityDAO extends AbstractEntityDAO<User> {
+    //TODO: validate not null email, login, password
     @Override
     public void create(User entity) {
         super.create(entity);
