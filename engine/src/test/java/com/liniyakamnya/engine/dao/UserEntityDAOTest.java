@@ -3,6 +3,7 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.User;
 import org.junit.Test;
 
+import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -18,14 +19,11 @@ public class UserEntityDAOTest {
     private User user;
 
     @Test
-    public void testCreate() throws Exception {
-        initEmptyUser();
-        entityDAO.create(user);
-    }
-
-    @Test
     public void testSafeOrUpdate() throws Exception {
-        initEmptyUser();
+        User user = new User();
+        user.setEmail("liniyakamnya@gmail.com");
+        user.setLogin("login");
+        user.setPassword("pass");
         User created = entityDAO.safeOrUpdate(user);
 
         assertNotNull(created);
@@ -55,6 +53,12 @@ public class UserEntityDAOTest {
         deleteUser(created);
     }
 
+    @Test(expected = ConstraintViolationException.class)
+    public void testCreate() throws Exception {
+        initEmptyUser();
+        entityDAO.create(user);
+    }
+
     private void initEmptyUser() {
         user = new User();
         user.setEmail("liniyakamnya@gmail.com");
@@ -63,6 +67,4 @@ public class UserEntityDAOTest {
     private void deleteUser(User user) {
         entityDAO.delete(user);
     }
-
-
 }

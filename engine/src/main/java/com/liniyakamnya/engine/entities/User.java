@@ -18,11 +18,11 @@ import java.io.Serializable;
 @Entity
 public class User implements Serializable {
     private Long id;
-    @NotNull
+    @NotNull(message = "login can't be empty")
     private String login;
-    @NotNull
+    @NotNull(message = "password can't be empty")
     private String password;
-    @NotNull @Email
+    @NotNull(message = "email can't be empty") @Email(message = "doesn't match email pattern")
     private String email;
     private ActionsForEmail actionsForEmail = new ActionsForEmail();
 
