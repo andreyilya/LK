@@ -1,16 +1,17 @@
 package com.liniyakamnya.engine.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author a.radkov
@@ -50,8 +51,7 @@ public class Note implements Serializable {
         this.createdDate = createdDate;
     }
 
-    @OneToOne
-    @JoinColumn(name = "category_id")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE })
     public Category getCategory() {
         return category;
     }
@@ -60,11 +60,10 @@ public class Note implements Serializable {
         this.category = category;
     }
 
-    @OneToOne
-    @JoinColumn(name = "subcategory_id")
-    public SubCategory getSubCategory() {
-        return subCategory;
-    }
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE })
+	public SubCategory getSubCategory() {
+		return subCategory;
+	}
 
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;

@@ -3,7 +3,6 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.Category;
 import com.liniyakamnya.engine.entities.Note;
 import com.liniyakamnya.engine.entities.SubCategory;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Date;
@@ -20,6 +19,7 @@ public class NoteEntityDAOTest {
 	private static CategoryEntityDAO categoryEntityDAO = new CategoryEntityDAO();
 	private static SubCategoryEntityDAO subCategoryEntityDAO = new SubCategoryEntityDAO();
 	private static NoteEntityDAO noteEntityDAO = new NoteEntityDAO();
+	private SubCategory createdSubCategory;
 
 	@Test
 	public void testCreate() throws Exception {
@@ -27,7 +27,6 @@ public class NoteEntityDAOTest {
 	}
 
 	@Test
-    @Ignore
 	public void testSafeOrUpdate() throws Exception {
 		Category category = new Category();
 		category.setName("testCategory");
@@ -36,7 +35,7 @@ public class NoteEntityDAOTest {
 		SubCategory subCategory = new SubCategory();
 		subCategory.setName("testSubCategory");
 		subCategory.setCategory(createdCategory);
-		SubCategory createdSubCategory = subCategoryEntityDAO.safeOrUpdate(subCategory);
+		createdSubCategory = subCategoryEntityDAO.safeOrUpdate(subCategory);
 
 		createdCategory.getSubCategories().add(createdSubCategory);
 		Category updatedCategory = categoryEntityDAO.safeOrUpdate(createdCategory);
@@ -52,10 +51,9 @@ public class NoteEntityDAOTest {
 		assertNotNull(createdNote.getCategory());
 		assertNotNull(createdNote.getSubCategory());
 
-        deleteNote(note);
-        deleteSubCategory(createdSubCategory);
-        categoryEntityDAO.delete(updatedCategory);
-    }
+		deleteNote(note);
+		//subCategoryEntityDAO.delete(createdSubCategory);
+	}
 
 	@Test
 	public void testFindById() throws Exception {
