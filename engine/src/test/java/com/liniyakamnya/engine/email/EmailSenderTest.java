@@ -11,6 +11,6 @@ import org.junit.Test;
 public class EmailSenderTest {
     @Test
     public void testSendMail() throws Exception {
-        EmailSender.sendMail("liniyakamnya@gmail.com", "<h1 style=\"font-size:25px;\"><b>Test<b></h1>");
+        EmailMessageHandler.protocolAction("qwerrqwe");
     }
 }

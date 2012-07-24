@@ -2,6 +2,8 @@ package com.liniyakamnya.engine.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author a.radkov
@@ -25,6 +27,8 @@ public class ActionsForEmail {
     private boolean updateSubCategory;
     private boolean deleteSubCategory;
 
+    private transient Map<Actions, Boolean> actions = new HashMap<Actions, Boolean>();
+
     @Column
     public boolean isCreateUser() {
         return createUser;
@@ -32,6 +36,7 @@ public class ActionsForEmail {
 
     public void setCreateUser(boolean createUser) {
         this.createUser = createUser;
+        actions.put(Actions.CREATE_USER, createUser);
     }
 
     @Column
@@ -41,6 +46,7 @@ public class ActionsForEmail {
 
     public void setUpdateUser(boolean updateUser) {
         this.updateUser = updateUser;
+        actions.put(Actions.UPDATE_USER, updateUser);
     }
 
     @Column
@@ -50,6 +56,7 @@ public class ActionsForEmail {
 
     public void setDeleteUser(boolean deleteUser) {
         this.deleteUser = deleteUser;
+        actions.put(Actions.DELETE_USER, deleteUser);
     }
 
     @Column
@@ -59,6 +66,7 @@ public class ActionsForEmail {
 
     public void setCreateNote(boolean createNote) {
         this.createNote = createNote;
+        actions.put(Actions.CREATE_NOTE, createNote);
     }
 
     @Column
@@ -68,6 +76,7 @@ public class ActionsForEmail {
 
     public void setUpdateNote(boolean updateNote) {
         this.updateNote = updateNote;
+        actions.put(Actions.UPDATE_NOTE, updateNote);
     }
 
     @Column
@@ -77,6 +86,7 @@ public class ActionsForEmail {
 
     public void setDeleteNote(boolean deleteNote) {
         this.deleteNote = deleteNote;
+        actions.put(Actions.UPDATE_NOTE, deleteNote);
     }
 
     @Column
@@ -86,6 +96,7 @@ public class ActionsForEmail {
 
     public void setCreateCategory(boolean createCategory) {
         this.createCategory = createCategory;
+        actions.put(Actions.CREATE_CATEGORY, createCategory);
     }
 
     @Column
@@ -95,6 +106,7 @@ public class ActionsForEmail {
 
     public void setUpdateCategory(boolean updateCategory) {
         this.updateCategory = updateCategory;
+        actions.put(Actions.UPDATE_CATEGORY, updateCategory);
     }
 
     @Column
@@ -104,6 +116,7 @@ public class ActionsForEmail {
 
     public void setDeleteCategory(boolean deleteCategory) {
         this.deleteCategory = deleteCategory;
+        actions.put(Actions.DELETE_CATEGORY, deleteCategory);
     }
 
     @Column
@@ -113,6 +126,7 @@ public class ActionsForEmail {
 
     public void setCreateSubCategory(boolean createSubCategory) {
         this.createSubCategory = createSubCategory;
+        actions.put(Actions.CREATE_SUB_CATEGORY, createSubCategory);
     }
 
     @Column
@@ -122,6 +136,7 @@ public class ActionsForEmail {
 
     public void setUpdateSubCategory(boolean updateSubCategory) {
         this.updateSubCategory = updateSubCategory;
+        actions.put(Actions.UPDATE_SUB_CATEGORY, updateSubCategory);
     }
 
     @Column
@@ -131,5 +146,10 @@ public class ActionsForEmail {
 
     public void setDeleteSubCategory(boolean deleteSubCategory) {
         this.deleteSubCategory = deleteSubCategory;
+        actions.put(Actions.DELETE_SUB_CATEGORY, deleteSubCategory);
+    }
+
+    public boolean isProtocol(Actions action) {
+        return actions.get(action);
     }
 }

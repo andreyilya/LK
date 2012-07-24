@@ -1,5 +1,6 @@
 package com.liniyakamnya.engine.email;
 
+import com.liniyakamnya.engine.entities.User;
 import org.apache.commons.mail.EmailException;
 
 /**
@@ -12,6 +13,7 @@ public final class EmailMessageHandler {
 
     public static void protocolAction(String action) throws EmailException {
         //TODO: cycle for all users
+         User user = new User();
 
         if (action != null) {
             String message = EmailMessageGenerator.generate(action);
