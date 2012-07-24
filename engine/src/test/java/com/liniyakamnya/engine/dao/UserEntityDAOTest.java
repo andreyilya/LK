@@ -43,7 +43,7 @@ public class UserEntityDAOTest {
     @Test
     public void testComplexCreate() {
         User user = new User();
-        user.setEmail("liniyakamnya@yandex.ru");
+        user.setEmail("liniyakamnya@gmail.com");
         user.setLogin("login");
         user.setPassword("pass");
 
@@ -57,6 +57,7 @@ public class UserEntityDAOTest {
 
     private void initEmptyUser() {
         user = new User();
+        user.setEmail("liniyakamnya@gmail.com");
     }
 
     private void deleteUser(User user) {
