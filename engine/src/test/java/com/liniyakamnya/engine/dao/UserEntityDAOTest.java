@@ -6,7 +6,6 @@ import org.junit.Test;
 import javax.validation.ConstraintViolationException;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -36,21 +35,6 @@ public class UserEntityDAOTest {
         List<User> users = entityDAO.getAll();
 
         assertNotNull(users);
-    }
-
-    @Test
-    public void testComplexCreate() {
-        User user = new User();
-        user.setEmail("liniyakamnya@gmail.com");
-        user.setLogin("login");
-        user.setPassword("pass");
-
-        User created = entityDAO.safeOrUpdate(user);
-        assertNotNull(created);
-        assertEquals(created.getEmail(), user.getEmail());
-        assertEquals(created.getLogin(), user.getLogin());
-        assertEquals(created.getPassword(), user.getPassword());
-        deleteUser(created);
     }
 
     @Test(expected = ConstraintViolationException.class)
