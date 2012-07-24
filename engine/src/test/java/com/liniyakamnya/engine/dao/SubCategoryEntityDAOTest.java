@@ -2,6 +2,7 @@ package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.Category;
 import com.liniyakamnya.engine.entities.SubCategory;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.List;
@@ -67,6 +68,28 @@ public class SubCategoryEntityDAOTest {
         entityDAO.delete(createdSubCategory);
         assertNull(entityDAO.findById(createdSubCategory.getId()));
         assertNotNull(categoryEntityDAO.findById(createdCategory.getId()));
+    }
+
+    @Test @Ignore
+    public void testSafeOrUpdateCascadeDeleteSubCategory2() throws Exception {
+        Category category = new Category();
+        category.setName("testCategory3");
+        Category createdCategory = categoryEntityDAO.safeOrUpdate(category);
+
+        SubCategory subCategory = new SubCategory();
+        subCategory.setName("testSubCategory3");
+        subCategory.setCategory(createdCategory);
+
+        SubCategory createdSubCategory = entityDAO.safeOrUpdate(subCategory);
+        assertNotNull(createdSubCategory.getCategory().getId());
+
+        assertEquals(category.getName(), createdCategory.getName());
+        assertNotNull(createdSubCategory);
+        assertNotNull(createdSubCategory.getCategory());
+
+        categoryEntityDAO.delete(createdCategory);
+        assertNull(entityDAO.findById(createdSubCategory.getId()));
+        assertNull(categoryEntityDAO.findById(createdCategory.getId()));
     }
 
     @Test

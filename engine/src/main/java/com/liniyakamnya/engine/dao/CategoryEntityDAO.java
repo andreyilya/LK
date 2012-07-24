@@ -1,6 +1,7 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.Category;
+import com.liniyakamnya.engine.entities.SubCategory;
 
 import java.util.List;
 
@@ -23,11 +24,21 @@ public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
 
     @Override
     public void delete(Category entity) {
+        SubCategoryEntityDAO entityDAO = new SubCategoryEntityDAO();
+        for (SubCategory subCategory : entity.getSubCategories()) {
+            entityDAO.delete(subCategory);
+        }
+
         super.delete(entity);
     }
 
     @Override
     public void delete(Long id) {
+        SubCategoryEntityDAO entityDAO = new SubCategoryEntityDAO();
+        for (SubCategory subCategory : findById(id).getSubCategories()) {
+            entityDAO.delete(subCategory);
+        }
+
         super.delete(id);
     }
 

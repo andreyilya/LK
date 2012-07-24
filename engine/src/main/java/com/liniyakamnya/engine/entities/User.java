@@ -1,11 +1,14 @@
 package com.liniyakamnya.engine.entities;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -15,8 +18,11 @@ import java.io.Serializable;
 @Entity
 public class User implements Serializable {
     private Long id;
+    @NotNull
     private String login;
+    @NotNull
     private String password;
+    @NotNull @Email
     private String email;
     private ActionsForEmail actionsForEmail = new ActionsForEmail();
 
