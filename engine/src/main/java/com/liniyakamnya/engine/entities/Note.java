@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 public class Note implements Serializable {
     private Long id;
 
-    private Date createdDate;
+    private Date createdDate = new Date();
     private Category category;
     private SubCategory subCategory;
     private double price;

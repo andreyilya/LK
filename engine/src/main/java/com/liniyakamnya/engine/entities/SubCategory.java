@@ -1,5 +1,6 @@
 package com.liniyakamnya.engine.entities;
 
+import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -20,6 +21,7 @@ import java.io.Serializable;
 @Entity
 public class SubCategory implements Serializable {
     private Long id;
+	@NotNull
     private String name;
     private Category category;
     private double price;

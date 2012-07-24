@@ -22,7 +22,9 @@ public class SubCategoryEntityDAOTest {
 
     @Test
     public void testCreate() throws Exception {
-        entityDAO.create(new SubCategory());
+		SubCategory subCategory =  new SubCategory();
+		subCategory.setName("name");
+        entityDAO.create(subCategory);
     }
 
     @Test
@@ -92,8 +94,9 @@ public class SubCategoryEntityDAOTest {
 
     @Test
     public void testFindById() throws Exception {
-        SubCategory subCategory = new SubCategory();
-        Long id = entityDAO.safeOrUpdate(subCategory).getId();
+		SubCategory subCategory =  new SubCategory();
+		subCategory.setName("name");
+		Long id = entityDAO.safeOrUpdate(subCategory).getId();
         SubCategory created = entityDAO.findById(id);
         assertNotNull(created);
 

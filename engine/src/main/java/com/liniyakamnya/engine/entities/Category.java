@@ -11,6 +11,7 @@ import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author a.radkov
@@ -19,6 +20,7 @@ import java.util.List;
 @Entity
 public class Category implements Serializable {
     private Long id;
+	@NotNull
     private String name;
     private List<SubCategory> subCategories = new ArrayList<SubCategory>();
 

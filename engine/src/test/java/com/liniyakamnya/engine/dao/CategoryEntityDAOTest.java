@@ -18,12 +18,15 @@ public class CategoryEntityDAOTest {
 
     @Test
     public void testCreate() throws Exception {
-        entityDAO.create(new Category());
+		Category category = new Category();
+		category.setName("name");
+        entityDAO.create(category);
     }
 
     @Test
     public void testFindById() throws Exception {
         Category category = new Category();
+		category.setName("name");
         Long id = entityDAO.safeOrUpdate(category).getId();
         Category created = entityDAO.findById(id);
         assertNotNull(created);
