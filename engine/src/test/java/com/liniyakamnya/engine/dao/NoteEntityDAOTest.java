@@ -34,7 +34,6 @@ public class NoteEntityDAOTest {
 
 		SubCategory subCategory = new SubCategory();
 		subCategory.setName("testSubCategory");
-		subCategory.setCategory(createdCategory);
 		createdSubCategory = subCategoryEntityDAO.safeOrUpdate(subCategory);
 
 		createdCategory.getSubCategories().add(createdSubCategory);

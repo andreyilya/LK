@@ -8,10 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.validation.constraints.NotNull;
 
 /**
  * @author a.radkov
@@ -43,7 +43,7 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL } , orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL} , orphanRemoval = true)
     public List<SubCategory> getSubCategories() {
         return subCategories;
     }

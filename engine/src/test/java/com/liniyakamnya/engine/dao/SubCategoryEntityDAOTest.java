@@ -35,14 +35,12 @@ public class SubCategoryEntityDAOTest {
 
         SubCategory subCategory = new SubCategory();
         subCategory.setName("testSubCategory");
-        subCategory.setCategory(createdCategory);
         SubCategory createdSubCategory = entityDAO.safeOrUpdate(subCategory);
 
         createdCategory.getSubCategories().add(createdSubCategory);
         Category updatedCategory = categoryEntityDAO.safeOrUpdate(createdCategory);
 
         assertNotNull(createdSubCategory);
-        assertNotNull(createdSubCategory.getCategory());
 
         assertTrue(updatedCategory.getSubCategories().size() > 0);
 
@@ -56,19 +54,13 @@ public class SubCategoryEntityDAOTest {
 
         SubCategory subCategory = new SubCategory();
         subCategory.setName("testSubCategory3");
-        subCategory.setCategory(category);
 
         SubCategory createdSubCategory = entityDAO.safeOrUpdate(subCategory);
-        assertNotNull(createdSubCategory.getCategory().getId());
-        Category createdCategory = categoryEntityDAO.findById(createdSubCategory.getCategory().getId());
 
-        assertEquals(category.getName(), createdCategory.getName());
         assertNotNull(createdSubCategory);
-        assertNotNull(createdSubCategory.getCategory());
 
         entityDAO.delete(createdSubCategory);
         assertNull(entityDAO.findById(createdSubCategory.getId()));
-        assertNotNull(categoryEntityDAO.findById(createdCategory.getId()));
     }
 
     @Test
