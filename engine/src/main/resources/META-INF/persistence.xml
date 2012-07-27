@@ -10,6 +10,7 @@
         <class>com.liniyakamnya.engine.entities.Category</class>
         <class>com.liniyakamnya.engine.entities.SubCategory</class>
         <class>com.liniyakamnya.engine.entities.ActionsForEmail</class>
+        <class>com.liniyakamnya.engine.entities.Note</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
