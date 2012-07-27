@@ -17,7 +17,6 @@ public class SubCategory implements Serializable {
     private Long id;
 	@NotNull
     private String name;
-    private Category category;
     private double price;
 
     @Id
