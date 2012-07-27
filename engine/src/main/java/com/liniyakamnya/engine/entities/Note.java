@@ -1,6 +1,5 @@
 package com.liniyakamnya.engine.entities;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -51,7 +50,7 @@ public class Note implements Serializable {
         this.createdDate = createdDate;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE })
+    @ManyToOne(fetch = FetchType.LAZY)
     public Category getCategory() {
         return category;
     }
@@ -60,7 +59,7 @@ public class Note implements Serializable {
         this.category = category;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE })
+    @ManyToOne(fetch = FetchType.LAZY)
 	public SubCategory getSubCategory() {
 		return subCategory;
 	}

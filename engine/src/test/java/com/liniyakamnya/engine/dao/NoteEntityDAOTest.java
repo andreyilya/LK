@@ -19,7 +19,6 @@ public class NoteEntityDAOTest {
 	private static CategoryEntityDAO categoryEntityDAO = new CategoryEntityDAO();
 	private static SubCategoryEntityDAO subCategoryEntityDAO = new SubCategoryEntityDAO();
 	private static NoteEntityDAO noteEntityDAO = new NoteEntityDAO();
-	private SubCategory createdSubCategory;
 
 	@Test
 	public void testCreate() throws Exception {
@@ -34,7 +33,7 @@ public class NoteEntityDAOTest {
 
 		SubCategory subCategory = new SubCategory();
 		subCategory.setName("testSubCategory");
-		createdSubCategory = subCategoryEntityDAO.safeOrUpdate(subCategory);
+		SubCategory createdSubCategory = subCategoryEntityDAO.safeOrUpdate(subCategory);
 
 		createdCategory.getSubCategories().add(createdSubCategory);
 		Category updatedCategory = categoryEntityDAO.safeOrUpdate(createdCategory);
@@ -50,8 +49,8 @@ public class NoteEntityDAOTest {
 		assertNotNull(createdNote.getCategory());
 		assertNotNull(createdNote.getSubCategory());
 
+		categoryEntityDAO.delete(updatedCategory);
 		deleteNote(note);
-		//subCategoryEntityDAO.delete(createdSubCategory);
 	}
 
 	@Test
@@ -80,7 +79,4 @@ public class NoteEntityDAOTest {
 		noteEntityDAO.delete(created);
 	}
 
-	private void deleteSubCategory(SubCategory subCategory) {
-		subCategoryEntityDAO.delete(subCategory);
-	}
 }
