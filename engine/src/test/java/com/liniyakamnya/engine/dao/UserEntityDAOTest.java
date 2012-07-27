@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import javax.validation.ConstraintViolationException;
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.Assert.assertNotNull;
 

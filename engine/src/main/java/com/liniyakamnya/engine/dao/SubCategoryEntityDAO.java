@@ -3,12 +3,14 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.SubCategory;
 
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: Asus
  * Date: 17.07.12
  * Time: 21:20
  */
+@Transactional
 public class SubCategoryEntityDAO extends AbstractEntityDAO<SubCategory> {
 
     @Override

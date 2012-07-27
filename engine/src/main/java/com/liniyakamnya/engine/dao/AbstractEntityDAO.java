@@ -7,6 +7,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.io.Serializable;
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author a.radkov
@@ -16,53 +17,28 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 
     @Override
     public void create(T entity) {
-        checkForActiveTransaction();
-        getEntityManager().getTransaction().begin();
         getEntityManager().merge(entity);
-        getEntityManager().getTransaction().commit();
-
     }
 
     @Override
     public void update(T entity) {
-        checkForActiveTransaction();
-        getEntityManager().getTransaction().begin();
         getEntityManager().merge(entity);
-        getEntityManager().getTransaction().commit();
     }
 
     @Override
     public void delete(T entity) {
-        checkForActiveTransaction();
-        getEntityManager().getTransaction().begin();
         getEntityManager().remove(entity);
-        getEntityManager().getTransaction().commit();
     }
 
     @Override
     public void delete(Long id) {
-        checkForActiveTransaction();
-        getEntityManager().getTransaction().begin();
         getEntityManager().remove(findById(id));
-        getEntityManager().getTransaction().commit();
     }
 
     @Override
+	@Transactional
     public T safeOrUpdate(T entity) {
-        checkForActiveTransaction();
-
-        getEntityManager().getTransaction().begin();
-        T savedEntity = getEntityManager().merge(entity);
-        getEntityManager().getTransaction().commit();
-
-
-        return savedEntity;
-    }
-
-    private void checkForActiveTransaction() {
-        if (getEntityManager().getTransaction().isActive()) {
-            getEntityManager().getTransaction().rollback();
-        }
+		return getEntityManager().merge(entity);
     }
 
     @Override

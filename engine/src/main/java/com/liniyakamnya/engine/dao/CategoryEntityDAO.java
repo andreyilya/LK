@@ -3,12 +3,14 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.Category;
 
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * User: Asus
  * Date: 17.07.12
  * Time: 21:18
  */
+@Transactional
 public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
 
     @Override
@@ -31,6 +33,7 @@ public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
 
     @Override
     public void delete(Long id) {
+		// TODO: delete this
         Category entity = findById(id);
         entity.getSubCategories().clear();
         safeOrUpdate(entity);

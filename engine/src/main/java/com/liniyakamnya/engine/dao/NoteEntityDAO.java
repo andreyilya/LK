@@ -3,11 +3,13 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.Note;
 
 import java.util.List;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author a.radkov
  *         Date: 19.07.12
  */
+@Transactional
 public class NoteEntityDAO extends AbstractEntityDAO<Note> {
     @Override
     public void create(Note entity) {
