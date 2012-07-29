@@ -27,6 +27,7 @@ public class UserEntityDAOTest {
         User created = entityDAO.safeOrUpdate(user);
 
         assertNotNull(created);
+		assertNotNull(created.getId());
         assertNotNull(created.getActionsForEmail());
         deleteUser(created);
     }
