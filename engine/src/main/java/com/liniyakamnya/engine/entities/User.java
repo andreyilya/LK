@@ -1,6 +1,5 @@
 package com.liniyakamnya.engine.entities;
 
-import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
@@ -8,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -17,58 +15,55 @@ import java.io.Serializable;
  */
 @Entity
 public class User implements Serializable {
-    private Long id;
-    @NotNull(message = "login can't be empty")
-    private String login;
-    @NotNull(message = "password can't be empty")
-    private String password;
-    @NotNull(message = "email can't be empty") @Email(message = "doesn't match email pattern")
-    private String email;
-    private ActionsForEmail actionsForEmail = new ActionsForEmail();
+	private Long id;
+	private String login;
+	private String password;
+	private String email;
+	private ActionsForEmail actionsForEmail = new ActionsForEmail();
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public Long getId() {
-        return id;
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    @Column
-    public String getLogin() {
-        return login;
-    }
+	@Column
+	public String getLogin() {
+		return login;
+	}
 
-    public void setLogin(String login) {
-        this.login = login;
-    }
+	public void setLogin(String login) {
+		this.login = login;
+	}
 
-    @Column
-    public String getPassword() {
-        return password;
-    }
+	@Column
+	public String getPassword() {
+		return password;
+	}
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
-    @Column
-    public String getEmail() {
-        return email;
-    }
+	@Column
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    @Embedded
-    public ActionsForEmail getActionsForEmail() {
-        return actionsForEmail;
-    }
+	@Embedded
+	public ActionsForEmail getActionsForEmail() {
+		return actionsForEmail;
+	}
 
-    public void setActionsForEmail(ActionsForEmail actionsForEmail) {
-        this.actionsForEmail = actionsForEmail;
-    }
+	public void setActionsForEmail(ActionsForEmail actionsForEmail) {
+		this.actionsForEmail = actionsForEmail;
+	}
 }

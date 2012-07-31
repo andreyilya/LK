@@ -3,9 +3,7 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.User;
 import org.junit.Test;
 
-import javax.validation.ConstraintViolationException;
 import java.util.List;
-import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -39,7 +37,6 @@ public class UserEntityDAOTest {
         assertNotNull(users);
     }
 
-    @Test(expected = ConstraintViolationException.class)
     public void testCreate() throws Exception {
         initEmptyUser();
         entityDAO.create(user);

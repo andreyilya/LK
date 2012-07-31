@@ -3,13 +3,10 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.User;
 
 import java.util.List;
-import org.springframework.transaction.annotation.Transactional;
-
 /**
  * @author a.radkov
  *         Date: 16.07.12
  */
-@Transactional
 public class UserEntityDAO extends AbstractEntityDAO<User> {
     @Override
     public void create(User entity) {
