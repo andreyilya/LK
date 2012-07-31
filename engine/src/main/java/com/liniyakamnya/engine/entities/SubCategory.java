@@ -1,10 +1,16 @@
 package com.liniyakamnya.engine.entities;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 /**
@@ -15,6 +21,7 @@ import java.io.Serializable;
 public class SubCategory implements Serializable {
 	private Long id;
 	private String name;
+	private Category category;
 	private double price;
 
 	@Id
@@ -34,6 +41,16 @@ public class SubCategory implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE })
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	@Column

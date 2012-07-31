@@ -3,6 +3,7 @@ package com.liniyakamnya.engine.dao;
 import com.liniyakamnya.engine.entities.Category;
 
 import java.util.List;
+import javax.persistence.Query;
 
 /**
  * User: Asus
@@ -11,52 +12,51 @@ import java.util.List;
  */
 public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
 
-    @Override
-    public void create(Category entity) {
-        super.create(entity);
-    }
+	@Override
+	public void create(Category entity) {
+		super.create(entity);
+	}
 
-    @Override
-    public void update(Category entity) {
-        super.update(entity);
-    }
+	@Override
+	public void update(Category entity) {
+		super.update(entity);
+	}
 
-    @Override
-    public void delete(Category entity) {
-		// TODO: delete this
-        entity.getSubCategories().clear();
-        safeOrUpdate(entity);
+	@Override
+	public void delete(Category entity) {
+		super.delete(entity);
 
-        super.delete(entity);
-    }
+		getEntityManager().getTransaction().begin();
+		Query query =
+				getEntityManager().createNamedQuery("delete.subCategory");
+		query.setParameter("id", entity.getId());
+		query.executeUpdate();
+		getEntityManager().getTransaction().commit();
+	}
 
-    @Override
-    public void delete(Long id) {
-		// TODO: delete this
-        Category entity = findById(id);
-        entity.getSubCategories().clear();
-        safeOrUpdate(entity);
+	@Override
+	public void delete(Long id) {
+		Category entity = findById(id);
+		delete(entity);
+	}
 
-        super.delete(id);
-    }
+	@Override
+	public Category safeOrUpdate(Category entity) {
+		return super.safeOrUpdate(entity);
+	}
 
-    @Override
-    public Category safeOrUpdate(Category entity) {
-        return super.safeOrUpdate(entity);
-    }
+	@Override
+	public Category findById(Long id) {
+		return super.findById(id);
+	}
 
-    @Override
-    public Category findById(Long id) {
-        return super.findById(id);
-    }
+	@Override
+	public List<Category> getAll() {
+		return super.getAll();
+	}
 
-    @Override
-    public List<Category> getAll() {
-        return super.getAll();
-    }
-
-    @Override
-    public Class<Category> getDomainClass() {
-        return Category.class;
-    }
+	@Override
+	public Class<Category> getDomainClass() {
+		return Category.class;
+	}
 }

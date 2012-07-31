@@ -7,6 +7,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,6 +19,12 @@ import java.util.List;
  *         Date: 17.07.12
  */
 @Entity
+
+@NamedQueries(
+		@NamedQuery(name = "delete.subCategory",
+				query = "delete from SubCategory c where c.category.id = :id")
+)
+
 public class Category implements Serializable {
 	private Long id;
 	private String name;
