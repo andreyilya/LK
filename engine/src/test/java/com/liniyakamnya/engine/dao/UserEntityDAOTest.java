@@ -13,41 +13,42 @@ import static org.junit.Assert.assertNotNull;
  * Time: 22:08
  */
 public class UserEntityDAOTest {
-    private static UserEntityDAO entityDAO = new UserEntityDAO();
-    private User user;
+	private static UserEntityDAO entityDAO = new UserEntityDAO();
+	private User user;
 
-    @Test
-    public void testSafeOrUpdate() throws Exception {
-        User user = new User();
-        user.setEmail("liniyakamnya@gmail.com");
-        user.setLogin("login");
-        user.setPassword("pass");
-        User created = entityDAO.safeOrUpdate(user);
+	@Test
+	public void testSafeOrUpdate() throws Exception {
+		User user = new User();
+		user.setEmail("liniyakamnya@gmail.com");
+		user.setLogin("login");
+		user.setPassword("pass");
+		User created = entityDAO.safeOrUpdate(user);
 
-        assertNotNull(created);
+		assertNotNull(created);
 		assertNotNull(created.getId());
-        assertNotNull(created.getActionsForEmail());
-        deleteUser(created);
-    }
+		assertNotNull(created.getActionsForEmail());
+		deleteUser(created);
+	}
 
-    @Test
-    public void testGetAll() throws Exception {
-        List<User> users = entityDAO.getAll();
+	@Test
+	public void testGetAll() throws Exception {
+		List<User> users = entityDAO.getAll();
 
-        assertNotNull(users);
-    }
+		assertNotNull(users);
+	}
 
-    public void testCreate() throws Exception {
-        initEmptyUser();
-        entityDAO.create(user);
-    }
+	@Test
+	public void testCreate() throws Exception {
+		initEmptyUser();
+		entityDAO.create(user);
+	}
 
-    private void initEmptyUser() {
-        user = new User();
-        user.setEmail("liniyakamnya@gmail.com");
-    }
+	private void initEmptyUser() {
+		user = new User();
+		user.setEmail("liniyakamnya@gmail.com");
+	}
 
-    private void deleteUser(User user) {
-        entityDAO.delete(user);
-    }
+	private void deleteUser(User user) {
+		entityDAO.delete(user);
+	}
 }
