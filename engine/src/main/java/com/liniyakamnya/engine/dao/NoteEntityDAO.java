@@ -1,6 +1,8 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.Note;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -8,6 +10,8 @@ import java.util.List;
  * @author a.radkov
  *         Date: 19.07.12
  */
+@Transactional
+@Repository("noteDao")
 public class NoteEntityDAO extends AbstractEntityDAO<Note> {
     @Override
     public void create(Note entity) {

@@ -1,12 +1,16 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.User;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 /**
  * @author a.radkov
  *         Date: 16.07.12
  */
+@Transactional
+@Repository("userDao")
 public class UserEntityDAO extends AbstractEntityDAO<User> {
     @Override
     public void create(User entity) {

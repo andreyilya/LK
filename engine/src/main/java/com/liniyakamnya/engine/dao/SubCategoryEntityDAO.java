@@ -1,6 +1,8 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.SubCategory;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -9,6 +11,8 @@ import java.util.List;
  * Date: 17.07.12
  * Time: 21:20
  */
+@Transactional
+@Repository("subCategoryDao")
 public class SubCategoryEntityDAO extends AbstractEntityDAO<SubCategory> {
 
     @Override

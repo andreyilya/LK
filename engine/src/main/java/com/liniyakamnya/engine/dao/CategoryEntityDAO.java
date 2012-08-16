@@ -1,15 +1,19 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.Category;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import javax.persistence.Query;
+import java.util.List;
 
 /**
  * User: Asus
  * Date: 17.07.12
  * Time: 21:18
  */
+@Transactional
+@Repository("categoryDao")
 public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
 
 	@Override
