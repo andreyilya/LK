@@ -13,7 +13,7 @@ public class UserController {
 	private EntityDAO userEntityDAO;
 
 	@RequestMapping("/index")
-	public String listContacts(Map<String, Object> map) {
+	public String listUsers(Map<String, Object> map) {
 
 		map.put("userList", userEntityDAO.getAll());
 		return "user";
