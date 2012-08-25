@@ -2,12 +2,16 @@ package com.liniyakamnya.ui.entities;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -30,6 +34,7 @@ public class User implements Serializable {
 	private String password;
 	private String email;
 	private ActionsForEmail actionsForEmail = new ActionsForEmail();
+	private List<Role> roles = new ArrayList<Role>();
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -66,6 +71,15 @@ public class User implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@ManyToMany(fetch = FetchType.LAZY)
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 	@Embedded
