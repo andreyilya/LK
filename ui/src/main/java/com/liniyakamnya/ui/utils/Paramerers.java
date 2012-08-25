@@ -1,4 +1,4 @@
-package com.liniyakamnya.ui.web;
+package com.liniyakamnya.ui.utils;
 
 /**
  * Created by IntelliJ IDEA.
@@ -6,6 +6,10 @@ package com.liniyakamnya.ui.web;
  * Date: 26.08.12
  * Time: 0:05
  */
-public class Paramerers {
+public final class Paramerers {
+	private Paramerers() {
+
+	}
+
 	public static final String userList = "userList";
 }
