@@ -12,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class AbstractEntityDAO<T extends Serializable> implements EntityDAO<T> {
 
+	private static final String POINT_SEPARATOR = "\\.";
+	private static final String ALL = ".all";
+
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -52,9 +55,9 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 	@SuppressWarnings("unchecked")
 	public List<T> getAll() {
 
-		//TODO: getDomainClass//String[] parts = getDomainClass().getName().toLowerCase().split(".");
-		String domainClass = "user";// parts[parts.length - 1];
-		return sessionFactory.getCurrentSession().getNamedQuery(domainClass + ".all")
+		String[] parts = getDomainClass().getName().toLowerCase().split(POINT_SEPARATOR);
+		String domainClass = parts[parts.length - 1];
+		return sessionFactory.getCurrentSession().getNamedQuery(domainClass + ALL)
 				.list();
 	}
 
