@@ -29,7 +29,7 @@ public class User implements Serializable {
 	private String login;
 	private String password;
 	private String email;
-	//private ActionsForEmail actionsForEmail = new ActionsForEmail();
+	private ActionsForEmail actionsForEmail = new ActionsForEmail();
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -68,12 +68,12 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
-//	@Embedded
-//	public ActionsForEmail getActionsForEmail() {
-//		return actionsForEmail;
-//	}
-//
-//	public void setActionsForEmail(ActionsForEmail actionsForEmail) {
-//		this.actionsForEmail = actionsForEmail;
-//	}
+	@Embedded
+	public ActionsForEmail getActionsForEmail() {
+		return actionsForEmail;
+	}
+
+	public void setActionsForEmail(ActionsForEmail actionsForEmail) {
+		this.actionsForEmail = actionsForEmail;
+	}
 }
