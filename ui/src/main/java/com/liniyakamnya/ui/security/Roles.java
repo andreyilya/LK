@@ -7,7 +7,7 @@ package com.liniyakamnya.ui.security;
  * Time: 22:14
  */
 public enum Roles {
-	ROLE_USER,
+	//ROLE_USER,
 	ROLE_ADMIN,
 	ROLE_SUPER_ADMIN
 }
