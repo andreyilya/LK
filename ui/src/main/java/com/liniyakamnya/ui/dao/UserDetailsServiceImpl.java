@@ -1,9 +1,9 @@
 package com.liniyakamnya.ui.dao;
 
 import com.liniyakamnya.ui.entities.User;
+import com.liniyakamnya.ui.exception.GuiException;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.PersistenceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.GrantedAuthority;
@@ -57,10 +57,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 				});
 
 			return new org.springframework.security.core.userdetails.User(username, user.getPassword(), true, true, true, true, gAuthorities);
-		} catch (PersistenceException e) {
-			throw new UsernameNotFoundException(e.getLocalizedMessage());
-		}
-		catch (NullPointerException e) {
+		} catch (GuiException e) {
 			throw new UsernameNotFoundException(e.getLocalizedMessage());
 		}
 	}

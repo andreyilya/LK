@@ -1,11 +1,13 @@
 package com.liniyakamnya.ui.dao;
 
 import com.liniyakamnya.ui.entities.User;
+import com.liniyakamnya.ui.exception.GuiException;
 import java.util.List;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.hibernate.Query;
 
 /**
  * @author a.radkov
@@ -14,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Repository("userDao")
 @Service
-public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentificator{
+public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentificator {
 	@Override
 	public void create(User entity) {
 		super.create(entity);
@@ -52,17 +54,16 @@ public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentifi
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public User getUserByLogin(String login) {
-		Session session = getSessionFactory().getCurrentSession();
-		org.hibernate.Query query = session.getNamedQuery("user.byLogin");
-		query.setString("login", login);
-		List<User> list = query.list();
-		User userByLogin = null;
-		//TODO: normal logic!
-		if (!list.isEmpty()) {
-			userByLogin = list.get(0);
+	public User getUserByLogin(String login) throws GuiException {
+		try {
+			Session session = getSessionFactory().getCurrentSession();
+			Query query = session.getNamedQuery("user.byLogin");
+			query.setString("login", login);
+			List<User> list = query.list();
+			return list.get(0);
+		} catch (IndexOutOfBoundsException e) {
+			throw new GuiException(e.getMessage());
 		}
-		return userByLogin;
 	}
 
 

@@ -1,5 +1,6 @@
 package com.liniyakamnya.ui.entities;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ import javax.persistence.Id;
  * Time: 20:23
  */
 @Entity
-public class Authority {
+public class Authority implements Serializable {
 	private Long id;
 	private String authority;
 

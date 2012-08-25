@@ -51,7 +51,8 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<T> getAll() {
-		//String[] parts = getDomainClass().getName().toLowerCase().split(".");
+
+		//TODO: getDomainClass//String[] parts = getDomainClass().getName().toLowerCase().split(".");
 		String domainClass = "user";// parts[parts.length - 1];
 		return sessionFactory.getCurrentSession().getNamedQuery(domainClass + ".all")
 				.list();

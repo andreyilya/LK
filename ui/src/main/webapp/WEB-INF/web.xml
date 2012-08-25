@@ -27,6 +27,17 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+    <servlet>
+        <servlet-name>startupServlet</servlet-name>
+        <servlet-class>com.liniyakamnya.ui.security.StartupServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>startupServlet</servlet-name>
+        <url-pattern>/ui</url-pattern>
+    </servlet-mapping>
+
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>

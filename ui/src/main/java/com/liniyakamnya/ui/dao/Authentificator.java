@@ -1,6 +1,7 @@
 package com.liniyakamnya.ui.dao;
 
 import com.liniyakamnya.ui.entities.User;
+import com.liniyakamnya.ui.exception.GuiException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,5 +10,5 @@ import com.liniyakamnya.ui.entities.User;
  * Time: 19:18
  */
 public interface Authentificator {
-	User getUserByLogin(String login);
+	User getUserByLogin(String login) throws GuiException;
 }
