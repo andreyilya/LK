@@ -14,10 +14,9 @@ import javax.persistence.Id;
  * Time: 20:23
  */
 @Entity
-public class Authority implements Serializable {
+public class Role implements Serializable {
 	private Long id;
-	private String authority;
-
+	private String roleName;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
@@ -29,11 +28,11 @@ public class Authority implements Serializable {
 	}
 
 	@Column
-	public String getAuthority() {
-		return authority;
+	public String getRoleName() {
+		return roleName;
 	}
 
-	public void setAuthority(String authority) {
-		this.authority = authority;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 }

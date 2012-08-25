@@ -42,7 +42,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 //			for (final String authority : user.getAuthorites()) {
 //				gAuthorities.add(new GrantedAuthority() {
 //					@Override
-//					public String getAuthority() {
+//					public String getRoleName() {
 //						return authority;
 //					}
 //				});
