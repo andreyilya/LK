@@ -8,12 +8,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  * @author a.radkov
  *         Date: 16.07.12
  */
 @Entity
+
+@NamedQueries(
+		@NamedQuery(name = "user.byLogin",
+				query = "from User as u where u.login = :login")
+)
 public class User implements Serializable {
 	private Long id;
 	private String login;

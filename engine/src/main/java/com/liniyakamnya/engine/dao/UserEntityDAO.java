@@ -1,6 +1,7 @@
 package com.liniyakamnya.engine.dao;
 
 import com.liniyakamnya.engine.entities.User;
+import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -46,6 +47,21 @@ public class UserEntityDAO extends AbstractEntityDAO<User> {
     public List<User> getAll() {
         return super.getAll();
     }
+
+	public User getUserByLogin(String login){
+		getEntityManager().getTransaction().begin();
+		Query query =
+				getEntityManager().createNamedQuery("user.byLogin");
+		query.setParameter("login", login);
+		User user = new User();
+		List list = query.getResultList();
+		if(!list.isEmpty()) {
+			user = (User)list.get(0);
+		}
+		getEntityManager().getTransaction().commit();
+		return user;
+	}
+
 
     @Override
     public Class<User> getDomainClass() {
