@@ -12,16 +12,16 @@ public class UserController {
 	@Autowired
 	private EntityDAO userEntityDAO;
 
-	@RequestMapping("/index")
+	@RequestMapping(URLs.INDEX)
 	public String listUsers(Map<String, Object> map) {
 
-		map.put("userList", userEntityDAO.getAll());
-		return "user";
+		map.put(Paramerers.userList, userEntityDAO.getAll());
+		return URLs.INDEX_PAGE;
 	}
 
 	@RequestMapping("/")
 	public String home() {
-		return "redirect:/index";
+		return URLs.INDEX_REDIRECT;
 	}
 
 //	@RequestMapping(value = "/add", method = RequestMethod.POST)

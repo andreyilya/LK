@@ -18,10 +18,9 @@ public class AdminController {
 	@Autowired
 	private EntityDAO userEntityDAO;
 
-	@RequestMapping("/admin")
+	@RequestMapping(URLs.ADMIN)
 	public String listUsers(Map<String, Object> map) {
-
-		map.put("userList", userEntityDAO.getAll());
-		return "admin";
+		map.put(Paramerers.userList, userEntityDAO.getAll());
+		return URLs.ADMIN_PAGE;
 	}
 }
