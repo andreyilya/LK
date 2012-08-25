@@ -57,9 +57,8 @@ public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentifi
 		org.hibernate.Query query = session.getNamedQuery("user.byLogin");
 		query.setString("login", login);
 		List<User> list = query.list();
-		User userByLogin = new User();
+		User userByLogin = null;
 		//TODO: normal logic!
-		userByLogin.setEmail("wer");
 		if (!list.isEmpty()) {
 			userByLogin = list.get(0);
 		}

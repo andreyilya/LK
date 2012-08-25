@@ -60,6 +60,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		} catch (PersistenceException e) {
 			throw new UsernameNotFoundException(e.getLocalizedMessage());
 		}
+		catch (NullPointerException e) {
+			throw new UsernameNotFoundException(e.getLocalizedMessage());
+		}
 	}
 
 }

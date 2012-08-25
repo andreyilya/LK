@@ -1,7 +1,6 @@
 package com.liniyakamnya.ui.web;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
-import com.liniyakamnya.ui.entities.User;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +15,6 @@ public class UserController {
 	@RequestMapping("/index")
 	public String listContacts(Map<String, Object> map) {
 
-		map.put("user", new User());
 		map.put("userList", userEntityDAO.getAll());
 		return "user";
 	}
