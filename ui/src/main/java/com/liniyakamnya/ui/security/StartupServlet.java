@@ -22,6 +22,6 @@ public class StartupServlet extends HttpServlet {
 		WebApplicationContext springContext =
 				WebApplicationContextUtils.getWebApplicationContext(getServletContext());
 		UserEntityDAO entityDAO = (UserEntityDAO) springContext.getBean("UserEntityDAO");
-		//System.out.print(entityDAO.getAll().get(0));
+		System.out.print(entityDAO.getAll().get(0));
 	}
 }
