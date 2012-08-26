@@ -13,12 +13,6 @@ function ajaxDelete() {
 }
 
 function deleteFromDatatable(url){
-    var a = $(".deleteLink");
-    var link;
-    for(i=0;i< a.length;i++){
-         if(a[i].name == url){
-             a[i].parentNode.parentNode.deleteCell();
-             break;
-         }
-    }
+    var row = $("#" + url);
+    row.remove();
 }

@@ -22,7 +22,7 @@
 <h2><spring:message code="label.title"/></h2>
 
 
-<h3><spring:message code="label.contacts"/></h3>
+<h3><spring:message code="label.users"/></h3>
 
 <c:if test="${!empty userList}">
     <table class="table table-striped table-bordered">
@@ -37,7 +37,7 @@
                 <td>${user.login}</td>
                 <td>${user.email}</td>
                 <td>${user.password}</td>
-                <td><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')" class="deleteLink" name="delete/${user.id}"><spring:message code="label.delete" /></a></td>
+                <td id="delete/${user.id}"><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')" class="deleteLink" ><spring:message code="label.delete" /></a></td>
             </tr>
         </c:forEach>
     </table>
