@@ -48,8 +48,8 @@
             <label class="checkbox">
                 <input type="checkbox" name="_spring_security_remember_me"> <spring:message code="label.remember"/>
             </label>
-            <input type="submit" class="btn" value="Login"/>
-            <input type="reset" class="btn" value="Reset"/>
+            <input type="submit" class="btn btn-primary" value="Login"/>
+            <input type="reset" class="btn btn-primary" value="Reset"/>
         </div>
     </div>
 
