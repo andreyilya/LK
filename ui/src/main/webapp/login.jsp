@@ -8,13 +8,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf8">
     <title><spring:message code="label.title"/></title>
     <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="resources/bootstrap/js/jquery.js" type="text/javascript"></script>
 </head>
 <body>
 
 
 <c:if test="${not empty param.error}">
-    <font color="red"> <spring:message code="label.loginerror"/>
-        : ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message} </font>
+
+    <div class="alert alert-error fade in">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong><spring:message code="label.loginerror"/>: </strong> <spring:message code="label.loginmessage"/>
+    </div>
+
 </c:if>
 <form method="POST" action="<c:url value="/j_spring_security_check" />" class="form-horizontal">
 
@@ -54,5 +60,7 @@
     </div>
 
 </form>
+<script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
 </body>
 </html>
