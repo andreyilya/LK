@@ -24,7 +24,6 @@
 
 <h3><spring:message code="label.contacts"/></h3>
 
-adminnnnnnnnnnnnnnnnnnnnnnnnnnnn!sadfasas
 <c:if test="${!empty userList}">
     <table class="table table-striped table-bordered">
         <tr>

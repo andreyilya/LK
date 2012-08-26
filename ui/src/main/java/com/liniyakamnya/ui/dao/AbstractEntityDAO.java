@@ -2,6 +2,8 @@ package com.liniyakamnya.ui.dao;
 
 import java.io.Serializable;
 import java.util.List;
+import org.apache.log4j.Logger;
+import org.hibernate.ObjectNotFoundException;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,7 +16,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 
 	private static final String POINT_SEPARATOR = "\\.";
 	private static final String ALL = ".all";
-
+	private static final Logger logger = Logger.getLogger(AbstractEntityDAO.class);
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -35,7 +37,11 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 
 	@Override
 	public void delete(Long id) {
-		sessionFactory.getCurrentSession().delete(findById(id));
+		try {
+			sessionFactory.getCurrentSession().delete(findById(id));
+		} catch (ObjectNotFoundException e) {
+			 logger.warn("Object with id " + id + " not found");
+		}
 	}
 
 	@Override
