@@ -1,5 +1,6 @@
 package com.liniyakamnya.ui.dao;
 
+import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.exception.GuiException;
 import java.util.HashSet;
@@ -37,24 +38,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 			throws UsernameNotFoundException, DataAccessException {
 		try {
 			User user = userService.getUserByLogin(username);
-			final String email = user.getEmail();
 			Set<GrantedAuthority> gAuthorities = new HashSet<GrantedAuthority>();
-//			for (final String authority : user.getAuthorites()) {
-//				gAuthorities.add(new GrantedAuthority() {
-//					@Override
-//					public String getRoleName() {
-//						return authority;
-//					}
-//				});
-//			}
-
-			gAuthorities.add(new GrantedAuthority() {
+			for (final Role authority : user.getRoles()) {
+				gAuthorities.add(new GrantedAuthority() {
 					@Override
 					public String getAuthority() {
-
-						return email;
+						return authority.getRoleName();
 					}
 				});
+			}
 
 			return new org.springframework.security.core.userdetails.User(username, user.getPassword(), true, true, true, true, gAuthorities);
 		} catch (GuiException e) {

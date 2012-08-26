@@ -4,6 +4,7 @@ import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.utils.Paramerers;
 import com.liniyakamnya.ui.utils.URLs;
 import java.util.Map;
+import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public  class AdminController {
 
 	@Autowired
+	@Named("userDao")
 	private EntityDAO userEntityDAO;
 
 	@RequestMapping(URLs.ADMIN)

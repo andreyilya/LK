@@ -1,11 +1,8 @@
 package com.liniyakamnya.ui.security;
 
-import com.liniyakamnya.ui.dao.UserEntityDAO;
-import java.io.IOException;
+import com.liniyakamnya.ui.dao.RoleEntityDAO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -17,11 +14,12 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
  */
 public class StartupServlet extends HttpServlet {
 	@Override
-	public void doGet(HttpServletRequest reqest, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void init()
+			throws ServletException {
+		super.init();
 		WebApplicationContext springContext =
 				WebApplicationContextUtils.getWebApplicationContext(getServletContext());
-		UserEntityDAO entityDAO = (UserEntityDAO) springContext.getBean("UserEntityDAO");
-		System.out.print(entityDAO.getAll().get(0));
+		RoleEntityDAO entityDAO = (RoleEntityDAO) springContext.getBean("roleDao");
+		entityDAO.initRoles();
 	}
 }

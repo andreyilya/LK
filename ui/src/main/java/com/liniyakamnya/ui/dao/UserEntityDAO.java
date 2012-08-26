@@ -15,8 +15,12 @@ import org.hibernate.Query;
  */
 @Transactional
 @Repository("userDao")
-@Service
+@Service("userDao")
 public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentificator {
+
+	private static final String USER_BY_LOGIN = "user.byLogin";
+	private static final String LOGIN = "login";
+
 	@Override
 	public void create(User entity) {
 		super.create(entity);
@@ -57,8 +61,8 @@ public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentifi
 	public User getUserByLogin(String login) throws GuiException {
 		try {
 			Session session = getSessionFactory().getCurrentSession();
-			Query query = session.getNamedQuery("user.byLogin");
-			query.setString("login", login);
+			Query query = session.getNamedQuery(USER_BY_LOGIN);
+			query.setString(LOGIN, login);
 			List<User> list = query.list();
 			return list.get(0);
 		} catch (IndexOutOfBoundsException e) {

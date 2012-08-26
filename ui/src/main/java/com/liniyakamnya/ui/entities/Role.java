@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,9 +16,14 @@ import javax.persistence.Id;
  * Time: 20:23
  */
 @Entity
+@NamedQueries({
+		@NamedQuery(name = "role.deleteAll",
+				query = "delete from Role")
+})
 public class Role implements Serializable {
 	private Long id;
 	private String roleName;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
