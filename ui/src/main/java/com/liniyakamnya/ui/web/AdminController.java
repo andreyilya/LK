@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Time: 23:26
  */
 @Controller
-public  class AdminController {
+public class AdminController {
 
 	@Autowired
 	@Named("userDao")
@@ -30,7 +31,9 @@ public  class AdminController {
 	}
 
 	@RequestMapping("/delete/{userId}")
-	public String deleteUser(@PathVariable("userId") Long userId) {
+	public
+	@ResponseBody
+	String deleteUser(@PathVariable("userId") Long userId) {
 		userEntityDAO.delete(userId);
 		return URLs.ADMIN_REDIRECT;
 	}

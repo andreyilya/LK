@@ -33,14 +33,16 @@
             <th></th>
         </tr>
         <c:forEach items="${userList}" var="user">
-            <tr>
+            <tr id="delete/${user.id}">
                 <td>${user.login}</td>
                 <td>${user.email}</td>
                 <td>${user.password}</td>
-                <td id="delete/${user.id}"><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')" class="deleteLink" ><spring:message code="label.delete" /></a></td>
+                <td><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')" class="deleteLink" ><spring:message code="label.delete" /></a></td>
             </tr>
         </c:forEach>
     </table>
+
+
     <div class="modal hide fade" id="deleteUser">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -54,6 +56,23 @@
             <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
         </div>
     </div>
+
+
+    <div class="modal hide fade" id="createUser">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>Create user</h3>
+        </div>
+        <div class="modal-body">
+            <p>do you want to delete user <span class="user"></span> ?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" onclick="ajaxDelete()" class="btn btn-primary">Create</a>
+            <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
+        </div>
+    </div>
+
+
 </c:if>
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
