@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<a href="<c:url value="/login.jsp" />">
+<a href="<c:url value="/logout" />">
     <spring:message code="label.logout"/>
 </a>
 
