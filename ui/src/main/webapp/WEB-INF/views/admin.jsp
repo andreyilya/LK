@@ -11,6 +11,7 @@
     <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/bootstrap/css/styles.css" rel="stylesheet">
     <script src="resources/bootstrap/js/jquery.js" type="text/javascript"></script>
+    <script src="resources/bootstrap/js/scripts.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -30,15 +31,30 @@ adminnnnnnnnnnnnnnnnnnnnnnnnnnnn!sadfasas
             <th><spring:message code="label.firstname"/></th>
             <th><spring:message code="label.email"/></th>
             <th><spring:message code="label.password"/></th>
+            <th></th>
         </tr>
         <c:forEach items="${userList}" var="user">
             <tr>
                 <td>${user.login}</td>
                 <td>${user.email}</td>
                 <td>${user.password}</td>
+                <td><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')" ><spring:message code="label.delete" /></a></td>
             </tr>
         </c:forEach>
     </table>
+    <div class="modal hide fade" id="deleteUser">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>Deleting user</h3>
+        </div>
+        <div class="modal-body">
+            <p>do you want to delete user <span class="user"></span> ?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn toReplace btn-primary">Delete</a>
+            <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
+        </div>
+    </div>
 </c:if>
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 

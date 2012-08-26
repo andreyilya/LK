@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -26,5 +27,11 @@ public  class AdminController {
 	public String listUsers(Map<String, Object> map) {
 		map.put(Paramerers.userList, userEntityDAO.getAll());
 		return URLs.ADMIN_PAGE;
+	}
+
+	@RequestMapping("/delete/{userId}")
+	public String deleteUser(@PathVariable("userId") Long userId) {
+		userEntityDAO.delete(userId);
+		return URLs.ADMIN_REDIRECT;
 	}
 }
