@@ -37,7 +37,7 @@
                 <td>${user.login}</td>
                 <td>${user.email}</td>
                 <td>${user.password}</td>
-                <td><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')" ><spring:message code="label.delete" /></a></td>
+                <td><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')" class="deleteLink" name="delete/${user.id}"><spring:message code="label.delete" /></a></td>
             </tr>
         </c:forEach>
     </table>
@@ -50,7 +50,7 @@
             <p>do you want to delete user <span class="user"></span> ?</p>
         </div>
         <div class="modal-footer">
-            <a href="#" class="btn toReplace btn-primary">Delete</a>
+            <a href="#" onclick="ajaxDelete()" class="btn toReplace btn-primary">Delete</a>
             <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
         </div>
     </div>
