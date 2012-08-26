@@ -13,14 +13,14 @@
 </head>
 <body>
 
-<div class="container center">
+<div class="container center hero-unit">
     <c:if test="${not empty param.error}">
-
-        <div class="alert alert-error fade in">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong><spring:message code="label.loginerror"/>: </strong> <spring:message code="label.loginmessage"/>
+        <div class="permanent">
+            <div class="alert alert-error fade in">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong><spring:message code="label.loginerror"/>: </strong> <spring:message code="label.loginmessage"/>
+            </div>
         </div>
-
     </c:if>
     <form method="POST" action="<c:url value="/j_spring_security_check" />" class="form-horizontal">
 
