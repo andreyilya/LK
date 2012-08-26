@@ -24,7 +24,6 @@
     </c:if>
     <form method="POST" action="<c:url value="/j_spring_security_check" />" class="form-horizontal">
 
-
         <div class="control-group">
             <label class="control-label" for="inputLogin">
                 <spring:message code="label.login"/>
@@ -54,8 +53,14 @@
                 <label class="checkbox">
                     <input type="checkbox" name="_spring_security_remember_me"> <spring:message code="label.remember"/>
                 </label>
-                <input type="submit" class="btn btn-primary" value="Login"/>
-                <input type="reset" class="btn btn-primary" value="Reset"/>
+                <input type="submit" class="btn btn-primary"
+                       value=
+                       <spring:message code="label.loginbutton" />
+                        />
+                <input type="reset" class="btn btn-primary"
+                       value=
+                       <spring:message code="label.reserbutton" />
+                        />
             </div>
         </div>
 
