@@ -16,3 +16,18 @@ function deleteFromDatatable(url) {
     var row = $(document.getElementById(url));
     row.remove();
 }
+
+$('#main a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+});
+
+$('#actions a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+});
+
+$('#roles a').click(function (e) {
+    e.preventDefault();
+    $(this).tab('show');
+});

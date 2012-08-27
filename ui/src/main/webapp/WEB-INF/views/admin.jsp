@@ -24,6 +24,7 @@
 
 <h3><spring:message code="label.users"/></h3>
 
+<a href="#createUser" role="button" class="btn btn-primary" data-toggle="modal">Create user</a>
 <c:if test="${!empty userList}">
     <table class="table table-striped table-bordered">
         <tr>
@@ -37,7 +38,8 @@
                 <td>${user.login}</td>
                 <td>${user.email}</td>
                 <td>${user.password}</td>
-                <td><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')" class="deleteLink" ><spring:message code="label.delete" /></a></td>
+                <td><a href="#" onclick="initDialog('delete/${user.id}','${user.login}')"
+                       class="deleteLink"><spring:message code="label.delete"/></a></td>
             </tr>
         </c:forEach>
     </table>
@@ -63,8 +65,72 @@
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3>Create user</h3>
         </div>
-        <div class="modal-body">
-            <p>do you want to delete user <span class="user"></span> ?</p>
+        <div class="modal-body form-horizontal">
+
+            <ul class="nav nav-tabs">
+                <li><a href="#main" data-toggle="tab">Main</a></li>
+                <li><a href="#actions" data-toggle="tab">Actions</a></li>
+                <li><a href="#roles" data-toggle="tab">Roles</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="main" class="tab-pane active">
+                    <div class="control-group">
+                        <label class="control-label" for="inputLogin">
+                            <spring:message code="label.login"/>
+                        </label>
+
+                        <div class="controls">
+                            <input type="text" id="inputLogin"
+                                   placeholder=
+                                       <spring:message code="label.login" />
+                                    />
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">
+                            <spring:message code="label.password"/>
+                        </label>
+
+                        <div class="controls">
+                            <input type="password" id="inputPassword"
+                                   placeholder=
+                                       <spring:message code="label.password" />
+                                    />
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="confirmPassword">
+                            <spring:message code="label.password"/>
+                        </label>
+
+                        <div class="controls">
+                            <input type="password" id="confirmPassword"
+                                   placeholder=
+                                       <spring:message code="label.password" />
+                                    />
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">
+                            <spring:message code="label.email"/>
+                        </label>
+
+                        <div class="controls">
+                            <input type="password" id="inputEmail"
+                                   placeholder=
+                                       <spring:message code="label.email" />
+                                    />
+                        </div>
+                    </div>
+                </div>
+                <div id="actions" class="tab-pane">
+                    werqwerwreerw
+                </div>
+                <div id="roles" class="tab-pane"> qwerweqrew</div>
+            </div>
         </div>
         <div class="modal-footer">
             <a href="#" onclick="ajaxDelete()" class="btn btn-primary">Create</a>
