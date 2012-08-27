@@ -47,7 +47,7 @@ pageEncoding="utf8" %>
 
 
     <tags:deleteEntity/>
-    <tags:addUser/>
+    <tags:addUser />
 
 </c:if>
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
