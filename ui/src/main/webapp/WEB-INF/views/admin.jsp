@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf8"
-         pageEncoding="utf8" %>
+pageEncoding="utf8" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -45,19 +46,7 @@
     </table>
 
 
-    <div class="modal hide fade" id="deleteUser">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3>Deleting user</h3>
-        </div>
-        <div class="modal-body">
-            <p>do you want to delete user <span class="user"></span> ?</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#" onclick="ajaxDelete()" class="btn toReplace btn-primary">Delete</a>
-            <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
-        </div>
-    </div>
+    <tags:deleteEntity/>
 
 
     <div class="modal hide fade" id="createUser">
