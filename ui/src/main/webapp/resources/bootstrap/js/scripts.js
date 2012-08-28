@@ -1,7 +1,7 @@
 function initDialog(address, username) {
     $(".toReplace").attr('name', address);
     $('#deleteUser').modal('show');
-    $('.user').append(username);
+    $('.user').text(username);
 }
 
 function ajaxDelete() {
