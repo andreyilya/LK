@@ -15,20 +15,30 @@
             </ul>
             <div class="tab-content">
                 <div id="main" class="tab-pane active">
-                    <parts:formfield label="label.login" value="login" />
-                    <parts:formpassword label="label.password" value="password" />
-                    <parts:formpassword label="label.password" value="password" />
+                    <parts:formfield label="label.login" value="login"/>
+                    <parts:formpassword label="label.password" value="password"/>
+                    <parts:formpassword label="label.password" value="password"/>
                     <parts:formfield label="label.email" value="email"/>
                 </div>
                 <div id="actions" class="tab-pane">
-                    <table>
-                        <c:forEach items="${actions}" var="action">
-                            <tr>${action.field}<td> <form:checkbox path="actionsForEmail.${action.field}" value="true"/></td></tr>
-
-                        </c:forEach>
+                    <table class="table table-striped table-bordered">
+                        <c:set var="i" scope="page" value="0"/>
+                        <tr>
+                            <c:forEach items="${actions}" var="action">
+                            <td><label class="checkbox">${action.field}
+                                <form:checkbox path="actionsForEmail.${action.field}" value="true"/></label></td>
+                            <c:set var="i" scope="page" value="${i+1}"/>
+                            <c:if test="${i%3==0}">
+                        </tr>
+                        <tr>
+                            </c:if>
+                            </c:forEach>
+                        </tr>
                     </table>
                 </div>
-                <div id="roles" class="tab-pane"> qwerweqrew</div>
+                <div id="roles" class="tab-pane">
+
+                </div>
             </div>
         </div>
         <div class="modal-footer">
