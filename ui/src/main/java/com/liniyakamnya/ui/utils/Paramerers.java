@@ -14,4 +14,5 @@ public final class Paramerers {
 	public static final String user = "user";
 	public static final String userList = "userList";
 	public static final String actions = "actions";
+	public static final String roles = "roles";
 }

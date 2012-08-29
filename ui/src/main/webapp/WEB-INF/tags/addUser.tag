@@ -37,7 +37,20 @@
                     </table>
                 </div>
                 <div id="roles" class="tab-pane">
-
+                    <table class="table table-striped table-bordered">
+                        <c:set var="i" scope="page" value="0"/>
+                        <tr>
+                            <c:forEach items="${roles}" var="role">
+                            <td><label class="checkbox">${role}
+                                <form:checkbox path="roles" value="${role}"/></label></td>
+                            <c:set var="i" scope="page" value="${i+1}"/>
+                            <c:if test="${i%3==0}">
+                        </tr>
+                        <tr>
+                            </c:if>
+                            </c:forEach>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>

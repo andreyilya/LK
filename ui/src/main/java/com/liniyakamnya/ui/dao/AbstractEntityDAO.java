@@ -6,12 +6,13 @@ import org.apache.log4j.Logger;
 import org.hibernate.ObjectNotFoundException;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author a.radkov
  *         Date: 16.07.12
  */
-
+@Transactional
 public abstract class AbstractEntityDAO<T extends Serializable> implements EntityDAO<T> {
 
 	private static final String POINT_SEPARATOR = "\\.";

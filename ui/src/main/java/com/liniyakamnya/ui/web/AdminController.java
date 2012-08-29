@@ -3,6 +3,7 @@ package com.liniyakamnya.ui.web;
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.User;
+import com.liniyakamnya.ui.security.Roles;
 import com.liniyakamnya.ui.utils.Paramerers;
 import com.liniyakamnya.ui.utils.URLs;
 import java.util.Map;
@@ -37,6 +38,8 @@ public class AdminController {
 	public String listUsers(Map<String, Object> map) {
 		map.put(Paramerers.user, new User());
 		map.put(Paramerers.actions, Actions.values());
+		//TODO: from dao
+		map.put(Paramerers.roles, Roles.values());
 		map.put(Paramerers.userList, userEntityDAO.getAll());
 		return URLs.ADMIN_PAGE;
 	}

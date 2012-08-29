@@ -18,7 +18,9 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
 		@NamedQuery(name = "role.deleteAll",
-				query = "delete from Role")
+				query = "delete from Role"),
+		@NamedQuery(name = "role.all",
+		query = "from Role")
 })
 public class Role implements Serializable {
 	private Long id;
