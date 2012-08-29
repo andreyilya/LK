@@ -19,4 +19,7 @@ public final class URLs {
 	public static final String ADMIN_PAGE = "admin";
 	public static final String ADMIN_REDIRECT = "redirect:/admin";
 
+	public static final String ADD = "/add";
+	public static final String DELETE_USER = "/delete/{userId}";
+
 }

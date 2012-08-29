@@ -1,8 +1,11 @@
 <%@ tag pageEncoding="UTF-8" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="parts" tagdir="/WEB-INF/tags/parts" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <div class="modal hide fade" id="createUser">
-       <tags:dialogHeader headerName="Add user"/>
+    <parts:dialogHeader headerName="Add user"/>
+    <form:form method="post" action="add" commandName="user">
         <div class="modal-body form-horizontal">
 
             <ul class="nav nav-tabs">
@@ -12,57 +15,10 @@
             </ul>
             <div class="tab-content">
                 <div id="main" class="tab-pane active">
-                    <div class="control-group">
-                        <label class="control-label" for="inputLogin">
-                            <spring:message code="label.login"/>
-                        </label>
-
-                        <div class="controls">
-                            <input type="text" id="inputLogin"
-                                   placeholder=
-                                       <spring:message code="label.login" />
-                                    />
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label" for="inputPassword">
-                            <spring:message code="label.password"/>
-                        </label>
-
-                        <div class="controls">
-                            <input type="password" id="inputPassword"
-                                   placeholder=
-                                       <spring:message code="label.password" />
-                                    />
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label" for="confirmPassword">
-                            <spring:message code="label.password"/>
-                        </label>
-
-                        <div class="controls">
-                            <input type="password" id="confirmPassword"
-                                   placeholder=
-                                       <spring:message code="label.password" />
-                                    />
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label" for="inputEmail">
-                            <spring:message code="label.email"/>
-                        </label>
-
-                        <div class="controls">
-                            <input type="password" id="inputEmail"
-                                   placeholder=
-                                       <spring:message code="label.email" />
-                                    />
-                        </div>
-                    </div>
+                    <parts:formfield label="label.login" value="login" />
+                    <parts:formpassword label="label.password" value="password" />
+                    <parts:formpassword label="label.password" value="password" />
+                    <parts:formfield label="label.email" value="email"/>
                 </div>
                 <div id="actions" class="tab-pane">
                     werqwerwreerw
@@ -71,7 +27,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a href="#" onclick="ajaxDelete()" class="btn btn-primary">Create</a>
+            <input type="submit" class="btn btn-primary" value="Create">
             <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
         </div>
-    </div>
+    </form:form>
+</div>

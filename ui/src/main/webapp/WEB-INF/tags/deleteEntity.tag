@@ -1,7 +1,7 @@
 <%@ tag pageEncoding="UTF-8" %>
-<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="parts" tagdir="/WEB-INF/tags/parts" %>
 <div class="modal hide fade" id="deleteUser">
-    <tags:dialogHeader headerName="Deleting user" />
+    <parts:dialogHeader headerName="Deleting user" />
     <div class="modal-body">
         <p>do you want to delete пользователя <span class="user"></span> ?</p>
     </div>

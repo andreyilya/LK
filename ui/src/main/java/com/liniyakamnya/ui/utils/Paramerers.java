@@ -7,9 +7,10 @@ package com.liniyakamnya.ui.utils;
  * Time: 0:05
  */
 public final class Paramerers {
-	private Paramerers() {
 
+	private Paramerers() {
 	}
 
+	public static String user = "user";
 	public static final String userList = "userList";
 }
