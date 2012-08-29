@@ -11,6 +11,7 @@ public final class Paramerers {
 	private Paramerers() {
 	}
 
-	public static String user = "user";
+	public static final String user = "user";
 	public static final String userList = "userList";
+	public static final String actions = "actions";
 }
