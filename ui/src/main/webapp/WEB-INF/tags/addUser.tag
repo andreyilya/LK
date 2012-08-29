@@ -9,7 +9,7 @@
         <div class="modal-body form-horizontal">
 
             <ul class="nav nav-tabs">
-                <li><a href="#main" data-toggle="tab">Main</a></li>
+                <li class="active"><a href="#main" data-toggle="tab">Main</a></li>
                 <li><a href="#actions" data-toggle="tab">Actions</a></li>
                 <li><a href="#roles" data-toggle="tab">Roles</a></li>
             </ul>
