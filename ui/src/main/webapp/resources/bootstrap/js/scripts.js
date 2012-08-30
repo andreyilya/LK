@@ -21,18 +21,22 @@ function ajaxAdd() {
     $.post("add", $("#addUser").serialize(),
             function (response) {
                 $('#createUser').modal('hide');
-                addRow($(addUser), response)
+                addRow($(addUser).serializeArray(), response)
             }, 'json');
 }
 
 function addRow(form, response) {
     var id = "delete/" + response;
-    var row = "<tr id=ID>" +
+    var row = "<tr id='ID'>" +
             "<td>LOGIN</td>" +
-            "<td>ENAIL</td>" +
+            "<td>EMAIL</td>" +
             "<td>PASSWORD</td> " +
-            "<td><a href='#' onclick='initDialog('ID','LOGIN')' class='deleteLink'>Delete</a></td>" +
+            "<td><a href='#' onclick='initDialog('ID','LOGIN')' class='deleteLink'>Удалить</a></td>" +
             "</tr>";
+    row= row.replace("ID",id);
+    row=row.replace("LOGIN",form[0].value);
+    row=row.replace("EMAIL",form[1].value);
+    row=row.replace("PASSWORD",form[2].value);
     $("#userTable tr:last").after(row);
 }
 
