@@ -12,7 +12,7 @@ pageEncoding="utf8" %>
     <title><spring:message code="label.title"/></title>
     <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="resources/bootstrap/css/styles.css" rel="stylesheet">
-    <script src="resources/bootstrap/js/jquery.js" type="text/javascript"></script>
+    <script src="resources/bootstrap/js/jquery.js"  type="text/javascript"></script>
     <script src="resources/bootstrap/js/scripts.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
