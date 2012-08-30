@@ -42,7 +42,7 @@ public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentifi
 	}
 
 	@Override
-	public User safeOrUpdate(User entity) {
+	public Long safeOrUpdate(User entity) {
 		return super.safeOrUpdate(entity);
 	}
 

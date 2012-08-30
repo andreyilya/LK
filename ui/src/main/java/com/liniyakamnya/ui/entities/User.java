@@ -20,7 +20,6 @@ import javax.persistence.NamedQuery;
  *         Date: 16.07.12
  */
 @Entity
-
 @NamedQueries({
 		@NamedQuery(name = "user.byLogin",
 				query = "from User as u where u.login = :login"),

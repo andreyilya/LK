@@ -27,7 +27,7 @@ pageEncoding="utf8" %>
 
 <a href="#createUser" role="button" class="btn btn-primary" data-toggle="modal">Create user</a>
 <c:if test="${!empty userList}">
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered" id="userTable">
         <tr>
             <th><spring:message code="label.firstname"/></th>
             <th><spring:message code="label.email"/></th>

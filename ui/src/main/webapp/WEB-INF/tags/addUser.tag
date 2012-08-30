@@ -5,7 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="modal hide fade" id="createUser">
     <parts:dialogHeader headerName="Add user"/>
-    <form:form method="post" action="add" commandName="user">
+    <form:form id="addUser" method="post" action="add" onsubmit='return false;' commandName="user">
         <div class="modal-body form-horizontal">
 
             <ul class="nav nav-tabs">
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <input type="submit" class="btn btn-primary" value="Create">
+            <input type="submit" class="btn btn-primary" value="Create" onclick="ajaxAdd();">
             <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
         </div>
     </form:form>

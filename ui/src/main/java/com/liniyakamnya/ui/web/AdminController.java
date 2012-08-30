@@ -2,10 +2,12 @@ package com.liniyakamnya.ui.web;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
+import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.security.Roles;
 import com.liniyakamnya.ui.utils.Paramerers;
 import com.liniyakamnya.ui.utils.URLs;
+import java.util.ArrayList;
 import java.util.Map;
 import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,11 +48,11 @@ public class AdminController {
 
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = URLs.ADD, method = RequestMethod.POST)
-	public String addUser(@ModelAttribute(USER) User user,
-						  BindingResult result) {
-
-		userEntityDAO.create(user);
-		return URLs.ADMIN_REDIRECT;
+	public
+	@ResponseBody
+	String addUser(@ModelAttribute(USER) User user,
+				 BindingResult result) {
+		return userEntityDAO.safeOrUpdate(user).toString();
 	}
 
 	@RequestMapping(URLs.DELETE_USER)

@@ -12,7 +12,7 @@ public interface EntityDAO<T extends Serializable> {
 
     void update(T entity);
 
-    T safeOrUpdate(T entity);
+	Long safeOrUpdate(T entity);
 
     void delete(T entity);
 

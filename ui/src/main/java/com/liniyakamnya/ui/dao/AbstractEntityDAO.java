@@ -47,8 +47,8 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public T safeOrUpdate(T entity) {
-		return (T) sessionFactory.getCurrentSession().save(entity);
+	public Long safeOrUpdate(T entity) {
+		return (Long) sessionFactory.getCurrentSession().save(entity);
 	}
 
 	@Override
