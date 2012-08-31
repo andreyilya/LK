@@ -17,7 +17,7 @@
                 <div id="main" class="tab-pane active">
                     <parts:formfield label="label.login" value="login"/>
                     <parts:formpassword label="label.password" value="password"/>
-                    <parts:formpassword label="label.password" value="password"/>
+                    <parts:formpassword label="label.password" value=""/>
                     <parts:formfield label="label.email" value="email"/>
                 </div>
                 <div id="actions" class="tab-pane">
