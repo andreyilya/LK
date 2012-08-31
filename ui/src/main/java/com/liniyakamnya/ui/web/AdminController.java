@@ -33,7 +33,7 @@ public class AdminController {
 
 	@Autowired
 	@Named(Paramerers.userDao)
-	private EntityDAO userEntityDAO;
+	private EntityDAO<User> userEntityDAO;
 
 	@RequestMapping(URLs.ADMIN)
 	public String listUsers(Map<String, Object> map) {
@@ -45,7 +45,6 @@ public class AdminController {
 		return URLs.ADMIN_PAGE;
 	}
 
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = URLs.ADD, method = RequestMethod.POST)
 	public
 	@ResponseBody
