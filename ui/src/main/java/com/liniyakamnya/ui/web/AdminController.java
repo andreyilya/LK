@@ -30,10 +30,9 @@ public class AdminController {
 
 	private static final String USER = "user";
 	private static final String USER_ID = "userId";
-	private static final String USER_DAO = "userDao";
 
 	@Autowired
-	@Named(USER_DAO)
+	@Named(Paramerers.userDao)
 	private EntityDAO userEntityDAO;
 
 	@RequestMapping(URLs.ADMIN)

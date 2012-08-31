@@ -23,7 +23,7 @@ pageEncoding="utf8" %>
 
 <h2><spring:message code="label.title"/></h2>
 
-
+<p><a href="index">Notes</a></p>
 <h3><spring:message code="label.users"/></h3>
 
 <a href="#createUser" role="button" class="btn btn-primary" data-toggle="modal">Create user</a>
@@ -46,7 +46,7 @@ pageEncoding="utf8" %>
         </c:forEach>
     </table>
 
-    <tags:deleteEntity/>
+    <tags:deleteEntity entityName="user"/>
     <tags:addUser />
 
 </c:if>

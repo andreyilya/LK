@@ -1,14 +1,14 @@
-function initDialog(address, username) {
+function initDialog(address, entityname) {
     $(".toReplace").attr('name', address);
-    $('#deleteUser').modal('show');
-    $('.user').text(username);
+    $('#deleteEntity').modal('show');
+    $('.entity').text(entityname);
 }
 
 function ajaxDelete() {
     var url = $(".toReplace").attr('name');
     $.get(url);
     deleteFromDatatable(url);
-    $('#deleteUser').modal('hide');
+    $('#deleteEntity').modal('hide');
     return false;
 }
 

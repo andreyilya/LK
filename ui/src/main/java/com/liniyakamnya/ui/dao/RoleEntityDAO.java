@@ -2,6 +2,7 @@ package com.liniyakamnya.ui.dao;
 
 import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.security.Roles;
+import com.liniyakamnya.ui.utils.Paramerers;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 @Repository
-@Service("roleDao")
+@Service(Paramerers.roleDao)
 public class RoleEntityDAO extends AbstractEntityDAO<Role> implements RoleConfigurator {
 
 	private static final String ROLE_DELETE_ALL = "role.deleteAll";

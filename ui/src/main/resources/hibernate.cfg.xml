@@ -7,6 +7,9 @@
 	<session-factory>
         <mapping class="com.liniyakamnya.ui.entities.User" />
         <mapping class="com.liniyakamnya.ui.entities.Role" />
+        <mapping class="com.liniyakamnya.ui.entities.Note" />
+        <mapping class="com.liniyakamnya.ui.entities.Category" />
+        <mapping class="com.liniyakamnya.ui.entities.SubCategory" />
     </session-factory>
 
 </hibernate-configuration>

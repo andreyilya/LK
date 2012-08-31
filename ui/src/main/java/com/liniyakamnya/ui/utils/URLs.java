@@ -22,4 +22,5 @@ public final class URLs {
 	public static final String ADD = "/add";
 	public static final String DELETE_USER = "/delete/{userId}";
 
+	public static final String DELETE_NOTE = "/deleteNote/{noteId}";
 }
