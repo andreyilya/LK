@@ -41,7 +41,7 @@
                         <c:set var="i" scope="page" value="0"/>
                         <tr>
                             <c:forEach items="${roles}" var="role">
-                            <td><label class="checkbox">${role}
+                            <td><label class="checkbox">${role.roleName}
                                 <form:checkbox path="roles" value="${role}"/></label></td>
                             <c:set var="i" scope="page" value="${i+1}"/>
                             <c:if test="${i%3==0}">

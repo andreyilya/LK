@@ -35,12 +35,15 @@ public class AdminController {
 	@Named(Paramerers.userDao)
 	private EntityDAO<User> userEntityDAO;
 
+	@Autowired
+	@Named(Paramerers.roleDao)
+	private EntityDAO<User> roleEntityDAO;
+
 	@RequestMapping(URLs.ADMIN)
 	public String listUsers(Map<String, Object> map) {
 		map.put(Paramerers.user, new User());
 		map.put(Paramerers.actions, Actions.values());
-		//TODO: from dao
-		map.put(Paramerers.roles, Roles.values());
+		map.put(Paramerers.roles, roleEntityDAO.getAll());
 		map.put(Paramerers.userList, userEntityDAO.getAll());
 		return URLs.ADMIN_PAGE;
 	}
