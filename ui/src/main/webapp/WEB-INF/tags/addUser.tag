@@ -22,13 +22,11 @@
                 </div>
                 <div id="actions" class="tab-pane">
                     <table class="table table-striped table-bordered">
-                        <c:set var="i" scope="page" value="0"/>
                         <tr>
-                            <c:forEach items="${actions}" var="action">
+                            <c:forEach items="${actions}" var="action" varStatus="row">
                             <td><label class="checkbox">${action.field}
                                 <form:checkbox path="actionsForEmail.${action.field}" value="true"/></label></td>
-                            <c:set var="i" scope="page" value="${i+1}"/>
-                            <c:if test="${i%3==0}">
+                            <c:if test="${(row.index+1)%3==0}">
                         </tr>
                         <tr>
                             </c:if>
@@ -38,13 +36,11 @@
                 </div>
                 <div id="roles" class="tab-pane">
                     <table class="table table-striped table-bordered">
-                        <c:set var="i" scope="page" value="0"/>
                         <tr>
-                            <c:forEach items="${roles}" var="role">
+                            <c:forEach items="${roles}" var="role" varStatus="row">
                             <td><label class="checkbox">${role.roleName}
                                 <form:checkbox path="roles" value="${role}"/></label></td>
-                            <c:set var="i" scope="page" value="${i+1}"/>
-                            <c:if test="${i%3==0}">
+                            <c:if test="${(row.index+1)%3==0}">
                         </tr>
                         <tr>
                             </c:if>
