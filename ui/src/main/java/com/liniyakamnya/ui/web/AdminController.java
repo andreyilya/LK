@@ -2,12 +2,9 @@ package com.liniyakamnya.ui.web;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
-import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
-import com.liniyakamnya.ui.security.Roles;
 import com.liniyakamnya.ui.utils.Paramerers;
 import com.liniyakamnya.ui.utils.URLs;
-import java.util.ArrayList;
 import java.util.Map;
 import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
