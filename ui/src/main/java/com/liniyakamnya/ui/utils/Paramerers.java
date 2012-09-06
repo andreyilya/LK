@@ -11,16 +11,16 @@ public final class Paramerers {
 	private Paramerers() {
 	}
 
-	public static final String roles = "roles";
-	public static final String roleDao = "roleDao";
+	public static final String ROLES = "roles";
+	public static final String ROLE_DAO = "roleDao";
 
-	public static final String user = "user";
-	public static final String userList = "userList";
-	public static final String userDao = "userDao";
+	public static final String USER = "user";
+	public static final String USER_LIST = "userList";
+	public static final String USER_DAO = "userDao";
 
-	public static final String actions = "actions";
+	public static final String ACTIONS = "actions";
 
-	public static final String noteDao = "noteDao";
-	public static final String noteList = "noteList";
-	public static final String note = "note";
+	public static final String NOTE_DAO = "noteDao";
+	public static final String NOTE_LIST = "noteList";
+	public static final String NOTE = "note";
 }

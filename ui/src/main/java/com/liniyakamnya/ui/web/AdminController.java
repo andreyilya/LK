@@ -29,19 +29,19 @@ public class AdminController {
 	private static final String USER_ID = "userId";
 
 	@Autowired
-	@Named(Paramerers.userDao)
+	@Named(Paramerers.USER_DAO)
 	private EntityDAO<User> userEntityDAO;
 
 	@Autowired
-	@Named(Paramerers.roleDao)
+	@Named(Paramerers.ROLE_DAO)
 	private EntityDAO<User> roleEntityDAO;
 
 	@RequestMapping(URLs.ADMIN)
 	public String listUsers(Map<String, Object> map) {
-		map.put(Paramerers.user, new User());
-		map.put(Paramerers.actions, Actions.values());
-		map.put(Paramerers.roles, roleEntityDAO.getAll());
-		map.put(Paramerers.userList, userEntityDAO.getAll());
+		map.put(Paramerers.USER, new User());
+		map.put(Paramerers.ACTIONS, Actions.values());
+		map.put(Paramerers.ROLES, roleEntityDAO.getAll());
+		map.put(Paramerers.USER_LIST, userEntityDAO.getAll());
 		return URLs.ADMIN_PAGE;
 	}
 

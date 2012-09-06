@@ -18,16 +18,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class NoteController {
 	private static final String NOTE_ID = "noteId";
-	private static final String NOTE = "note";
+	private static final String NOTE = "NOTE";
 
 	@Autowired
-	@Named(Paramerers.noteDao)
+	@Named(Paramerers.NOTE_DAO)
 	private EntityDAO<Note> noteEntityDAO;
 
 	@RequestMapping(URLs.INDEX)
 	public String listNotes(Map<String, Object> map) {
-		map.put(Paramerers.note, new Note());
-		map.put(Paramerers.noteList, noteEntityDAO.getAll());
+		map.put(Paramerers.NOTE, new Note());
+		map.put(Paramerers.NOTE_LIST, noteEntityDAO.getAll());
 		return URLs.INDEX_PAGE;
 	}
 

@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 @Repository
-@Service(Paramerers.roleDao)
+@Service(Paramerers.ROLE_DAO)
 public class RoleEntityDAO extends AbstractEntityDAO<Role> implements RoleConfigurator {
 
 	private static final String ROLE_DELETE_ALL = "role.deleteAll";

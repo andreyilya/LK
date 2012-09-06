@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
  * Time: 18:37
  */
 @Transactional
-@Repository(Paramerers.noteDao)
-@Service(Paramerers.noteDao)
+@Repository(Paramerers.NOTE_DAO)
+@Service(Paramerers.NOTE_DAO)
 public class NoteEntityDAO extends AbstractEntityDAO<Note>{
 	@Override
 	public Class<Note> getDomainClass() {
