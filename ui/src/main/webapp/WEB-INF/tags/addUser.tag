@@ -3,9 +3,11 @@
 <%@ taglib prefix="parts" tagdir="/WEB-INF/tags/parts" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ attribute name="type" required="true" rtexprvalue="true" %>
+
 <div class="modal hide fade" id="createUser">
     <parts:dialogHeader headerName="Add user"/>
-    <form:form id="addUser" method="post" action="add" onsubmit='return false;' commandName="user">
+    <form:form id="addUser" method="post" action="${type}" onsubmit='return false;' commandName="user">
         <div class="modal-body form-horizontal">
 
             <ul class="nav nav-tabs">

@@ -89,6 +89,14 @@ function addRowNote(form, response) {
 }
 
 
+function setType(type) {
+    $('#addUser').attr('action', type);
+}
+
+function initUpdate(id) {
+    $('#hiddenId').attr('value', id);
+}
+
 $('#main a').click(function (e) {
     e.preventDefault();
     $(this).tab('show');

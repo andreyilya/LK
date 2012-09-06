@@ -10,6 +10,7 @@ import com.liniyakamnya.ui.utils.URLs;
 import java.util.Map;
 import javax.inject.Named;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -28,55 +29,60 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AdminController {
 
-    private static final String USER = "user";
-    private static final String USER_ID = "userId";
+	private static final String USER = "user";
+	private static final String USER_ID = "userId";
 
-    @Autowired
-    @Named(Paramerers.USER_DAO)
-    private EntityDAO<User> userEntityDAO;
+	@Autowired
+	@Named(Paramerers.USER_DAO)
+	private EntityDAO<User> userEntityDAO;
 
-    @Autowired
-    @Named(Paramerers.ROLE_DAO)
-    private EntityDAO<Role> roleEntityDAO;
+	@Autowired
+	@Named(Paramerers.ROLE_DAO)
+	private EntityDAO<Role> roleEntityDAO;
 
-    @RequestMapping(URLs.ADMIN)
-    public String listUsers(Map<String, Object> map) {
-        map.put(Paramerers.USER, new User());
-        map.put(Paramerers.ACTIONS, Actions.values());
-        map.put(Paramerers.ROLES, roleEntityDAO.getAll());
-        map.put(Paramerers.USER_LIST, userEntityDAO.getAll());
-        return URLs.ADMIN_PAGE;
-    }
+	@RequestMapping(URLs.ADMIN)
+	public String listUsers(Map<String, Object> map) {
+		map.put(Paramerers.USER, new User());
+		map.put(Paramerers.ACTIONS, Actions.values());
+		map.put(Paramerers.ROLES, roleEntityDAO.getAll());
+		map.put(Paramerers.USER_LIST, userEntityDAO.getAll());
+		return URLs.ADMIN_PAGE;
+	}
 
-    @RequestMapping(value = URLs.ADD, method = RequestMethod.POST)
-    public
-    @ResponseBody
-    String addUser(@ModelAttribute(USER) User user,
-                   BindingResult result) {
-        //Correctly, it should be moved to service , byt for out small project it`s very lazy
-        //to create service lajer. probably, it will be done.
-        setRoles(user);
-        return userEntityDAO.safeOrUpdate(user).toString();
-    }
+	@RequestMapping(value = URLs.ADD_USER, method = RequestMethod.POST)
+	public
+	@ResponseBody
+	String addUser(@ModelAttribute(USER) User user,
+				   BindingResult result) {
+		//Correctly, it should be moved to service , byt for out small project it`s very lazy
+		//to create service lajer. probably, it will be done.
+		setRoles(user);
+		return userEntityDAO.safeOrUpdate(user).toString();
+	}
 
-    private void setRoles(User user) {
-        try {
-            for (String id : user.getRoless().split(",")) {
-                user.getRoles().add(roleEntityDAO.findById(Long.parseLong(id)));
-            }
-        } catch (NumberFormatException e) {
-            //do nothing
-        }  catch (NullPointerException e){
-            //do nothing
-        }
-    }
+	private void setRoles(User user) {
+		if (StringUtils.isNotEmpty(user.getRoless())) {
+			for (String id : user.getRoless().split(",")) {
+				user.getRoles().add(roleEntityDAO.findById(Long.parseLong(id)));
+			}
+		}
 
-    @RequestMapping(URLs.DELETE_USER)
-    public
-    @ResponseBody
-    String deleteUser(@PathVariable(USER_ID) Long userId) {
+	}
 
-        userEntityDAO.delete(userId);
-        return URLs.ADMIN_REDIRECT;
-    }
+	@RequestMapping(value = URLs.UPDATE_USER, method = RequestMethod.POST)
+	public
+	@ResponseBody
+	void updateUser(@ModelAttribute(USER) User user,
+					BindingResult result) {
+		userEntityDAO.update(user);
+	}
+
+	@RequestMapping(URLs.DELETE_USER)
+	public
+	@ResponseBody
+	String deleteUser(@PathVariable(USER_ID) Long userId) {
+
+		userEntityDAO.delete(userId);
+		return URLs.ADMIN_REDIRECT;
+	}
 }
