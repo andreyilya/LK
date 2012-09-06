@@ -20,30 +20,23 @@ import org.springframework.transaction.annotation.Transactional;
 @Service(Paramerers.ROLE_DAO)
 public class RoleEntityDAO extends AbstractEntityDAO<Role> implements RoleConfigurator {
 
-	private static final String ROLE_DELETE_ALL = "role.deleteAll";
+    @Override
+    public void initRoles() {
+        createRoles();
+    }
 
-	@Override
-	public void initRoles() {
-		deleteRoles();
-		createRoles();
-	}
+    private void createRoles() {
+        if (getAll().isEmpty()) {
+            for (Roles role : Roles.values()) {
+                Role roleEntity = new Role();
+                roleEntity.setRoleName(role.name());
+                super.create(roleEntity);
+            }
+        }
+    }
 
-	private void deleteRoles() {
-		Session session = getSessionFactory().getCurrentSession();
-		Query query = session.getNamedQuery(ROLE_DELETE_ALL);
-		query.executeUpdate();
-	}
-
-	private void createRoles() {
-		for (Roles role : Roles.values()) {
-			Role roleEntity = new Role();
-			roleEntity.setRoleName(role.name());
-			super.create(roleEntity);
-		}
-	}
-
-	@Override
-	public Class<Role> getDomainClass() {
-		return Role.class;
-	}
+    @Override
+    public Class<Role> getDomainClass() {
+        return Role.class;
+    }
 }

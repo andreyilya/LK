@@ -15,7 +15,7 @@ import org.hibernate.Query;
  *         Date: 16.07.12
  */
 @Transactional
-@Repository(Paramerers.USER_DAO)
+@Repository
 @Service(Paramerers.USER_DAO)
 public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentificator {
 
