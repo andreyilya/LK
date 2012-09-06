@@ -55,10 +55,20 @@ public class AdminController {
                    BindingResult result) {
         //Correctly, it should be moved to service , byt for out small project it`s very lazy
         //to create service lajer. probably, it will be done.
-        for (String id : user.getRoless().split(",")) {
-            user.getRoles().add(roleEntityDAO.findById(Long.parseLong(id)));
-        }
+        setRoles(user);
         return userEntityDAO.safeOrUpdate(user).toString();
+    }
+
+    private void setRoles(User user) {
+        try {
+            for (String id : user.getRoless().split(",")) {
+                user.getRoles().add(roleEntityDAO.findById(Long.parseLong(id)));
+            }
+        } catch (NumberFormatException e) {
+            //do nothing
+        }  catch (NullPointerException e){
+            //do nothing
+        }
     }
 
     @RequestMapping(URLs.DELETE_USER)
