@@ -2,6 +2,7 @@ package com.liniyakamnya.ui.web;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
+import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.utils.Paramerers;
 import com.liniyakamnya.ui.utils.URLs;
@@ -34,7 +35,7 @@ public class AdminController {
 
 	@Autowired
 	@Named(Paramerers.ROLE_DAO)
-	private EntityDAO<User> roleEntityDAO;
+	private EntityDAO<Role> roleEntityDAO;
 
 	@RequestMapping(URLs.ADMIN)
 	public String listUsers(Map<String, Object> map) {
@@ -50,6 +51,7 @@ public class AdminController {
 	@ResponseBody
 	String addUser(@ModelAttribute(USER) User user,
 				 BindingResult result) {
+        user.getRoles().add(roleEntityDAO.findById(Long.parseLong(user.getRoless().split(",")[0])));
 		return userEntityDAO.safeOrUpdate(user).toString();
 	}
 

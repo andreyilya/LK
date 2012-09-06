@@ -1,6 +1,8 @@
 package com.liniyakamnya.ui.entities;
 
 
+import org.apache.commons.lang.StringUtils;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +36,7 @@ public class User implements Serializable {
 	private String email;
 	private ActionsForEmail actionsForEmail = new ActionsForEmail();
 	private List<Role> roles = new ArrayList<Role>();
+	private String roless= StringUtils.EMPTY;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -89,4 +92,12 @@ public class User implements Serializable {
 	public void setActionsForEmail(ActionsForEmail actionsForEmail) {
 		this.actionsForEmail = actionsForEmail;
 	}
+
+    public String getRoless() {
+        return roless;
+    }
+
+    public void setRoless(String roless) {
+        this.roless = roless;
+    }
 }

@@ -39,7 +39,7 @@
                         <tr>
                             <c:forEach items="${roles}" var="role" varStatus="row">
                             <td><label class="checkbox">${role.roleName}
-                                <form:checkbox path="roles" value="${role}"/></label></td>
+                                <form:checkbox path="roless" value="${role.id}"/></label></td>
                             <c:if test="${(row.index+1)%3==0}">
                         </tr>
                         <tr>
