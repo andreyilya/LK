@@ -1,5 +1,6 @@
 package com.liniyakamnya.ui.web;
 
+import com.google.gson.Gson;
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.Role;
@@ -12,6 +13,9 @@ import javax.inject.Named;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,6 +35,8 @@ public class AdminController {
 
 	private static final String USER = "user";
 	private static final String USER_ID = "userId";
+	public static final String CONTENT_TYPE = "Content-Type";
+	public static final String APPLICATION_JSON = "application/json";
 
 	@Autowired
 	@Named(Paramerers.USER_DAO)
@@ -77,6 +83,14 @@ public class AdminController {
 		userEntityDAO.update(user);
 	}
 
+	@RequestMapping(value = URLs.GET_USER)
+	public
+	@ResponseBody
+	ResponseEntity<String> getUser(@PathVariable(USER_ID) Long userId) {
+		User user = userEntityDAO.findById(userId);
+		return createJsonResponse(user);
+	}
+
 	@RequestMapping(URLs.DELETE_USER)
 	public
 	@ResponseBody
@@ -85,4 +99,13 @@ public class AdminController {
 		userEntityDAO.delete(userId);
 		return URLs.ADMIN_REDIRECT;
 	}
+
+	private ResponseEntity<String> createJsonResponse(Object o) {
+		HttpHeaders headers = new HttpHeaders();
+		headers.set(CONTENT_TYPE, APPLICATION_JSON);
+		Gson gson = new Gson();
+		String json = gson.toJson(o);
+		return new ResponseEntity<String>(json, headers, HttpStatus.CREATED);
+	}
+
 }
