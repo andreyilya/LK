@@ -94,7 +94,12 @@ function setType(type) {
 }
 
 function initUpdate(id) {
+    setType('update');
     $('#hiddenId').attr('value', id);
+    var url = "getUser/" + id;
+    $.get(url, function (response) {
+        $('#createUser').modal('show');
+    }, 'json');
 }
 
 $('#main a').click(function (e) {

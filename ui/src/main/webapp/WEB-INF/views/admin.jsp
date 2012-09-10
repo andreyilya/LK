@@ -47,7 +47,7 @@
                             class="deleteLink"><spring:message code="label.delete"/></a>
                     </div>
                     <div>
-                        <a href="#createUser" data-toggle="modal" onclick="setType('update');initUpdate(${user.id});">
+                        <a href="#" data-toggle="modal" onclick="initUpdate(${user.id});">
                             <spring:message code="label.update"/></a>
                     </div>
                 </td>
