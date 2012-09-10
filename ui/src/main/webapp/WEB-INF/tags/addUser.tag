@@ -17,6 +17,7 @@
             </ul>
             <div class="tab-content">
                 <div id="main" class="tab-pane active">
+                    <form:hidden path="id" id="hiddenId"/>
                     <parts:formfield label="label.login" value="login"/>
                     <parts:formpassword label="label.password" value="password"/>
                     <parts:formpassword label="label.password" value=""/>

@@ -1,5 +1,6 @@
 package com.liniyakamnya.ui.dao;
 
+import com.liniyakamnya.ui.entities.User;
 import java.io.Serializable;
 import java.util.List;
 import org.apache.log4j.Logger;
@@ -54,7 +55,7 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 	@Override
 	@SuppressWarnings("unchecked")
 	public T findById(Long id) {
-		return (T) sessionFactory.getCurrentSession().load(
+		return (T) sessionFactory.getCurrentSession().get(
 				getDomainClass(), id);
 	}
 
