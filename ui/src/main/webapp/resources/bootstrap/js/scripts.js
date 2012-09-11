@@ -94,25 +94,19 @@ function setType(type) {
 }
 
 function initUpdate(id) {
-    setType('update');
-    $('#hiddenId').attr('value', id);
     var url = "getUser/" + id;
     $.get(url, function (response) {
+        initUpdateDialog(response);
         $('#createUser').modal('show');
     }, 'json');
 }
 
-$('#main a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-});
+function initUpdateDialog(response) {
+    $('#addUser').trigger( 'reset' );
 
-$('#actions a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-});
-
-$('#roles a').click(function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-});
+    setType('update');
+    $('#hiddenId').attr('value', response.id);
+    $('#login').attr('value', response.login);
+    $('#email').attr('value', response.email);
+    $("#roless1").prop("checked", response.roles[0]);
+}
