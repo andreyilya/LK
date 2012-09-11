@@ -20,20 +20,20 @@ function deleteFromDatatable(url) {
 
 function ajaxAdd() {
     $.post("add", $("#addUser").serialize(),
-            function (response) {
-                $('#createUser').modal('hide');
-                addRow($(addUser).serializeArray(), response)
-            }, 'json');
+        function (response) {
+            $('#createUser').modal('hide');
+            addRow($(addUser).serializeArray(), response)
+        }, 'json');
 }
 
 function addRow(form, response) {
     var id = "delete/" + response;
     var row = "<tr id='ID'>" +
-            "<td>LOGIN</td>" +
-            "<td>EMAIL</td>" +
-            "<td>PASSWORD</td> " +
-            "<td><a href='#' onclick=\"initDialog('ID','LOGIN')\" class='deleteLink'>Удалить</a></td>" +
-            "</tr>";
+        "<td>LOGIN</td>" +
+        "<td>EMAIL</td>" +
+        "<td>PASSWORD</td> " +
+        "<td><a href='#' onclick=\"initDialog('ID','LOGIN')\" class='deleteLink'>Удалить</a></td>" +
+        "</tr>";
     row = row.replace(/ID/g, id);
     row = row.replace(/LOGIN/g, getValue(form, "login"));
     row = row.replace("EMAIL", getValue(form, "email"));
@@ -53,25 +53,25 @@ function getValue(list, key) {
 
 function ajaxAddNote() {
     $.post("addNote", $("#addNote").serialize(),
-            function (response) {
-                $('#createNote').modal('hide');
-                addRowNote($(addNote).serializeArray(), response)
-            }, 'json');
+        function (response) {
+            $('#createNote').modal('hide');
+            addRowNote($(addNote).serializeArray(), response)
+        }, 'json');
 }
 
 function addRowNote(form, response) {
     var id = "deleteNote/" + response;
     var row = "<tr id='ROW_ID'>" +
-            "<td>ID</td>" +
-            "<td>DATE</td>" +
-            "<td>PRICE</td> " +
-            "<td>NUMBER</td> " +
-            "<td>STATUS</td> " +
-            "<td>CUSTOMER_NAME</td> " +
-            "<td>CUSTOMER_PHONE</td> " +
-            "<td>OTHERS</td> " +
-            "<td><a href='#' onclick=\"initDialog('ROW_ID','ID')\" class='deleteLink'>Удалить</a></td>" +
-            "</tr>";
+        "<td>ID</td>" +
+        "<td>DATE</td>" +
+        "<td>PRICE</td> " +
+        "<td>NUMBER</td> " +
+        "<td>STATUS</td> " +
+        "<td>CUSTOMER_NAME</td> " +
+        "<td>CUSTOMER_PHONE</td> " +
+        "<td>OTHERS</td> " +
+        "<td><a href='#' onclick=\"initDialog('ROW_ID','ID')\" class='deleteLink'>Удалить</a></td>" +
+        "</tr>";
     var date = new Date();
     var mm = date.getMonth() + 1;
     mm = (mm < 10) ? '0' + mm : mm;
@@ -102,11 +102,18 @@ function initUpdate(id) {
 }
 
 function initUpdateDialog(response) {
-    $('#addUser').trigger( 'reset' );
+    $('#addUser').trigger('reset');
 
     setType('update');
     $('#hiddenId').attr('value', response.id);
     $('#login').attr('value', response.login);
     $('#email').attr('value', response.email);
-    $("#roless1").prop("checked", response.roles[0]);
+    for (i = 0; i < 3; i++) {
+        var id = "#roless" + (i + 1).toString();
+        for (j = 0; j < response.roles.length; j++) {
+            if (response.roles[j].id == $(id).attr("value")) {
+                $(id).prop("checked", true);
+            }
+        }
+    }
 }
