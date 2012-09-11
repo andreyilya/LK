@@ -108,7 +108,8 @@ function initUpdateDialog(response) {
     $('#hiddenId').attr('value', response.id);
     $('#login').attr('value', response.login);
     $('#email').attr('value', response.email);
-    for (i = 0; i < 3; i++) {
+
+    for (i = 0; i < $("#roles td").length; i++) {
         var id = "#roless" + (i + 1).toString();
         for (j = 0; j < response.roles.length; j++) {
             if (response.roles[j].id == $(id).attr("value")) {
