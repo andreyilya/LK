@@ -18,26 +18,38 @@ function deleteFromDatatable(url) {
 }
 
 
-function ajaxAdd() {
-    $.post("add", $("#addUser").serialize(),
+function ajaxAddOrUpdate(type) {
+    $.post(type, $("#addUser").serialize(),
         function (response) {
             $('#createUser').modal('hide');
-            addRow($(addUser).serializeArray(), response)
+            if (type == "add") {
+                addRow($(addUser).serializeArray(), response)
+            } else {
+                updateRow($(addUser).serializeArray());
+            }
         }, 'json');
 }
 
-function addRow(form, response) {
+function createUserRow(response, form) {
     var id = "delete/" + response;
+
     var row = "<tr id='ID'>" +
         "<td>LOGIN</td>" +
         "<td>EMAIL</td>" +
         "<td>PASSWORD</td> " +
-        "<td><a href='#' onclick=\"initDialog('ID','LOGIN')\" class='deleteLink'>Удалить</a></td>" +
+        "<td><div><a href='#' onclick=\"initDialog('ID','LOGIN')\" class='deleteLink'>Удалить</a></div>" +
+        "<div><a href='#' onclick=\"initUpdate('UPDATE')\" >Обновить</a></div></td>" +
+
         "</tr>";
     row = row.replace(/ID/g, id);
     row = row.replace(/LOGIN/g, getValue(form, "login"));
     row = row.replace("EMAIL", getValue(form, "email"));
     row = row.replace("PASSWORD", getValue(form, "password"));
+    row = row.replace("UPDATE", response);
+    return row;
+}
+function addRow(form, response) {
+    var row = createUserRow(response, form);
     $("#userTable tr:last").after(row);
 }
 
@@ -50,6 +62,9 @@ function getValue(list, key) {
     return null;
 }
 
+function updateRow(form) {
+
+}
 
 function ajaxAddNote() {
     $.post("addNote", $("#addNote").serialize(),
@@ -70,7 +85,7 @@ function addRowNote(form, response) {
         "<td>CUSTOMER_NAME</td> " +
         "<td>CUSTOMER_PHONE</td> " +
         "<td>OTHERS</td> " +
-        "<td><a href='#' onclick=\"initDialog('ROW_ID','ID')\" class='deleteLink'>Удалить</a></td>" +
+        "<td><div><a href='#' onclick=\"initDialog('ROW_ID','ID')\" class='deleteLink'>Удалить</a></td></div>" +
         "</tr>";
     var date = new Date();
     var mm = date.getMonth() + 1;
