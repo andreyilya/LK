@@ -17,31 +17,31 @@ public abstract class AbstractEntityService<T extends Serializable> implements E
     @Override
     public void create(T entity) {
         getEntityDAO().create(entity);
-        emailService.protocolAction(Actions.DELETE_USER);
+       // emailService.protocolAction(Actions.DELETE_USER);
     }
 
     @Override
     public void update(T entity) {
         getEntityDAO().update(entity);
-        emailService.protocolAction(Actions.DELETE_USER);
+       // emailService.protocolAction(Actions.DELETE_USER);
     }
 
     @Override
     public Long safeOrUpdate(T entity) {
-        emailService.protocolAction(Actions.DELETE_USER);
+        //emailService.protocolAction(Actions.DELETE_USER);
         return getEntityDAO().safeOrUpdate(entity);
     }
 
     @Override
     public void delete(T entity) {
         getEntityDAO().delete(entity);
-        emailService.protocolAction(Actions.DELETE_USER);
+       // emailService.protocolAction(Actions.DELETE_USER);
     }
 
     @Override
     public void delete(Long id) {
         getEntityDAO().delete(id);
-        emailService.protocolAction(Actions.DELETE_USER);
+      //  emailService.protocolAction(Actions.DELETE_USER);
     }
 
     @Override

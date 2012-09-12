@@ -60,19 +60,7 @@ public class AdminController {
 	@ResponseBody
 	String addUser(@ModelAttribute(USER) User user,
 				   BindingResult result) {
-		//Correctly, it should be moved to service , byt for out small project it`s very lazy
-		//to create service lajer. probably, it will be done.
-		setRoles(user);
 		return userEntityService.safeOrUpdate(user).toString();
-	}
-
-	private void setRoles(User user) {
-		if (StringUtils.isNotEmpty(user.getRoless())) {
-			for (String id : user.getRoless().split(",")) {
-				user.getRoles().add(roleEntityDAO.findById(Long.parseLong(id)));
-			}
-		}
-
 	}
 
 	@RequestMapping(value = URLs.UPDATE_USER, method = RequestMethod.POST)
