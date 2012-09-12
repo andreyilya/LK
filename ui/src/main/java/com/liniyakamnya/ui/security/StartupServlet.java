@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 
 import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
+import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
@@ -29,8 +30,8 @@ public class StartupServlet extends HttpServlet {
     EntityDAO<Role> rolesEntityDAO;
 
     @Autowired
-    @Named(value = Parameters.USER_DAO)
-    EntityDAO<User> userEntityDAO;
+    @Named(value = Parameters.USER_SERVICE)
+    EntityService<User> userEntityService;
 
     @Override
     public void init(ServletConfig config)
@@ -41,12 +42,12 @@ public class StartupServlet extends HttpServlet {
 
         roleEntityDAO.initRoles();
 
-        if (userEntityDAO.getAll().isEmpty()) {
+        if (userEntityService.getAll().isEmpty()) {
             User user = new User();
             user.setLogin("admin");
             user.setPassword("admin");
             user.setRoles(rolesEntityDAO.getAll());
-            userEntityDAO.safeOrUpdate(user);
+            userEntityService.safeOrUpdate(user);
         }
     }
 }

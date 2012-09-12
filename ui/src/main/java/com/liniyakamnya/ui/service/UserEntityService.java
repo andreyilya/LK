@@ -15,7 +15,7 @@ import javax.inject.Named;
  * @author a.radkov
  *         Date: 12.09.12
  */
-@Service
+@Service(Parameters.USER_SERVICE)
 @Transactional
 public class UserEntityService extends AbstractEntityService<User> {
     @Autowired

@@ -1,7 +1,7 @@
 package com.liniyakamnya.ui.service;
 
-import com.liniyakamnya.ui.entities.Actions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,6 +10,7 @@ import java.util.List;
  * @author a.radkov
  *         Date: 12.09.12
  */
+@Transactional
 public abstract class AbstractEntityService<T extends Serializable> implements EntityService<T> {
     @Autowired
     EmailService emailService;

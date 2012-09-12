@@ -40,6 +40,7 @@ public class AdminController {
 	public static final String APPLICATION_JSON = "application/json";
 
 	@Autowired
+    @Named(Parameters.USER_SERVICE)
 	private EntityService<User> userEntityService;
 
 	@Autowired

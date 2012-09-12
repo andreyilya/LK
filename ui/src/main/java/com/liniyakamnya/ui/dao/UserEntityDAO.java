@@ -18,9 +18,8 @@ import org.hibernate.Query;
  * @author a.radkov
  *         Date: 16.07.12
  */
+@Repository(Parameters.USER_DAO)
 @Transactional
-@Repository
-@Service(Parameters.USER_DAO)
 public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentificator {
 
 	private static final String USER_BY_LOGIN = "user.byLogin";

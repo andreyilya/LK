@@ -16,11 +16,11 @@ public final class Parameters {
 
 	public static final String USER = "user";
 	public static final String USER_LIST = "userList";
+    public static final String USER_SERVICE= "userService";
 	public static final String USER_DAO = "userDao";
 
 	public static final String ACTIONS = "actions";
-
-	public static final String NOTE_DAO = "noteDao";
-	public static final String NOTE_LIST = "noteList";
-	public static final String NOTE = "note";
+    public static final String NOTE_DAO = "noteDao";
+    public static final String NOTE_LIST = "noteList";
+    public static final String NOTE = "note";
 }
