@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <input type="submit" class="btn btn-primary" value="${type}" onclick="ajaxAddOrUpdate('${type}');">
+            <input type="submit" class="btn btn-primary" value="${type}" onclick="ajaxAddOrUpdate();">
             <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
         </div>
     </form:form>

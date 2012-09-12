@@ -18,7 +18,8 @@ function deleteFromDatatable(url) {
 }
 
 
-function ajaxAddOrUpdate(type) {
+function ajaxAddOrUpdate() {
+    var type = $('#addUser').attr('action');
     $.post(type, $("#addUser").serialize(),
         function (response) {
             $('#createUser').modal('hide');
