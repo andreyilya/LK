@@ -38,7 +38,7 @@ function addRow(form, response) {
 
 function updateRow(form) {
     var id = $("#hiddenId").attr("value");
-    var row = createUserRow(id, form);
+    var row = createUserCell(id, form);
     var rowId = "#delete\\/" + id;
     $(rowId).html(row);
 }
@@ -46,13 +46,22 @@ function createUserRow(response, form) {
     var id = "delete/" + response;
 
     var row = "<tr id='ID'>" +
+        createUserCell (response, form) +
+
+        "</tr>";
+    row = row.replace(/ID/g, id);
+    return row;
+}
+
+function createUserCell (response, form){
+    var id = "delete/" + response;
+
+    var row =
         "<td>LOGIN</td>" +
         "<td>EMAIL</td>" +
         "<td>PASSWORD</td> " +
         "<td><div><a href='#' onclick=\"initDialog('ID','LOGIN')\" class='deleteLink'>Удалить</a></div>" +
-        "<div><a href='#' onclick=\"initUpdate('UPDATE')\" >Обновить</a></div></td>" +
-
-        "</tr>";
+        "<div><a href='#' onclick=\"initUpdate('UPDATE')\" >Обновить</a></div></td>";
     row = row.replace(/ID/g, id);
     row = row.replace(/LOGIN/g, getValue(form, "login"));
     row = row.replace("EMAIL", getValue(form, "email"));
@@ -60,7 +69,6 @@ function createUserRow(response, form) {
     row = row.replace("UPDATE", response);
     return row;
 }
-
 
 function getValue(list, key) {
     for (i = 0; i < list.length; i++) {
