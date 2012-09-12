@@ -42,12 +42,12 @@ function updateRow(form) {
     var rowId = "#delete\\/" + id;
     $(rowId).html(row);
 }
+
 function createUserRow(response, form) {
     var id = "delete/" + response;
 
     var row = "<tr id='ID'>" +
         createUserCell (response, form) +
-
         "</tr>";
     row = row.replace(/ID/g, id);
     return row;
