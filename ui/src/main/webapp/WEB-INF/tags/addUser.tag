@@ -29,7 +29,7 @@
                             <c:forEach items="${actions}" var="action" varStatus="row">
                             <td><label class="checkbox">${action.field}
                                 <form:checkbox path="actionsForEmail.${action.field}" value="true"/></label></td>
-                            <c:if test="${(row.index+1)%3==0}">
+                            <c:if test="${(row.index+1)%4==0}">
                         </tr>
                         <tr>
                             </c:if>

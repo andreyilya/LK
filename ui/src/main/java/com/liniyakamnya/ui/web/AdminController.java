@@ -5,7 +5,8 @@ import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
-import com.liniyakamnya.ui.utils.Paramerers;
+import com.liniyakamnya.ui.service.EntityService;
+import com.liniyakamnya.ui.utils.Parameters;
 import com.liniyakamnya.ui.utils.URLs;
 
 import java.util.Map;
@@ -39,19 +40,18 @@ public class AdminController {
 	public static final String APPLICATION_JSON = "application/json";
 
 	@Autowired
-	@Named(Paramerers.USER_DAO)
-	private EntityDAO<User> userEntityDAO;
+	private EntityService<User> userEntityService;
 
 	@Autowired
-	@Named(Paramerers.ROLE_DAO)
+	@Named(Parameters.ROLE_DAO)
 	private EntityDAO<Role> roleEntityDAO;
 
 	@RequestMapping(URLs.ADMIN)
 	public String listUsers(Map<String, Object> map) {
-		map.put(Paramerers.USER, new User());
-		map.put(Paramerers.ACTIONS, Actions.values());
-		map.put(Paramerers.ROLES, roleEntityDAO.getAll());
-		map.put(Paramerers.USER_LIST, userEntityDAO.getAll());
+		map.put(Parameters.USER, new User());
+		map.put(Parameters.ACTIONS, Actions.values());
+		map.put(Parameters.ROLES, roleEntityDAO.getAll());
+		map.put(Parameters.USER_LIST, userEntityService.getAll());
 		return URLs.ADMIN_PAGE;
 	}
 
@@ -63,7 +63,7 @@ public class AdminController {
 		//Correctly, it should be moved to service , byt for out small project it`s very lazy
 		//to create service lajer. probably, it will be done.
 		setRoles(user);
-		return userEntityDAO.safeOrUpdate(user).toString();
+		return userEntityService.safeOrUpdate(user).toString();
 	}
 
 	private void setRoles(User user) {
@@ -80,14 +80,14 @@ public class AdminController {
 	@ResponseBody
 	void updateUser(@ModelAttribute(USER) User user,
 					BindingResult result) {
-		userEntityDAO.update(user);
+		userEntityService.update(user);
 	}
 
 	@RequestMapping(value = URLs.GET_USER)
 	public
 	@ResponseBody
 	ResponseEntity<String> getUser(@PathVariable(USER_ID) Long userId) {
-		User user = userEntityDAO.findById(userId);
+		User user = userEntityService.findById(userId);
 		return createJsonResponse(user);
 	}
 
@@ -96,7 +96,7 @@ public class AdminController {
 	@ResponseBody
 	String deleteUser(@PathVariable(USER_ID) Long userId) {
 
-		userEntityDAO.delete(userId);
+		userEntityService.delete(userId);
 		return URLs.ADMIN_REDIRECT;
 	}
 

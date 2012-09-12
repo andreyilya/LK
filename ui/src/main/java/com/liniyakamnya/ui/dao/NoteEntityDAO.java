@@ -1,7 +1,7 @@
 package com.liniyakamnya.ui.dao;
 
 import com.liniyakamnya.ui.entities.Note;
-import com.liniyakamnya.ui.utils.Paramerers;
+import com.liniyakamnya.ui.utils.Parameters;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
  * Time: 18:37
  */
 @Transactional
-@Repository(Paramerers.NOTE_DAO)
-@Service(Paramerers.NOTE_DAO)
+@Repository(Parameters.NOTE_DAO)
+@Service(Parameters.NOTE_DAO)
 public class NoteEntityDAO extends AbstractEntityDAO<Note>{
 	@Override
 	public Class<Note> getDomainClass() {

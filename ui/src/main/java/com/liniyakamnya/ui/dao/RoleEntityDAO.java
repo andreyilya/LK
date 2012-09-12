@@ -2,9 +2,7 @@ package com.liniyakamnya.ui.dao;
 
 import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.security.Roles;
-import com.liniyakamnya.ui.utils.Paramerers;
-import org.hibernate.Query;
-import org.hibernate.Session;
+import com.liniyakamnya.ui.utils.Parameters;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 @Repository
-@Service(Paramerers.ROLE_DAO)
+@Service(Parameters.ROLE_DAO)
 public class RoleEntityDAO extends AbstractEntityDAO<Role> implements RoleConfigurator {
 
     @Override

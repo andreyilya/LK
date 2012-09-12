@@ -2,7 +2,7 @@ package com.liniyakamnya.ui.web;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Note;
-import com.liniyakamnya.ui.utils.Paramerers;
+import com.liniyakamnya.ui.utils.Parameters;
 import com.liniyakamnya.ui.utils.URLs;
 import java.util.Map;
 import javax.inject.Named;
@@ -21,13 +21,13 @@ public class NoteController {
 	private static final String NOTE = "NOTE";
 
 	@Autowired
-	@Named(Paramerers.NOTE_DAO)
+	@Named(Parameters.NOTE_DAO)
 	private EntityDAO<Note> noteEntityDAO;
 
 	@RequestMapping(URLs.INDEX)
 	public String listNotes(Map<String, Object> map) {
-		map.put(Paramerers.NOTE, new Note());
-		map.put(Paramerers.NOTE_LIST, noteEntityDAO.getAll());
+		map.put(Parameters.NOTE, new Note());
+		map.put(Parameters.NOTE_LIST, noteEntityDAO.getAll());
 		return URLs.INDEX_PAGE;
 	}
 

@@ -6,9 +6,9 @@ package com.liniyakamnya.ui.utils;
  * Date: 26.08.12
  * Time: 0:05
  */
-public final class Paramerers {
+public final class Parameters {
 
-	private Paramerers() {
+	private Parameters() {
 	}
 
 	public static final String ROLES = "roles";

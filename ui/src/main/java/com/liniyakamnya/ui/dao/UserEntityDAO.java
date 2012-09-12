@@ -3,11 +3,11 @@ package com.liniyakamnya.ui.dao;
 import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.exception.GuiException;
-import com.liniyakamnya.ui.utils.Paramerers;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.liniyakamnya.ui.utils.Parameters;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ import org.hibernate.Query;
  */
 @Transactional
 @Repository
-@Service(Paramerers.USER_DAO)
+@Service(Parameters.USER_DAO)
 public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentificator {
 
 	private static final String USER_BY_LOGIN = "user.byLogin";
