@@ -1,22 +1,21 @@
 package com.liniyakamnya.ui.dao;
 
-import com.liniyakamnya.ui.entities.Note;
+import com.liniyakamnya.ui.entities.Category;
 import com.liniyakamnya.ui.utils.Parameters;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by IntelliJ IDEA.
  * User: user
- * Date: 31.08.12
- * Time: 18:37
+ * Date: 12.09.12
+ * Time: 22:59
  */
+@Repository (Parameters.CATEGORY_DAO)
 @Transactional
-@Repository(Parameters.NOTE_DAO)
-public class NoteEntityDAO extends AbstractEntityDAO<Note>{
+public class CategoryEntityDAO extends AbstractEntityDAO<Category>{
 	@Override
-	public Class<Note> getDomainClass() {
-		return Note.class;
+	public Class<Category> getDomainClass() {
+		return Category.class;
 	}
 }

@@ -1,7 +1,7 @@
 package com.liniyakamnya.ui.web;
 
-import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Note;
+import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
 import com.liniyakamnya.ui.utils.URLs;
 import java.util.Map;
@@ -21,13 +21,13 @@ public class NoteController {
 	private static final String NOTE = "NOTE";
 
 	@Autowired
-	@Named(Parameters.NOTE_DAO)
-	private EntityDAO<Note> noteEntityDAO;
+	@Named(Parameters.NOTE_SERVICE)
+	private EntityService<Note> noteEntityService;
 
 	@RequestMapping(URLs.INDEX)
 	public String listNotes(Map<String, Object> map) {
 		map.put(Parameters.NOTE, new Note());
-		map.put(Parameters.NOTE_LIST, noteEntityDAO.getAll());
+		map.put(Parameters.NOTE_LIST, noteEntityService.getAll());
 		return URLs.INDEX_PAGE;
 	}
 
@@ -42,7 +42,7 @@ public class NoteController {
 	@ResponseBody
 	String addNote(@ModelAttribute(NOTE) Note note,
 				   BindingResult result) {
-		return noteEntityDAO.safeOrUpdate(note).toString();
+		return noteEntityService.safeOrUpdate(note).toString();
 	}
 
 
@@ -51,7 +51,7 @@ public class NoteController {
 	@ResponseBody
 	String deleteNote(@PathVariable(NOTE_ID) Long noteId) {
 
-		noteEntityDAO.delete(noteId);
+		noteEntityService.delete(noteId);
 		return URLs.INDEX_REDIRECT;
 	}
 }

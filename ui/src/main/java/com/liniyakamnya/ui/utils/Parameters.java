@@ -13,6 +13,7 @@ public final class Parameters {
 
 	public static final String ROLES = "roles";
 	public static final String ROLE_DAO = "roleDao";
+	public static final String NOTE_SERVICE ="noteService";
 
 	public static final String USER = "user";
 	public static final String USER_LIST = "userList";
@@ -23,4 +24,6 @@ public final class Parameters {
     public static final String NOTE_DAO = "noteDao";
     public static final String NOTE_LIST = "noteList";
     public static final String NOTE = "note";
+
+	public static final String CATEGORY_DAO = "categoryDao";
 }

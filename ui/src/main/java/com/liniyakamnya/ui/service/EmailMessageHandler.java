@@ -37,6 +37,8 @@ public class EmailMessageHandler implements EmailService {
             }
         } catch (EmailException e) {
             e.printStackTrace();
-        }
+        } catch (NullPointerException e){
+			e.printStackTrace();
+		}
     }
 }

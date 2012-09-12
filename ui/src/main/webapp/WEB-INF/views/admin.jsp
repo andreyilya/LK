@@ -29,14 +29,15 @@
 
 <a href="#createUser" role="button" class="btn btn-primary" data-toggle="modal" onclick="setType('add');">Create
     user</a>
-<c:if test="${!empty userList}">
-    <table class="table table-striped table-bordered" id="userTable">
-        <tr>
-            <th><spring:message code="label.firstname"/></th>
-            <th><spring:message code="label.email"/></th>
-            <th><spring:message code="label.password"/></th>
-            <th></th>
-        </tr>
+
+<table class="table table-striped table-bordered" id="userTable">
+    <tr>
+        <th><spring:message code="label.firstname"/></th>
+        <th><spring:message code="label.email"/></th>
+        <th><spring:message code="label.password"/></th>
+        <th></th>
+    </tr>
+    <c:if test="${!empty userList}">
         <c:forEach items="${userList}" var="user">
             <tr id="delete/${user.id}">
                 <td>${user.login}</td>
@@ -53,12 +54,12 @@
                 </td>
             </tr>
         </c:forEach>
-    </table>
+    </c:if>
+</table>
 
-    <tags:deleteEntity entityName="user"/>
-    <tags:addUser type="add"/>
 
-</c:if>
+<tags:deleteEntity entityName="user"/>
+<tags:addUser type="add"/>
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 </body>
