@@ -31,6 +31,17 @@ function ajaxAddOrUpdate() {
         }, 'json');
 }
 
+function addRow(form, response) {
+    var row = createUserRow(response, form);
+    $("#userTable tr:last").after(row);
+}
+
+function updateRow(form) {
+    var id = $("#hiddenId").attr("value");
+    var row = createUserRow(id, form);
+    var rowId = "#delete\\/" + id;
+    $(rowId).html(row);
+}
 function createUserRow(response, form) {
     var id = "delete/" + response;
 
@@ -49,10 +60,7 @@ function createUserRow(response, form) {
     row = row.replace("UPDATE", response);
     return row;
 }
-function addRow(form, response) {
-    var row = createUserRow(response, form);
-    $("#userTable tr:last").after(row);
-}
+
 
 function getValue(list, key) {
     for (i = 0; i < list.length; i++) {
@@ -63,9 +71,6 @@ function getValue(list, key) {
     return null;
 }
 
-function updateRow(form) {
-
-}
 
 function ajaxAddNote() {
     $.post("addNote", $("#addNote").serialize(),
