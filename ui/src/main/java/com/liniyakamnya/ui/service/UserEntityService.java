@@ -1,6 +1,7 @@
 package com.liniyakamnya.ui.service;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
+import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.utils.Parameters;
@@ -32,6 +33,21 @@ public class UserEntityService extends AbstractEntityService<User> {
     }
 
     @Override
+    public Actions getCreateAction(){
+        return Actions.CREATE_USER;
+    }
+
+    @Override
+    public Actions getUpdateAction() {
+        return Actions.UPDATE_USER ;
+    }
+
+    @Override
+    public Actions getDeleteAction() {
+        return Actions.DELETE_USER;
+    }
+
+    @Override
     public void update(User user){
         setRoles(user);
         super.update(user);
@@ -51,4 +67,5 @@ public class UserEntityService extends AbstractEntityService<User> {
         }
 
     }
+
 }
