@@ -32,8 +32,10 @@ function ajaxAddOrUpdate() {
 }
 
 function addRow(form, response) {
-    var row = createUserRow(response, form);
-    $("#userTable tr:last").after(row);
+    if (response > 0) {
+        var row = createUserRow(response, form);
+        $("#userTable tr:last").after(row);
+    }
 }
 
 function updateRow(form) {
@@ -47,21 +49,21 @@ function createUserRow(response, form) {
     var id = "delete/" + response;
 
     var row = "<tr id='ID'>" +
-        createUserCell (response, form) +
+        createUserCell(response, form) +
         "</tr>";
     row = row.replace(/ID/g, id);
     return row;
 }
 
-function createUserCell (response, form){
+function createUserCell(response, form) {
     var id = "delete/" + response;
 
     var row =
         "<td>LOGIN</td>" +
-        "<td>EMAIL</td>" +
-        "<td>PASSWORD</td> " +
-        "<td><div><a href='#' onclick=\"initDialog('ID','LOGIN')\" class='deleteLink'>Удалить</a></div>" +
-        "<div><a href='#' onclick=\"initUpdate('UPDATE')\" >Обновить</a></div></td>";
+            "<td>EMAIL</td>" +
+            "<td>PASSWORD</td> " +
+            "<td><div><a href='#' onclick=\"initDialog('ID','LOGIN')\" class='deleteLink'>Удалить</a></div>" +
+            "<div><a href='#' onclick=\"initUpdate('UPDATE')\" >Обновить</a></div></td>";
     row = row.replace(/ID/g, id);
     row = row.replace(/LOGIN/g, getValue(form, "login"));
     row = row.replace("EMAIL", getValue(form, "email"));
