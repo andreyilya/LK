@@ -48,7 +48,6 @@ public abstract class AbstractEntityDAO<T extends Identifiable> implements Entit
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public Long safeOrUpdate(T entity) {
         return (Long) sessionFactory.getCurrentSession().save(entity);
     }
