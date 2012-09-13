@@ -1,6 +1,5 @@
 package com.liniyakamnya.ui.entities;
 
-import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +16,7 @@ import org.hibernate.annotations.OnDeleteAction;
  *         Date: 17.07.12
  */
 @Entity
-public class SubCategory implements Serializable {
+public class SubCategory implements Identifiable {
 	private Long id;
 	private String name;
 	private Category category;

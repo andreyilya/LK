@@ -1,9 +1,9 @@
 package com.liniyakamnya.ui.service;
 
+import com.liniyakamnya.ui.entities.Identifiable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,7 +11,7 @@ import java.util.List;
  *         Date: 12.09.12
  */
 @Transactional
-public abstract class AbstractEntityService<T extends Serializable> implements EntityService<T> {
+public abstract class AbstractEntityService<T extends Identifiable> implements EntityService<T> {
     @Autowired
     EmailService emailService;
 
@@ -22,9 +22,9 @@ public abstract class AbstractEntityService<T extends Serializable> implements E
     }
 
     @Override
-    public void update(T entity) {
-        getEntityDAO().update(entity);
+    public Long update(T entity) {
         emailService.protocolAction(getUpdateAction());
+        return getEntityDAO().update(entity);
     }
 
     @Override
@@ -42,7 +42,7 @@ public abstract class AbstractEntityService<T extends Serializable> implements E
     @Override
     public void delete(Long id) {
         getEntityDAO().delete(id);
-       emailService.protocolAction(getDeleteAction());
+        emailService.protocolAction(getDeleteAction());
     }
 
     @Override

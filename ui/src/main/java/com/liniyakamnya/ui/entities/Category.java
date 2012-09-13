@@ -1,6 +1,5 @@
 package com.liniyakamnya.ui.entities;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -25,7 +24,7 @@ import javax.persistence.OneToMany;
 				query = "delete from SubCategory c where c.category.id = :id")
 )
 
-public class Category implements Serializable {
+public class Category implements Identifiable {
 	private Long id;
 	private String name;
 	private List<SubCategory> subCategories = new ArrayList<SubCategory>();

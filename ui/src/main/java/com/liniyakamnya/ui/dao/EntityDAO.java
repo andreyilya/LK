@@ -1,12 +1,12 @@
 package com.liniyakamnya.ui.dao;
 
-import java.io.Serializable;
-import java.util.List;
+import com.liniyakamnya.ui.entities.Identifiable;
+
 
 /**
  * @author a.radkov
  *         Date: 16.07.12
  */
-public interface EntityDAO<T extends Serializable> extends EntityActions<T>{
+public interface EntityDAO<T extends Identifiable> extends EntityActions<T>{
 
 }

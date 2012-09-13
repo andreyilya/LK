@@ -1,7 +1,8 @@
 package com.liniyakamnya.ui.dao;
 
-import java.io.Serializable;
 import java.util.List;
+
+import com.liniyakamnya.ui.entities.Identifiable;
 import org.apache.log4j.Logger;
 import org.hibernate.ObjectNotFoundException;
 import org.hibernate.SessionFactory;
@@ -13,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  *         Date: 16.07.12
  */
 @Transactional
-public abstract class AbstractEntityDAO<T extends Serializable> implements EntityDAO<T> {
+public abstract class AbstractEntityDAO<T extends Identifiable> implements EntityDAO<T> {
 
 	private static final String POINT_SEPARATOR = "\\.";
 	private static final String ALL = ".all";
@@ -27,8 +28,9 @@ public abstract class AbstractEntityDAO<T extends Serializable> implements Entit
 	}
 
 	@Override
-	public void update(T entity) {
+	public Long update(T entity) {
 		sessionFactory.getCurrentSession().update(entity);
+        return entity.getId();
 	}
 
 	@Override

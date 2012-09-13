@@ -1,6 +1,5 @@
 package com.liniyakamnya.ui.entities;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,7 +21,7 @@ import javax.persistence.NamedQuery;
 		@NamedQuery(name = "role.all",
 		query = "from Role")
 })
-public class Role implements Serializable {
+public class Role implements Identifiable {
 	private Long id;
 	private String roleName;
 

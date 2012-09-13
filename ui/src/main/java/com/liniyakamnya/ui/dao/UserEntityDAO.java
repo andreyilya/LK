@@ -22,70 +22,56 @@ import org.hibernate.Query;
 @Transactional
 public class UserEntityDAO extends AbstractEntityDAO<User> implements Authentificator {
 
-	private static final String USER_BY_LOGIN = "user.byLogin";
-	private static final String LOGIN = "login";
-
-	@Override
-	public void create(User entity) {
-		super.create(entity);
-	}
-
-	@Override
-	public void update(User entity) {
-		super.update(entity);
-	}
-
-	@Override
-	public void delete(User entity) {
-		super.delete(entity);
-	}
-
-	@Override
-	public void delete(Long id) {
-		super.delete(id);
-	}
-
-	@Override
-	public Long safeOrUpdate(User entity) {
-		try {
-			getUserByLogin(entity.getLogin());
-			return (long) -1;
-		} catch (GuiException e) {
-			return super.safeOrUpdate(entity);
-		}
-
-	}
-
-	@Override
-	public User findById(Long id) {
-		User user =  (User) getSessionFactory().getCurrentSession().get(
-				getDomainClass(), id);
-		user.setRoles(new ArrayList<Role>(user.getRoles()));
-		return user;
-	}
-
-	@Override
-	public List<User> getAll() {
-		return super.getAll();
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public User getUserByLogin(String login) throws GuiException {
-		try {
-			Session session = getSessionFactory().getCurrentSession();
-			Query query = session.getNamedQuery(USER_BY_LOGIN);
-			query.setString(LOGIN, login);
-			List<User> list = query.list();
-			return list.get(0);
-		} catch (IndexOutOfBoundsException e) {
-			throw new GuiException(e.getMessage());
-		}
-	}
+    private static final String USER_BY_LOGIN = "user.byLogin";
+    private static final String LOGIN = "login";
 
 
-	@Override
-	public Class<User> getDomainClass() {
-		return User.class;
-	}
+    @Override
+    public Long update(User entity) {
+        return super.update(entity);
+    }
+
+    @Override
+    public Long safeOrUpdate(User entity) {
+        try {
+            getUserByLogin(entity.getLogin());
+            return (long) -1;
+        } catch (GuiException e) {
+            return super.safeOrUpdate(entity);
+        }
+
+    }
+
+    @Override
+    public User findById(Long id) {
+        User user = (User) getSessionFactory().getCurrentSession().get(
+                getDomainClass(), id);
+        user.setRoles(new ArrayList<Role>(user.getRoles()));
+        return user;
+    }
+
+    @Override
+    public List<User> getAll() {
+        return super.getAll();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public User getUserByLogin(String login) throws GuiException {
+        try {
+            Session session = getSessionFactory().getCurrentSession();
+            Query query = session.getNamedQuery(USER_BY_LOGIN);
+            query.setString(LOGIN, login);
+            List<User> list = query.list();
+            return list.get(0);
+        } catch (IndexOutOfBoundsException e) {
+            throw new GuiException(e.getMessage());
+        }
+    }
+
+
+    @Override
+    public Class<User> getDomainClass() {
+        return User.class;
+    }
 }

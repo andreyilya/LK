@@ -1,16 +1,17 @@
 package com.liniyakamnya.ui.dao;
 
-import java.io.Serializable;
+import com.liniyakamnya.ui.entities.Identifiable;
+
 import java.util.List;
 
 /**
  * @author a.radkov
  *         Date: 12.09.12
  */
-public interface EntityActions <T extends Serializable> {
+public interface EntityActions <T extends Identifiable> {
     void create(T entity);
 
-    void update(T entity);
+    Long update(T entity);
 
     Long safeOrUpdate(T entity);
 

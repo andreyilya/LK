@@ -3,7 +3,6 @@ package com.liniyakamnya.ui.entities;
 
 import org.apache.commons.lang.StringUtils;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
@@ -29,7 +28,7 @@ import javax.persistence.NamedQuery;
 		@NamedQuery(name = "user.all",
 				query = "from User")}
 )
-public class User implements Serializable {
+public class User implements Identifiable {
 	private Long id;
 	private String login;
 	private String password;

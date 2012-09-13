@@ -33,13 +33,13 @@ public class UserEntityService extends AbstractEntityService<User> {
     }
 
     @Override
-    public Actions getCreateAction(){
+    public Actions getCreateAction() {
         return Actions.CREATE_USER;
     }
 
     @Override
     public Actions getUpdateAction() {
-        return Actions.UPDATE_USER ;
+        return Actions.UPDATE_USER;
     }
 
     @Override
@@ -48,9 +48,9 @@ public class UserEntityService extends AbstractEntityService<User> {
     }
 
     @Override
-    public void update(User user){
+    public Long update(User user) {
         setRoles(user);
-        super.update(user);
+        return super.update(user);
     }
 
     @Override

@@ -66,9 +66,9 @@ public class AdminController {
 	@RequestMapping(value = URLs.UPDATE_USER, method = RequestMethod.POST)
 	public
 	@ResponseBody
-	void updateUser(@ModelAttribute(USER) User user,
+	String updateUser(@ModelAttribute(USER) User user,
 					BindingResult result) {
-		userEntityService.update(user);
+		return userEntityService.update(user).toString();
 	}
 
 	@RequestMapping(value = URLs.GET_USER)

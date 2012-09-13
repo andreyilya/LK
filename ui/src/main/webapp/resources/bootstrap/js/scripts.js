@@ -6,7 +6,7 @@ function initDialog(address, entityname) {
 
 function ajaxDelete() {
     var url = $(".toReplace").attr('name');
-    $.get(url, function(response){
+    $.get(url, function (response) {
         deleteFromDatatable(url);
         $('#deleteEntity').modal('hide');
     });
@@ -24,20 +24,20 @@ function ajaxAddOrUpdate() {
     var type = $('#addUser').attr('action');
     $.post(type, $("#addUser").serialize(),
         function (response) {
-            $('#createUser').modal('hide');
-            if (type == "add") {
-                addRow($(addUser).serializeArray(), response)
-            } else {
-                updateRow($(addUser).serializeArray());
+            if (response > 0) {
+                $('#createUser').modal('hide');
+                if (type == "add") {
+                    addRow($(addUser).serializeArray(), response)
+                } else {
+                    updateRow($(addUser).serializeArray());
+                }
             }
         }, 'json');
 }
 
 function addRow(form, response) {
-    if (response > 0) {
-        var row = createUserRow(response, form);
-        $("#userTable tr:last").after(row);
-    }
+    var row = createUserRow(response, form);
+    $("#userTable tr:last").after(row);
 }
 
 function updateRow(form) {

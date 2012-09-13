@@ -1,6 +1,5 @@
 package com.liniyakamnya.ui.entities;
 
-import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +22,7 @@ import javax.persistence.TemporalType;
 		@NamedQuery(name = "note.all",
 				query = "from Note")
 })
-public class Note implements Serializable {
+public class Note implements Identifiable {
     private Long id;
 
     private Date createdDate = new Date();
