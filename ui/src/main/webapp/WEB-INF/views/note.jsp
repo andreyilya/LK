@@ -12,9 +12,11 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8">
     <title><spring:message code="label.title"/></title>
     <link href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/bootstrap/css/jquery.contextMenu.css" rel="stylesheet">
     <link href="resources/bootstrap/css/styles.css" rel="stylesheet">
     <script src="resources/bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="resources/bootstrap/js/scripts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="resources/bootstrap/js/jquery.contextMenu.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
@@ -70,13 +72,13 @@
 
     <c:if test="${!empty categoryList}">
         <c:forEach items="${categoryList}" var="category">
-            <li><c:choose>
+            <li id=${category.id}><c:choose>
                 <c:when test="${!empty category.subCategories}">
                     <c:forEach items="${category.subCategories}" var="subCategory">
-                        <label for="${subCategory.id}">${category.name}</label>
+                        <label  for="${subCategory.id}">${category.name}</label>
                         <input type="checkbox" id="${subCategory.id}"/>
                         <ol>
-                            <li class="file">${subCategory.name}</li>
+                            <li id="sub${subCategory.id}" class="file">${subCategory.name}</li>
                         </ol>
                     </c:forEach>
                 </c:when>
@@ -92,12 +94,41 @@
 
 <tags:deleteEntity entityName="note"/>
 <tags:addNote/>
-
+<ul id="myMenu" class="contextMenu">
+    <li class="edit">
+        <a href="#edit">Edit</a>
+    </li>
+    <li class="cut separator">
+        <a href="#cut">Cut</a>
+    </li>
+    <li class="copy">
+        <a href="#copy">Copy</a>
+    </li>
+    <li class="paste">
+        <a href="#paste">Paste</a>
+    </li>
+    <li class="delete">
+        <a href="#delete">Delete</a>
+    </li>
+    <li class="quit separator">
+        <a href="#quit">Quit</a>
+    </li>
+</ul>
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     $('#createNote').on('hidden', function () {
         clearForm($('#addNote'));
     });
+</script><script type="text/javascript">
+    $(document).ready( function() {
+    $("#categoryTable li").contextMenu({
+                menu: 'myMenu'
+            },
+            function(action, el, pos) {
+                alert(
+                        $(el).attr("id")
+                );
+            });});
 </script>
 </body>
 </html>
