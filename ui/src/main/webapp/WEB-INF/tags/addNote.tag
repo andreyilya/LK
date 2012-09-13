@@ -4,10 +4,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="modal hide fade" id="createNote">
-    <parts:dialogHeader headerName="Add note"/>
+    <parts:dialogHeader headerName="note"/>
     <form:form id="addNote" method="post" action="add" onsubmit='return false;' commandName="note">
         <div class="modal-body form-horizontal">
-
+            <form:hidden path="id" id="hiddenId"/>
             <parts:formfield label="label.price" value="price"/>
             <parts:formfield label="label.number" value="number"/>
             <parts:formfield label="label.status" value="status"/>
@@ -17,7 +17,7 @@
 
         </div>
         <div class="modal-footer">
-            <input type="submit" class="btn btn-primary" value="Create" onclick="ajaxAddNote();">
+            <input type="submit" class="btn btn-primary type" value="Create" onclick="ajaxAddUpdateNote();">
             <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="clearForm($('#addNote'))">Close</a>
         </div>
     </form:form>

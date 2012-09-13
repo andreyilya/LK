@@ -34,8 +34,6 @@ public class AdminController {
 
     private static final String USER = "user";
     private static final String USER_ID = "userId";
-    public static final String CONTENT_TYPE = "Content-Type";
-    public static final String APPLICATION_JSON = "application/json";
 
     @Autowired
     @Named(Parameters.USER_SERVICE)
@@ -75,7 +73,7 @@ public class AdminController {
     @ResponseBody
     ResponseEntity<String> getUser(@PathVariable(USER_ID) Long userId) {
         User user = userEntityService.findById(userId);
-        return createJsonResponse(user);
+        return Json.createJsonResponse(user);
     }
 
     @RequestMapping(URLs.DELETE_USER)
@@ -85,14 +83,6 @@ public class AdminController {
 
         userEntityService.delete(userId);
         return URLs.ADMIN_REDIRECT;
-    }
-
-    private ResponseEntity<String> createJsonResponse(Object o) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.set(CONTENT_TYPE, APPLICATION_JSON);
-        Gson gson = new Gson();
-        String json = gson.toJson(o);
-        return new ResponseEntity<String>(json, headers, HttpStatus.CREATED);
     }
 
 }

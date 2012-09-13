@@ -27,4 +27,7 @@ public final class URLs {
 
     public static final String DELETE_NOTE = "/deleteNote/{noteId}";
     public static final String ADD_NOTE = "/addNote";
+    public static final String GET_NOTE = "/getNote/{noteId}";
+    public static final String UPDATE_NOTE = "updateNote";
+
 }

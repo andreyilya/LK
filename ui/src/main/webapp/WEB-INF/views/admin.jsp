@@ -27,7 +27,7 @@
 
 <h3><spring:message code="label.users"/></h3>
 
-<a href="#createUser" role="button" class="btn btn-primary" data-toggle="modal" onclick="setType('add');">Create
+<a href="#createUser" role="button" class="btn btn-primary" data-toggle="modal" onclick="setType($('#addUser'), 'add');">Create
     user</a>
 
 <table class="table table-striped table-bordered" id="userTable">

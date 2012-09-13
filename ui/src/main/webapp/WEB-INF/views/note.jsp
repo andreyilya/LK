@@ -30,7 +30,7 @@
 <h3><spring:message code="label.contacts"/></h3>
 
 <div class="notes">
-    <a href="#createNote" role="button" class="btn btn-primary" data-toggle="modal">Create note</a>
+    <a href="#createNote" role="button" class="btn btn-primary" data-toggle="modal" onclick="setType($('#addNote'), 'addNote');">Create note</a>
     <table class="table table-striped table-bordered" id="noteTable">
         <tr>
             <th><spring:message code="label.createdDate"/></th>
@@ -54,8 +54,11 @@
                     <td>${note.customerName}</td>
                     <td>${note.customersPhone}</td>
                     <td>${note.others}</td>
-                    <td><a href="#" onclick="initDialog('deleteNote/${note.id}','${note.id}')"
-                           class="deleteLink"><spring:message code="label.delete"/></a></td>
+                    <td><div><a href="#" onclick="initDialog('deleteNote/${note.id}','${note.id}')"
+                           class="deleteLink"><spring:message code="label.delete"/></a></div>
+                        <div><a href="#" onclick="initNoteUpdate('${note.id}');"
+                                ><spring:message code="label.update"/></a></div>
+                    </td>
                 </tr>
             </c:forEach>
         </c:if>
@@ -82,6 +85,10 @@
 <tags:addNote/>
 
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-
+<script type="text/javascript">
+    $('#createNote').on('hidden', function () {
+        clearForm($('#addNote'));
+    });
+</script>
 </body>
 </html>

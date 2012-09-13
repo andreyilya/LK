@@ -6,6 +6,7 @@ import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
 import com.liniyakamnya.ui.utils.URLs;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -52,6 +53,13 @@ public class NoteController {
         return noteEntityService.safeOrUpdate(note).toString();
     }
 
+    @RequestMapping(value = URLs.UPDATE_NOTE, method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String updateUser(@ModelAttribute(NOTE) Note note,
+                      BindingResult result) {
+        return noteEntityService.update(note).toString();
+    }
 
     @RequestMapping(URLs.DELETE_NOTE)
     public
@@ -60,5 +68,13 @@ public class NoteController {
 
         noteEntityService.delete(noteId);
         return URLs.INDEX_REDIRECT;
+    }
+
+    @RequestMapping(value = URLs.GET_NOTE)
+    public
+    @ResponseBody
+    ResponseEntity<String> getNote(@PathVariable(NOTE_ID) Long noteId) {
+        Note note = noteEntityService.findById(noteId);
+        return Json.createJsonResponse(note);
     }
 }

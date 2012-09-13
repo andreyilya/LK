@@ -12,7 +12,7 @@ body {
     padding: 10px;
 }
 
-#noteTable{
+.notes{
     float: right;
     width: 73%;
 }

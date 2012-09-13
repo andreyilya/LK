@@ -84,18 +84,34 @@ function getValue(list, key) {
 }
 
 
-function ajaxAddNote() {
-    $.post("addNote", $("#addNote").serialize(),
+function ajaxAddUpdateNote() {
+    var type = $('#addNote').attr('action');
+    $.post(type, $("#addNote").serialize(),
         function (response) {
-            $('#createNote').modal('hide');
-            addRowNote($(addNote).serializeArray(), response)
+            if (response > 0) {
+                $('#createNote').modal('hide');
+                if (type == 'addNote') {
+                    addRowNote($(addNote).serializeArray(), response);
+                }else {
+                    updateRowNote($(addNote).serializeArray());
+                }
+            }
         }, 'json');
 }
+
 
 function addRowNote(form, response) {
     var id = "deleteNote/" + response;
     var row = "<tr id='ROW_ID'>" +
-        "<td>ID</td>" +
+        createNoteCell(form, response) +
+        "</tr>";
+    row = row.replace(/ROW_ID/g, id);
+    $("#noteTable tr:last").after(row);
+}
+
+function createNoteCell(form, response) {
+    var id = "deleteNote/" + response;
+    var row = "<td>ID</td>" +
         "<td>DATE</td>" +
         "<td>PRICE</td> " +
         "<td>NUMBER</td> " +
@@ -103,8 +119,8 @@ function addRowNote(form, response) {
         "<td>CUSTOMER_NAME</td> " +
         "<td>CUSTOMER_PHONE</td> " +
         "<td>OTHERS</td> " +
-        "<td><div><a href='#' onclick=\"initDialog('ROW_ID','ID')\" class='deleteLink'>Удалить</a></td></div>" +
-        "</tr>";
+        "<td><div><a href='#' onclick=\"initDialog('ROW_ID','ID')\" class='deleteLink'>Удалить</a></div>" +
+        "<div><a href='#' onclick=\"initNoteUpdate('ID');\" class='deleteLink'>Update</a></div></td>";
     var date = new Date();
     var mm = date.getMonth() + 1;
     mm = (mm < 10) ? '0' + mm : mm;
@@ -118,12 +134,18 @@ function addRowNote(form, response) {
     row = row.replace("CUSTOMER_NAME", getValue(form, "customerName"));
     row = row.replace("CUSTOMER_PHONE", getValue(form, "customersPhone"));
     row = row.replace("OTHERS", getValue(form, "others"));
-    $("#noteTable tr:last").after(row);
+    return row;
 }
 
+function updateRowNote(form){
+    var id = $("#hiddenId").attr("value");
+    var row = createNoteCell(form, id);
+    var rowId = "#deleteNote\\/" + id;
+    $(rowId).html(row);
+}
 
-function setType(type) {
-    $('#addUser').attr('action', type);
+function setType(form, type) {
+    form.attr('action', type);
     $("span.type").html(type);
     $("input.type").attr('value', type);
 }
@@ -136,10 +158,30 @@ function initUpdate(id) {
     }, 'json');
 }
 
+function initNoteUpdate(id) {
+    var url = "getNote/" + id;
+    $.get(url, function (response) {
+        initNoteUpdateDialog(response);
+        $('#createNote').modal('show');
+    }, 'json');
+}
+
+function initNoteUpdateDialog(response) {
+    $('#addNote').trigger('reset');
+
+    setType($('#addNote'), 'updateNote');
+    $('#hiddenId').attr('value', response.id);
+    $('#price').attr('value', response.price);
+    $('#status').attr('value', response.status);
+    $('#customerName').attr('value', response.customerName);
+    $('#customersPhone').attr('value', response.customersPhone);
+    $('#others').attr('value', response.others);
+}
+
 function initUpdateDialog(response) {
     $('#addUser').trigger('reset');
 
-    setType('update');
+    setType($('#addUser') ,'update');
     $('#hiddenId').attr('value', response.id);
     $('#login').attr('value', response.login);
     $('#email').attr('value', response.email);
@@ -154,9 +196,6 @@ function initUpdateDialog(response) {
     }
 }
 
-$('#createUser').on('hidden', function () {
-    clearForm($('#addUser'));
-});
 
 function clearForm(form) {
     form.find(':input').each(function () {
