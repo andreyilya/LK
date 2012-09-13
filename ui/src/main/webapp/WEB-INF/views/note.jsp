@@ -76,20 +76,23 @@
 
         <c:if test="${!empty categoryList}">
             <c:forEach items="${categoryList}" var="category">
-                <li id=${category.id}><c:choose>
-                    <c:when test="${!empty category.subCategories}">
-                        <c:forEach items="${category.subCategories}" var="subCategory">
-                            <label for="${subCategory.id}">${category.name}</label>
+                <li id=${category.id}>
+                    <c:choose>
+                        <c:when test="${!empty category.subCategories}"><label
+                                for="${subCategory.id}">${category.name}</label>
                             <input type="checkbox" id="${subCategory.id}"/>
                             <ol>
-                                <li id="sub${subCategory.id}" class="file">${subCategory.name}</li>
+                                <c:forEach items="${category.subCategories}" var="subCategory">
+
+                                    <li id="sub${subCategory.id}" class="file">${subCategory.name}</li>
+
+                                </c:forEach>
                             </ol>
-                        </c:forEach>
-                    </c:when>
-                    <c:otherwise>
-                        <label>${category.name}</label>
-                    </c:otherwise>
-                </c:choose>
+                        </c:when>
+                        <c:otherwise>
+                            <label>${category.name}</label>
+                        </c:otherwise>
+                    </c:choose>
                 </li>
             </c:forEach>
         </c:if>
