@@ -18,7 +18,6 @@ import java.util.List;
  *         Date: 17.07.12
  */
 @Entity
-
 @NamedQueries({
         @NamedQuery(name = "delete.subCategory",
                 query = "delete from SubCategory c where c.category.id = :id"),

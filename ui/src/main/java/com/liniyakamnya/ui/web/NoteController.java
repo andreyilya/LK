@@ -44,6 +44,12 @@ public class NoteController {
         return URLs.INDEX_REDIRECT;
     }
 
+    @RequestMapping(value = "/addCategory", method = RequestMethod.POST)
+    public String addCategory(@ModelAttribute("category") Category note,
+                       BindingResult result) {
+        return URLs.INDEX_REDIRECT;
+    }
+
 
     @RequestMapping(value = URLs.ADD_NOTE, method = RequestMethod.POST)
     public
@@ -56,7 +62,7 @@ public class NoteController {
     @RequestMapping(value = URLs.UPDATE_NOTE, method = RequestMethod.POST)
     public
     @ResponseBody
-    String updateUser(@ModelAttribute(NOTE) Note note,
+    String updateNote(@ModelAttribute(NOTE) Note note,
                       BindingResult result) {
         return noteEntityService.update(note).toString();
     }

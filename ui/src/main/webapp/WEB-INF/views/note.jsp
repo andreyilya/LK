@@ -68,32 +68,37 @@
         </c:if>
     </table>
 </div>
-<ol id="categoryTable">
+<div class="categories">
+    <a href="#createCategory" role="button" class="btn btn-primary" data-toggle="modal">
+        Create category
+    </a>
+    <ol id="categoryTable">
 
-    <c:if test="${!empty categoryList}">
-        <c:forEach items="${categoryList}" var="category">
-            <li id=${category.id}><c:choose>
-                <c:when test="${!empty category.subCategories}">
-                    <c:forEach items="${category.subCategories}" var="subCategory">
-                        <label  for="${subCategory.id}">${category.name}</label>
-                        <input type="checkbox" id="${subCategory.id}"/>
-                        <ol>
-                            <li id="sub${subCategory.id}" class="file">${subCategory.name}</li>
-                        </ol>
-                    </c:forEach>
-                </c:when>
-                <c:otherwise>
-                    <label>${category.name}</label>
-                </c:otherwise>
-            </c:choose>
-            </li>
-        </c:forEach>
-    </c:if>
-</ol>
-
+        <c:if test="${!empty categoryList}">
+            <c:forEach items="${categoryList}" var="category">
+                <li id=${category.id}><c:choose>
+                    <c:when test="${!empty category.subCategories}">
+                        <c:forEach items="${category.subCategories}" var="subCategory">
+                            <label for="${subCategory.id}">${category.name}</label>
+                            <input type="checkbox" id="${subCategory.id}"/>
+                            <ol>
+                                <li id="sub${subCategory.id}" class="file">${subCategory.name}</li>
+                            </ol>
+                        </c:forEach>
+                    </c:when>
+                    <c:otherwise>
+                        <label>${category.name}</label>
+                    </c:otherwise>
+                </c:choose>
+                </li>
+            </c:forEach>
+        </c:if>
+    </ol>
+</div>
 
 <tags:deleteEntity entityName="note"/>
 <tags:addNote/>
+<tags:addCategory/>
 <ul id="myMenu" class="contextMenu">
     <li class="edit">
         <a href="#edit">Edit</a>
@@ -119,16 +124,19 @@
     $('#createNote').on('hidden', function () {
         clearForm($('#addNote'));
     });
-</script><script type="text/javascript">
-    $(document).ready( function() {
-    $("#categoryTable li").contextMenu({
-                menu: 'myMenu'
-            },
-            function(action, el, pos) {
-                alert(
-                        $(el).attr("id")
-                );
-            });});
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#categoryTable li").contextMenu({
+                    menu:'myMenu'
+                },
+                function (action, el, pos) {
+                    alert(
+                            $(el).attr("id")
+                    );
+                });
+
+    });
 </script>
 </body>
 </html>
