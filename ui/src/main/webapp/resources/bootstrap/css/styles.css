@@ -1,7 +1,7 @@
 div.center {
-    padding: 10px 10px 20px 10px;
-    width: 450px;
-}
+     padding: 10px 10px 20px 10px;
+     width: 450px;
+ }
 
 .permanent {
     width: 450px;
@@ -66,7 +66,7 @@ li.file {
 }
 
 input[type="radio"], input[type="checkbox"] {
-    margin: 12px 0 0 2px;
+    margin: 16px 0 0 2px;
     line-height: normal;
     cursor: pointer;
 }
@@ -109,17 +109,23 @@ li label {
 
 li input:checked + ol {
     background: url(../img/down.png) 47px 5px no-repeat;
-    margin: -2.0em 0 0 -45px; /* 20px */
-    padding: 1.563em 0 0 80px;
+    margin: -2em 0 0 -45px;
+    padding: 2em 0 0 60px;
     height: auto;
-    width: auto;
+    width: 0px;
 }
 
 li input:checked + ol > li {
-    display: block;
+    cursor: pointer;
+    display: table;
     margin: 0 0 0.125em; /* 2px */
 }
 
 li input:checked + ol > li:last-child {
     margin: 0 0 0.063em; /* 1px */
+}
+
+li input:checked + ol li {
+    position: relative;
+    left: 30px;
 }
