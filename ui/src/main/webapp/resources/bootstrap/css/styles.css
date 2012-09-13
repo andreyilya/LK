@@ -104,6 +104,7 @@ li label {
     padding-bottom: 7px;
     border-radius: 5px;
     padding-top: 7px;
+    border: solid 1px #AAA;
 }
 
 li input:checked + ol {
