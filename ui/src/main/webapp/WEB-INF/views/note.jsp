@@ -30,7 +30,8 @@
 <h3><spring:message code="label.contacts"/></h3>
 
 <div class="notes">
-    <a href="#createNote" role="button" class="btn btn-primary" data-toggle="modal" onclick="setType($('#addNote'), 'addNote');">Create note</a>
+    <a href="#createNote" role="button" class="btn btn-primary" data-toggle="modal"
+       onclick="setType($('#addNote'), 'addNote');">Create note</a>
     <table class="table table-striped table-bordered" id="noteTable">
         <tr>
             <th><spring:message code="label.createdDate"/></th>
@@ -54,8 +55,9 @@
                     <td>${note.customerName}</td>
                     <td>${note.customersPhone}</td>
                     <td>${note.others}</td>
-                    <td><div><a href="#" onclick="initDialog('deleteNote/${note.id}','${note.id}')"
-                           class="deleteLink"><spring:message code="label.delete"/></a></div>
+                    <td>
+                        <div><a href="#" onclick="initDialog('deleteNote/${note.id}','${note.id}')"
+                                class="deleteLink"><spring:message code="label.delete"/></a></div>
                         <div><a href="#" onclick="initNoteUpdate('${note.id}');"
                                 ><spring:message code="label.update"/></a></div>
                     </td>
@@ -64,21 +66,28 @@
         </c:if>
     </table>
 </div>
-<table class="table table-striped table-bordered" id="categoryTable">
-    <tr>
-        <th><spring:message code="label.createdDate"/></th>
-        <th><spring:message code="label.createdDate"/></th>
+<ol id="categoryTable">
 
-    </tr>
     <c:if test="${!empty categoryList}">
         <c:forEach items="${categoryList}" var="category">
-            <tr>
-                <td>${category.id}</td>
-                <td>${category.name}</td>
-            </tr>
+            <li><c:choose>
+                <c:when test="${!empty category.subCategories}">
+                    <c:forEach items="${category.subCategories}" var="subCategory">
+                        <label for="${subCategory.id}">${category.name}</label>
+                        <input type="checkbox" id="${subCategory.id}"/>
+                        <ol>
+                            <li class="file">${subCategory.name}</li>
+                        </ol>
+                    </c:forEach>
+                </c:when>
+                <c:otherwise>
+                    <label>${category.name}</label>
+                </c:otherwise>
+            </c:choose>
+            </li>
         </c:forEach>
     </c:if>
-</table>
+</ol>
 
 
 <tags:deleteEntity entityName="note"/>

@@ -52,7 +52,7 @@ public class Category implements Identifiable {
         this.name = name;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, orphanRemoval = true)
     public List<SubCategory> getSubCategories() {
         return subCategories;
     }
