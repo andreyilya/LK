@@ -10,7 +10,6 @@ import java.util.List;
 import com.liniyakamnya.ui.utils.Parameters;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.hibernate.Query;
 
