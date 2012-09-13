@@ -6,9 +6,11 @@ function initDialog(address, entityname) {
 
 function ajaxDelete() {
     var url = $(".toReplace").attr('name');
-    $.get(url);
-    deleteFromDatatable(url);
-    $('#deleteEntity').modal('hide');
+    $.get(url, function(response){
+        deleteFromDatatable(url);
+        $('#deleteEntity').modal('hide');
+    });
+
     return false;
 }
 

@@ -12,7 +12,6 @@ import com.liniyakamnya.ui.utils.URLs;
 import java.util.Map;
 import javax.inject.Named;
 
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
