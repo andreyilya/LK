@@ -59,16 +59,22 @@ li.file a[href $= '.js'] {
 }
 
 li.file {
-    background:  #CCC 0 0 no-repeat;
-    padding: 10px;
+    background:  #EEE 0 0 no-repeat;
+    padding: 3px;
     border-radius: 5px;
     border: solid 1px #888;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 15px 0 0 2px;
+    line-height: normal;
+    cursor: pointer;
 }
 
 li input {
     position: absolute;
     left: 0;
-    margin-left: 0;
+    margin: 15px 0 0 2px;
     opacity: 0;
     z-index: 2;
     cursor: pointer;
@@ -78,9 +84,10 @@ li input {
 }
 
 li input + ol {
-    background: url(../img/toggle-small-expand.png) 40px 0 no-repeat;
+    background: url(../img/right.png) 47px 0 no-repeat;
     margin: -1.6em 0 0 -44px; /* 15px */
     height: 1em;
+    width: 59px;
 }
 
 li input + ol > li {
@@ -90,17 +97,21 @@ li input + ol > li {
 }
 
 li label {
-    background: url(../img/folder-horizontal.png) 15px 1px no-repeat;
+    background: url(../img/c.png) #CCC 19px 5px no-repeat;
     cursor: pointer;
     display: block;
-    padding-left: 37px;
+    padding-left: 47px;
+    padding-bottom: 7px;
+    border-radius: 5px;
+    padding-top: 7px;
 }
 
 li input:checked + ol {
-    background: url(../img/toggle-small.png) 40px 5px no-repeat;
-    margin: -2.0em 0 0 -44px; /* 20px */
+    background: url(../img/down.png) 47px 5px no-repeat;
+    margin: -2.0em 0 0 -45px; /* 20px */
     padding: 1.563em 0 0 80px;
     height: auto;
+    width: auto;
 }
 
 li input:checked + ol > li {
