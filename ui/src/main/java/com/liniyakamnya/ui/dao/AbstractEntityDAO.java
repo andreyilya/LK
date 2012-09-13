@@ -16,63 +16,63 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public abstract class AbstractEntityDAO<T extends Identifiable> implements EntityDAO<T> {
 
-	private static final String POINT_SEPARATOR = "\\.";
-	private static final String ALL = ".all";
-	private static final Logger logger = Logger.getLogger(AbstractEntityDAO.class);
-	@Autowired
-	private SessionFactory sessionFactory;
+    private static final String POINT_SEPARATOR = "\\.";
+    private static final String ALL = ".all";
+    private static final Logger LOGGER = Logger.getLogger(AbstractEntityDAO.class);
+    @Autowired
+    private SessionFactory sessionFactory;
 
-	@Override
-	public void create(T entity) {
-		sessionFactory.getCurrentSession().save(entity);
-	}
+    @Override
+    public void create(T entity) {
+        sessionFactory.getCurrentSession().save(entity);
+    }
 
-	@Override
-	public Long update(T entity) {
-		sessionFactory.getCurrentSession().update(entity);
+    @Override
+    public Long update(T entity) {
+        sessionFactory.getCurrentSession().update(entity);
         return entity.getId();
-	}
+    }
 
-	@Override
-	public void delete(T entity) {
-		sessionFactory.getCurrentSession().delete(entity);
-	}
+    @Override
+    public void delete(T entity) {
+        sessionFactory.getCurrentSession().delete(entity);
+    }
 
-	@Override
-	public void delete(Long id) {
-		try {
-			sessionFactory.getCurrentSession().delete(findById(id));
-		} catch (ObjectNotFoundException e) {
-			 logger.warn("Object with id " + id + " not found");
-		}
-	}
+    @Override
+    public void delete(Long id) {
+        try {
+            sessionFactory.getCurrentSession().delete(findById(id));
+        } catch (ObjectNotFoundException e) {
+            LOGGER.warn("Object with id " + id + " not found");
+        }
+    }
 
-	@Override
-	@SuppressWarnings("unchecked")
-	public Long safeOrUpdate(T entity) {
-		return (Long) sessionFactory.getCurrentSession().save(entity);
-	}
+    @Override
+    @SuppressWarnings("unchecked")
+    public Long safeOrUpdate(T entity) {
+        return (Long) sessionFactory.getCurrentSession().save(entity);
+    }
 
-	@Override
-	@SuppressWarnings("unchecked")
-	public T findById(Long id) {
-		return (T) sessionFactory.getCurrentSession().get(
-				getDomainClass(), id);
-	}
+    @Override
+    @SuppressWarnings("unchecked")
+    public T findById(Long id) {
+        return (T) sessionFactory.getCurrentSession().get(
+                getDomainClass(), id);
+    }
 
-	@Override
-	@SuppressWarnings("unchecked")
-	public List<T> getAll() {
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<T> getAll() {
 
-		String[] parts = getDomainClass().getName().toLowerCase().split(POINT_SEPARATOR);
-		String domainClass = parts[parts.length - 1];
-		return sessionFactory.getCurrentSession().getNamedQuery(domainClass + ALL)
-				.list();
-	}
+        String[] parts = getDomainClass().getName().toLowerCase().split(POINT_SEPARATOR);
+        String domainClass = parts[parts.length - 1];
+        return sessionFactory.getCurrentSession().getNamedQuery(domainClass + ALL)
+                .list();
+    }
 
-	public abstract Class<T> getDomainClass();
+    public abstract Class<T> getDomainClass();
 
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 }

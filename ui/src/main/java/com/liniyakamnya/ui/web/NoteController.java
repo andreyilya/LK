@@ -4,8 +4,6 @@ import com.liniyakamnya.ui.entities.Note;
 import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
 import com.liniyakamnya.ui.utils.URLs;
-import java.util.Map;
-import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -15,43 +13,46 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.inject.Named;
+import java.util.Map;
+
 @Controller
 public class NoteController {
-	private static final String NOTE_ID = "noteId";
-	private static final String NOTE = "NOTE";
+    private static final String NOTE_ID = "noteId";
+    private static final String NOTE = "NOTE";
 
-	@Autowired
-	@Named(Parameters.NOTE_SERVICE)
-	private EntityService<Note> noteEntityService;
+    @Autowired
+    @Named(Parameters.NOTE_SERVICE)
+    private EntityService<Note> noteEntityService;
 
-	@RequestMapping(URLs.INDEX)
-	public String listNotes(Map<String, Object> map) {
-		map.put(Parameters.NOTE, new Note());
-		map.put(Parameters.NOTE_LIST, noteEntityService.getAll());
-		return URLs.INDEX_PAGE;
-	}
+    @RequestMapping(URLs.INDEX)
+    public String listNotes(Map<String, Object> map) {
+        map.put(Parameters.NOTE, new Note());
+        map.put(Parameters.NOTE_LIST, noteEntityService.getAll());
+        return URLs.INDEX_PAGE;
+    }
 
-	@RequestMapping("/")
-	public String home() {
-		return URLs.INDEX_REDIRECT;
-	}
-
-
-	@RequestMapping(value = URLs.ADD_NOTE, method = RequestMethod.POST)
-	public
-	@ResponseBody
-	String addNote(@ModelAttribute(NOTE) Note note,
-				   BindingResult result) {
-		return noteEntityService.safeOrUpdate(note).toString();
-	}
+    @RequestMapping("/")
+    public String home() {
+        return URLs.INDEX_REDIRECT;
+    }
 
 
-	@RequestMapping(URLs.DELETE_NOTE)
-	public
-	@ResponseBody
-	String deleteNote(@PathVariable(NOTE_ID) Long noteId) {
+    @RequestMapping(value = URLs.ADD_NOTE, method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String addNote(@ModelAttribute(NOTE) Note note,
+                   BindingResult result) {
+        return noteEntityService.safeOrUpdate(note).toString();
+    }
 
-		noteEntityService.delete(noteId);
-		return URLs.INDEX_REDIRECT;
-	}
+
+    @RequestMapping(URLs.DELETE_NOTE)
+    public
+    @ResponseBody
+    String deleteNote(@PathVariable(NOTE_ID) Long noteId) {
+
+        noteEntityService.delete(noteId);
+        return URLs.INDEX_REDIRECT;
+    }
 }

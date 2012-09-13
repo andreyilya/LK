@@ -10,5 +10,5 @@ import com.liniyakamnya.ui.exception.GuiException;
  * Time: 19:18
  */
 public interface Authentificator {
-	User getUserByLogin(String login) throws GuiException;
+    User getUserByLogin(String login) throws GuiException;
 }

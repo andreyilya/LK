@@ -19,11 +19,11 @@ import javax.inject.Named;
 public class EmailMessageHandler implements EmailService {
     @Autowired
     @Named(Parameters.USER_DAO)
-    EntityDAO<User> userEntityDAO;
+    private EntityDAO<User> userEntityDAO;
 
     @Override
     public void protocolAction(Actions action) {
-        EmailThread emailThread = new EmailThread(userEntityDAO,action);
+        EmailThread emailThread = new EmailThread(userEntityDAO, action);
         Thread thread = new Thread(emailThread);
         thread.start();
     }

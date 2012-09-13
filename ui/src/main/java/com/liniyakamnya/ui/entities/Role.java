@@ -16,31 +16,31 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "role.deleteAll",
-				query = "delete from Role"),
-		@NamedQuery(name = "role.all",
-		query = "from Role")
+        @NamedQuery(name = "role.deleteAll",
+                query = "delete from Role"),
+        @NamedQuery(name = "role.all",
+                query = "from Role")
 })
 public class Role implements Identifiable {
-	private Long id;
-	private String roleName;
+    private Long id;
+    private String roleName;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Long getId() {
-		return id;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	@Column
-	public String getRoleName() {
-		return roleName;
-	}
+    @Column
+    public String getRoleName() {
+        return roleName;
+    }
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 }

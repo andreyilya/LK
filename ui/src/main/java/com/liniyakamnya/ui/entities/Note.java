@@ -19,8 +19,8 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "note.all",
-				query = "from Note")
+        @NamedQuery(name = "note.all",
+                query = "from Note")
 })
 public class Note implements Identifiable {
     private Long id;
@@ -65,9 +65,9 @@ public class Note implements Identifiable {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-	public SubCategory getSubCategory() {
-		return subCategory;
-	}
+    public SubCategory getSubCategory() {
+        return subCategory;
+    }
 
     public void setSubCategory(SubCategory subCategory) {
         this.subCategory = subCategory;

@@ -2,7 +2,7 @@ package com.liniyakamnya.ui.service;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
-import com.liniyakamnya.ui.entities.Note;
+import com.liniyakamnya.ui.entities.Category;
 import com.liniyakamnya.ui.utils.Parameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,21 +11,19 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.inject.Named;
 
 /**
- * Created by IntelliJ IDEA.
- * User: user
- * Date: 12.09.12
- * Time: 23:01
+ * @author a.radkov
+ *         Date: 13.09.12
  */
-@Service(Parameters.NOTE_SERVICE)
+@Service(Parameters.CATEGORY_SERVICE)
 @Transactional
-public class NoteEntityService extends AbstractEntityService<Note> {
+public class CategoryEntityService  extends AbstractEntityService<Category> {
     @Autowired
-    @Named(Parameters.NOTE_DAO)
-    private EntityDAO<Note> noteEntityDAO;
+    @Named(Parameters.CATEGORY_DAO)
+    private EntityDAO<Category> noteEntityDAO;
 
 
     @Override
-    public EntityDAO<Note> getEntityDAO() {
+    public EntityDAO<Category> getEntityDAO() {
         return noteEntityDAO;
     }
 

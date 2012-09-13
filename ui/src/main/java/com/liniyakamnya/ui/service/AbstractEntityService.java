@@ -13,7 +13,7 @@ import java.util.List;
 @Transactional
 public abstract class AbstractEntityService<T extends Identifiable> implements EntityService<T> {
     @Autowired
-    EmailService emailService;
+    private EmailService emailService;
 
     @Override
     public void create(T entity) {

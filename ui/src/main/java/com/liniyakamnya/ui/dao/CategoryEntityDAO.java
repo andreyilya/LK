@@ -11,11 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
  * Date: 12.09.12
  * Time: 22:59
  */
-@Repository (Parameters.CATEGORY_DAO)
+@Repository(Parameters.CATEGORY_DAO)
 @Transactional
-public class CategoryEntityDAO extends AbstractEntityDAO<Category>{
-	@Override
-	public Class<Category> getDomainClass() {
-		return Category.class;
-	}
+public class CategoryEntityDAO extends AbstractEntityDAO<Category> {
+    @Override
+    public Class<Category> getDomainClass() {
+        return Category.class;
+    }
 }

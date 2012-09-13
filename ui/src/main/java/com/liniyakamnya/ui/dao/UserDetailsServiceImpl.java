@@ -3,8 +3,10 @@ package com.liniyakamnya.ui.dao;
 import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.exception.GuiException;
+
 import java.util.HashSet;
 import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.GrantedAuthority;
@@ -22,37 +24,39 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service("userDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
-	@Autowired
-	private Authentificator userService;
+    @Autowired
+    private Authentificator userService;
 
-	/**
-	 * Load user with authority by username.
-	 *
-	 * @param username the string name of the user.
-	 * @return authentication user object.
-	 * @throws org.springframework.security.core.userdetails.UsernameNotFoundException in case
-	 * @throws org.springframework.dao.DataAccessException       in case of data access exception ocurred.
-	 */
-	@Transactional(readOnly = true)
-	public UserDetails loadUserByUsername(String username)
-			throws UsernameNotFoundException, DataAccessException {
-		try {
-			User user = userService.getUserByLogin(username);
-			Set<GrantedAuthority> gAuthorities = new HashSet<GrantedAuthority>();
-			for (final Role authority : user.getRoles()) {
-				gAuthorities.add(new GrantedAuthority() {
-					@Override
-					public String getAuthority() {
-						return authority.getRoleName();
-					}
-				});
-			}
+    /**
+     * Load user with authority by username.
+     *
+     * @param username the string name of the user.
+     * @return authentication user object.
+     * @throws org.springframework.security.core.userdetails.UsernameNotFoundException
+     *          in case
+     * @throws org.springframework.dao.DataAccessException
+     *          in case of data access exception ocurred.
+     */
+    @Transactional(readOnly = true)
+    public UserDetails loadUserByUsername(String username) {
+        try {
+            User user = userService.getUserByLogin(username);
+            Set<GrantedAuthority> gAuthorities = new HashSet<GrantedAuthority>();
+            for (final Role authority : user.getRoles()) {
+                gAuthorities.add(new GrantedAuthority() {
+                    @Override
+                    public String getAuthority() {
+                        return authority.getRoleName();
+                    }
+                });
+            }
 
-			return new org.springframework.security.core.userdetails.User(username, user.getPassword(), true, true, true, true, gAuthorities);
-		} catch (GuiException e) {
-			throw new UsernameNotFoundException(e.getLocalizedMessage());
-		}
-	}
+            return new org.springframework.security.core.userdetails.User(username, user.getPassword(), true, true,
+                    true, true, gAuthorities);
+        } catch (GuiException e) {
+            throw new UsernameNotFoundException(e.getLocalizedMessage());
+        }
+    }
 
 }
 

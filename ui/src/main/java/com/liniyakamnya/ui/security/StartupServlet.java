@@ -2,18 +2,17 @@ package com.liniyakamnya.ui.security;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.dao.RoleConfigurator;
-
-import javax.inject.Named;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-
 import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+
+import javax.inject.Named;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,15 +22,15 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
  */
 public class StartupServlet extends HttpServlet {
     @Autowired
-    RoleConfigurator roleEntityDAO;
+    private RoleConfigurator roleEntityDAO;
 
     @Autowired
     @Named(value = Parameters.ROLE_DAO)
-    EntityDAO<Role> rolesEntityDAO;
+    private EntityDAO<Role> rolesEntityDAO;
 
     @Autowired
     @Named(value = Parameters.USER_SERVICE)
-    EntityService<User> userEntityService;
+    private EntityService<User> userEntityService;
 
     @Override
     public void init(ServletConfig config)

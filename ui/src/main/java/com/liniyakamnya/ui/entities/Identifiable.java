@@ -7,5 +7,5 @@ import java.io.Serializable;
  *         Date: 13.09.12
  */
 public interface Identifiable extends Serializable {
-    public Long getId();
+    Long getId();
 }

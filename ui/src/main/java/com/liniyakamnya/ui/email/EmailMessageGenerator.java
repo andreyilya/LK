@@ -1,3 +1,4 @@
+
 package com.liniyakamnya.ui.email;
 
 import com.liniyakamnya.ui.entities.Actions;
@@ -15,6 +16,7 @@ public final class EmailMessageGenerator {
     }
 
     public static String generate(Actions action) {
-        return ACTION +  action.toString().toLowerCase() + OCCURED;
+        return ACTION + action.toString().toLowerCase() + OCCURED;
     }
 }
+

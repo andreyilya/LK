@@ -1,7 +1,6 @@
 package com.liniyakamnya.ui.service;
 
 import com.liniyakamnya.ui.dao.EntityDAO;
-import com.liniyakamnya.ui.dao.UserEntityDAO;
 import com.liniyakamnya.ui.email.EmailMessageGenerator;
 import com.liniyakamnya.ui.email.EmailSender;
 import com.liniyakamnya.ui.entities.Actions;
@@ -35,7 +34,7 @@ public class EmailThread implements Runnable {
             }
         } catch (EmailException e) {
             e.printStackTrace();
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
     }

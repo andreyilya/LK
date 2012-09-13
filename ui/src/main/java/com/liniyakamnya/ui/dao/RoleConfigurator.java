@@ -7,5 +7,5 @@ package com.liniyakamnya.ui.dao;
  * Time: 9:04
  */
 public interface RoleConfigurator {
-	public void initRoles();
+    void initRoles();
 }
