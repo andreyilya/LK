@@ -28,39 +28,39 @@
     <a href="admin">Admin page</a>
 </sec:authorize>
 <h3><spring:message code="label.contacts"/></h3>
-<a href="#createNote" role="button" class="btn btn-primary" data-toggle="modal">Create note</a>
 
-
-<table class="table table-striped table-bordered" id="noteTable">
-    <tr>
-        <th><spring:message code="label.createdDate"/></th>
-        <th><spring:message code="label.createdDate"/></th>
-        <th><spring:message code="label.price"/></th>
-        <th><spring:message code="label.number"/></th>
-        <th><spring:message code="label.status"/></th>
-        <th><spring:message code="label.customerName"/></th>
-        <th><spring:message code="label.customersPhone"/></th>
-        <th><spring:message code="label.others"/></th>
-        <th><spring:message code="label.delete"/></th>
-    </tr>
-    <c:if test="${!empty noteList}">
-        <c:forEach items="${noteList}" var="note">
-            <tr id="deleteNote/${note.id}">
-                <td>${note.id}</td>
-                <td>${note.createdDate}</td>
-                <td>${note.price}</td>
-                <td>${note.number}</td>
-                <td>${note.status}</td>
-                <td>${note.customerName}</td>
-                <td>${note.customersPhone}</td>
-                <td>${note.others}</td>
-                <td><a href="#" onclick="initDialog('deleteNote/${note.id}','${note.id}')"
-                       class="deleteLink"><spring:message code="label.delete"/></a></td>
-            </tr>
-        </c:forEach>
-    </c:if>
-</table>
-
+<div class="notes">
+    <a href="#createNote" role="button" class="btn btn-primary" data-toggle="modal">Create note</a>
+    <table class="table table-striped table-bordered" id="noteTable">
+        <tr>
+            <th><spring:message code="label.createdDate"/></th>
+            <th><spring:message code="label.createdDate"/></th>
+            <th><spring:message code="label.price"/></th>
+            <th><spring:message code="label.number"/></th>
+            <th><spring:message code="label.status"/></th>
+            <th><spring:message code="label.customerName"/></th>
+            <th><spring:message code="label.customersPhone"/></th>
+            <th><spring:message code="label.others"/></th>
+            <th><spring:message code="label.delete"/></th>
+        </tr>
+        <c:if test="${!empty noteList}">
+            <c:forEach items="${noteList}" var="note">
+                <tr id="deleteNote/${note.id}">
+                    <td>${note.id}</td>
+                    <td>${note.createdDate}</td>
+                    <td>${note.price}</td>
+                    <td>${note.number}</td>
+                    <td>${note.status}</td>
+                    <td>${note.customerName}</td>
+                    <td>${note.customersPhone}</td>
+                    <td>${note.others}</td>
+                    <td><a href="#" onclick="initDialog('deleteNote/${note.id}','${note.id}')"
+                           class="deleteLink"><spring:message code="label.delete"/></a></td>
+                </tr>
+            </c:forEach>
+        </c:if>
+    </table>
+</div>
 <table class="table table-striped table-bordered" id="categoryTable">
     <tr>
         <th><spring:message code="label.createdDate"/></th>

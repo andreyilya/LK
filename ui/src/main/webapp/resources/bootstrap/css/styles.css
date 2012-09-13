@@ -11,3 +11,12 @@ div.center {
 body {
     padding: 10px;
 }
+
+#noteTable{
+    float: right;
+    width: 73%;
+}
+
+#categoryTable{
+    width: 25%;
+}
