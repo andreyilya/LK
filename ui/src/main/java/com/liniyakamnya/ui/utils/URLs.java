@@ -14,7 +14,7 @@ public final class URLs {
     public static final String INDEX = "/index";
 
     public static final String INDEX_REDIRECT = "redirect:/index";
-    public static final String INDEX_PAGE = "user";
+    public static final String INDEX_PAGE = "note";
     public static final String ADMIN = "/admin";
 
     public static final String ADMIN_PAGE = "admin";

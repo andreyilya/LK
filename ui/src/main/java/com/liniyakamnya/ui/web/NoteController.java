@@ -1,5 +1,6 @@
 package com.liniyakamnya.ui.web;
 
+import com.liniyakamnya.ui.entities.Category;
 import com.liniyakamnya.ui.entities.Note;
 import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
@@ -25,10 +26,15 @@ public class NoteController {
     @Named(Parameters.NOTE_SERVICE)
     private EntityService<Note> noteEntityService;
 
+    @Autowired
+    @Named(Parameters.CATEGORY_SERVICE)
+    private EntityService<Category> categoryEntityService;
+
     @RequestMapping(URLs.INDEX)
     public String listNotes(Map<String, Object> map) {
         map.put(Parameters.NOTE, new Note());
         map.put(Parameters.NOTE_LIST, noteEntityService.getAll());
+        map.put(Parameters.CATEGORY_LIST, categoryEntityService.getAll());
         return URLs.INDEX_PAGE;
     }
 

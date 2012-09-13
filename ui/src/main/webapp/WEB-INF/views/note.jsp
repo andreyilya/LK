@@ -61,6 +61,22 @@
     </c:if>
 </table>
 
+<table class="table table-striped table-bordered" id="categoryTable">
+    <tr>
+        <th><spring:message code="label.createdDate"/></th>
+        <th><spring:message code="label.createdDate"/></th>
+
+    </tr>
+    <c:if test="${!empty categoryList}">
+        <c:forEach items="${categoryList}" var="category">
+            <tr>
+                <td>${category.id}</td>
+                <td>${category.name}</td>
+            </tr>
+        </c:forEach>
+    </c:if>
+</table>
+
 
 <tags:deleteEntity entityName="note"/>
 <tags:addNote/>
