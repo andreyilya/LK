@@ -61,6 +61,10 @@
 <tags:deleteEntity entityName="user"/>
 <tags:addUser type="add"/>
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-
+ <script type="text/javascript">
+     $('#createUser').on('hidden', function () {
+         clearForm($('#addUser'));
+     });
+ </script>
 </body>
 </html>

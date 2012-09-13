@@ -124,6 +124,8 @@ function addRowNote(form, response) {
 
 function setType(type) {
     $('#addUser').attr('action', type);
+    $("span.type").html(type);
+    $("input.type").attr('value', type);
 }
 
 function initUpdate(id) {
@@ -150,4 +152,20 @@ function initUpdateDialog(response) {
             }
         }
     }
+}
+
+$('#createUser').on('hidden', function () {
+    clearForm($('#addUser'));
+});
+
+function clearForm(form) {
+    form.find(':input').each(function () {
+        var type = this.type, tag = this.tagName.toLowerCase();
+        if (type == 'text' || type == 'password' || tag == 'textarea')
+            this.value = '';
+        else if (type == 'checkbox' || type == 'radio')
+            this.checked = false;
+        else if (tag == 'select')
+            this.selectedIndex = -1;
+    })
 }

@@ -18,7 +18,7 @@
         </div>
         <div class="modal-footer">
             <input type="submit" class="btn btn-primary" value="Create" onclick="ajaxAddNote();">
-            <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
+            <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="clearForm($('#addNote'))">Close</a>
         </div>
     </form:form>
 </div>

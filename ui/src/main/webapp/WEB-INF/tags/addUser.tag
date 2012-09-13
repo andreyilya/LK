@@ -6,7 +6,7 @@
 <%@ attribute name="type" required="true" rtexprvalue="true" %>
 
 <div class="modal hide fade" id="createUser">
-    <parts:dialogHeader headerName="${type} user"/>
+    <parts:dialogHeader headerName="user"/>
     <form:form id="addUser" method="post" action="${type}" onsubmit='return false;' commandName="user">
         <div class="modal-body form-horizontal">
 
@@ -54,8 +54,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <input type="submit" class="btn btn-primary" value="${type}" onclick="ajaxAddOrUpdate();">
-            <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</a>
+            <input type="submit" class="btn btn-primary type" value="${type}" onclick="ajaxAddOrUpdate();">
+            <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="clearForm($('#addUser'))">Close</a>
         </div>
     </form:form>
 </div>
