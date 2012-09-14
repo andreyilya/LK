@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.inject.Named;
 
@@ -27,9 +28,11 @@ public class CategoryController {
     private EntityService<Category> categoryEntityService;
 
     @RequestMapping(value = URLs.ADD_CATEGORY, method = RequestMethod.POST)
-    public String addCategory(@ModelAttribute(Parameters.CATEGORY) Category category,
-                              BindingResult result) {
-       return categoryEntityService.safeOrUpdate(category).toString();
+    public
+    @ResponseBody
+    String addCategory(@ModelAttribute(Parameters.CATEGORY) Category category,
+                       BindingResult result) {
+        return categoryEntityService.safeOrUpdate(category).toString();
     }
 
     @RequestMapping(value = URLs.DELETE_CATEGORY)

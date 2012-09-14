@@ -197,6 +197,33 @@ function initUpdateDialog(response) {
 }
 
 
+function ajaxAddUpdateCategory() {
+    var type = $('#addCategory').attr('action');
+    $.post(type, $("#addCategory").serialize(),
+        function (response) {
+            if (response > 0) {
+                $('#createCategory').modal('hide');
+                if (type == 'addCategory') {
+                    addRowCategory($(addCategory).serializeArray(), response);
+                }else {
+                    addRowCategory($(addCategory).serializeArray(), response);
+
+                   // updateRowCategory($(addCategory).serializeArray());
+                }
+                initContextMenu();
+            }
+        }, 'json');
+}
+
+function addRowCategory(form, response){
+    var id = "deleteCategory/" + response;
+    var row = "<li id='ROW_ID' class='categoriesTree'><label>" +
+                getValue(form,"name")+
+        "</label></li>";
+    row = row.replace(/ROW_ID/g, id);
+    $("#categoryTable li:last").after(row);
+}
+
 function clearForm(form) {
     form.find(':input').each(function () {
         var type = this.type, tag = this.tagName.toLowerCase();
@@ -207,4 +234,30 @@ function clearForm(form) {
         else if (tag == 'select')
             this.selectedIndex = -1;
     })
+}
+
+function initContextMenu() {
+    $("#categoryTable li.categoriesTree").contextMenu({
+            menu:'categoryMenu'
+        },
+        function (action, el, pos) {
+            if (action == "delete") {
+                initDialog($(el).attr("id"), "category");
+            } else {
+
+                alert(
+                    $(el).attr("id") +
+                        action
+                );
+            }
+        });
+
+    $("#categoryTable li.file").contextMenu({
+            menu:'subCategoryMenu'
+        },
+        function (action, el, pos) {
+            alert(
+                "sub " + $(el).attr("id")
+            );
+        });
 }

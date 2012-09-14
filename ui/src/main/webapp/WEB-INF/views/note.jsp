@@ -130,36 +130,13 @@
 <script type="text/javascript">
     $('#createNote').on('hidden', function () {
         clearForm($('#addNote'));
+        clearForm($('#addCategory'));
     });
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#categoryTable li.categoriesTree").contextMenu({
-                    menu:'categoryMenu'
-                },
-                function (action, el, pos) {
-                    if (action == "delete") {
-                        initDialog($(el).attr("id"), "category");
-                    } else {
-
-                        alert(
-                                $(el).attr("id") +
-                                        action
-                        );
-                    }
-                });
-
-        $("#categoryTable li.file").contextMenu({
-                    menu:'subCategoryMenu'
-                },
-                function (action, el, pos) {
-                    alert(
-                            "sub " + $(el).attr("id")
-                    );
-                });
-
-    })
-    ;
+        initContextMenu();
+    });
 </script>
 </body>
 </html>

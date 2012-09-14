@@ -11,7 +11,7 @@
             <parts:formfield label="label.others" value="name"/>
         </div>
         <div class="modal-footer">
-            <input type="submit" class="btn btn-primary type" value="Create" >
+            <input type="submit" class="btn btn-primary type" value="Create" onclick="ajaxAddUpdateCategory();">
             <a href="#" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" >Close</a>
         </div>
     </form:form>
