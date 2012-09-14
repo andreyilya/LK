@@ -29,4 +29,7 @@ public final class Parameters {
     public static final String CATEGORY_SERVICE = "categoryService";
     public static final String CATEGORY_LIST = "categoryList";
     public static final String CATEGORY = "category";
+
+    public static final String SUB_CATEGORY_DAO = "subCategoryDao";
+
 }
