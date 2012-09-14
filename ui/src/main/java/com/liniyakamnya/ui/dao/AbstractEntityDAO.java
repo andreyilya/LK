@@ -41,6 +41,7 @@ public abstract class AbstractEntityDAO<T extends Identifiable> implements Entit
     @Override
     public void delete(Long id) {
         try {
+            //TODO: named query
             sessionFactory.getCurrentSession().delete(findById(id));
         } catch (ObjectNotFoundException e) {
             LOGGER.warn("Object with id " + id + " not found");
