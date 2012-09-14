@@ -69,7 +69,8 @@
     </table>
 </div>
 <div class="categories">
-    <a href="#createCategory" role="button" class="btn btn-primary" data-toggle="modal">
+    <a href="#createCategory" role="button" class="btn btn-primary" data-toggle="modal"
+       onclick="setType($('#addCategory'), 'addCategory');">
         Create category
     </a>
     <ol id="categoryTable">

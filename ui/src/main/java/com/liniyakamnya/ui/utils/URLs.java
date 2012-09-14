@@ -31,6 +31,8 @@ public final class URLs {
     public static final String UPDATE_NOTE = "updateNote";
 
 	public static final String ADD_CATEGORY = "/addCategory";
+	public static final String UPDATE_CATEGORY = "updateCategory";
+	public static final String GET_CATEGORY = "/getCategory/{categoryId}";
 	public static final String DELETE_CATEGORY = "/deleteCategory/{categoryId}";
 
 

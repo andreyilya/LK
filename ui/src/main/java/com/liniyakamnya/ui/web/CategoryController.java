@@ -1,10 +1,12 @@
 package com.liniyakamnya.ui.web;
 
 import com.liniyakamnya.ui.entities.Category;
+import com.liniyakamnya.ui.entities.Note;
 import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
 import com.liniyakamnya.ui.utils.URLs;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -34,6 +36,22 @@ public class CategoryController {
                        BindingResult result) {
         return categoryEntityService.safeOrUpdate(category).toString();
     }
+
+	@RequestMapping(value = URLs.UPDATE_CATEGORY, method = RequestMethod.POST)
+	public
+	@ResponseBody
+	String updateNote(@ModelAttribute(Parameters.CATEGORY) Category category,
+					  BindingResult result) {
+		return categoryEntityService.update(category).toString();
+	}
+
+	@RequestMapping(value = URLs.GET_CATEGORY)
+	public
+	@ResponseBody
+	ResponseEntity<String> getCategory(@PathVariable(CATEGORY_ID) Long categoryId) {
+		Category category = categoryEntityService.findById(categoryId);
+		return Json.createJsonResponse(category);
+	}
 
     @RequestMapping(value = URLs.DELETE_CATEGORY)
     public String deleteCategory(@PathVariable(CATEGORY_ID) Long categoryId) {
