@@ -7,6 +7,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -19,8 +20,6 @@ import java.util.List;
  */
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "delete.subCategory",
-                query = "delete from SubCategory c where c.category.id = :id"),
 
         @NamedQuery(name = "category.all",
                 query = "from Category")}
@@ -51,7 +50,11 @@ public class Category implements Identifiable {
         this.name = name;
     }
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, orphanRemoval = true)
+    @OneToMany(fetch = FetchType.EAGER,
+            cascade = {CascadeType.ALL},
+            targetEntity=SubCategory.class,
+            orphanRemoval = true)
+    @JoinColumn(name="category_id")
     public List<SubCategory> getSubCategories() {
         return subCategories;
     }

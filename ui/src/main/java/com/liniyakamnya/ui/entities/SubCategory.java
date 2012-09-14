@@ -1,5 +1,8 @@
 package com.liniyakamnya.ui.entities;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,10 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 /**
  * @author a.radkov
@@ -42,7 +43,8 @@ public class SubCategory implements Identifiable {
         this.name = name;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE})
+    @ManyToOne
+    @JoinColumn(name="category_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     public Category getCategory() {
         return category;
