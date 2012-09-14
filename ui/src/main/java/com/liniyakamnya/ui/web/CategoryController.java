@@ -29,7 +29,7 @@ public class CategoryController {
     @RequestMapping(value = URLs.ADD_CATEGORY, method = RequestMethod.POST)
     public String addCategory(@ModelAttribute(Parameters.CATEGORY) Category category,
                               BindingResult result) {
-        return URLs.INDEX_REDIRECT;
+       return categoryEntityService.safeOrUpdate(category).toString();
     }
 
     @RequestMapping(value = URLs.DELETE_CATEGORY)
