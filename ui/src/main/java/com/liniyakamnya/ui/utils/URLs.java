@@ -30,4 +30,7 @@ public final class URLs {
     public static final String GET_NOTE = "/getNote/{noteId}";
     public static final String UPDATE_NOTE = "updateNote";
 
+	public static final String ADD_CATEGORY = "addCategory";
+
+
 }

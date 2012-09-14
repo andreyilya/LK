@@ -34,6 +34,7 @@ public class NoteController {
     @RequestMapping(URLs.INDEX)
     public String listNotes(Map<String, Object> map) {
         map.put(Parameters.NOTE, new Note());
+		map.put(Parameters.CATEGORY, new Category());
         map.put(Parameters.NOTE_LIST, noteEntityService.getAll());
         map.put(Parameters.CATEGORY_LIST, categoryEntityService.getAll());
         return URLs.INDEX_PAGE;
@@ -44,8 +45,8 @@ public class NoteController {
         return URLs.INDEX_REDIRECT;
     }
 
-    @RequestMapping(value = "/addCategory", method = RequestMethod.POST)
-    public String addCategory(@ModelAttribute("category") Category note,
+    @RequestMapping(value = URLs.ADD_CATEGORY, method = RequestMethod.POST)
+    public String addCategory(@ModelAttribute(Parameters.CATEGORY) Category category,
                        BindingResult result) {
         return URLs.INDEX_REDIRECT;
     }
