@@ -19,26 +19,26 @@ import javax.inject.Named;
 public class CategoryEntityService  extends AbstractEntityService<Category> {
     @Autowired
     @Named(Parameters.CATEGORY_DAO)
-    private EntityDAO<Category> noteEntityDAO;
+    private EntityDAO<Category> categoryEntityDAO;
 
 
     @Override
     public EntityDAO<Category> getEntityDAO() {
-        return noteEntityDAO;
+        return categoryEntityDAO;
     }
 
     @Override
     public Actions getCreateAction() {
-        return Actions.CREATE_NOTE;
+        return Actions.CREATE_CATEGORY;
     }
 
     @Override
     public Actions getUpdateAction() {
-        return Actions.UPDATE_NOTE;
+        return Actions.UPDATE_CATEGORY;
     }
 
     @Override
     public Actions getDeleteAction() {
-        return Actions.DELETE_NOTE;
+        return Actions.DELETE_CATEGORY;
     }
 }
