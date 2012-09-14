@@ -76,7 +76,7 @@
 
         <c:if test="${!empty categoryList}">
             <c:forEach items="${categoryList}" var="category">
-                <li id=${category.id}>
+                <li id="deleteCategory/${category.id}" class="categoriesTree">
                     <c:choose>
                         <c:when test="${!empty category.subCategories}">
                             <label for="s${category.id}">${category.name}</label>
@@ -102,26 +102,30 @@
 <tags:deleteEntity entityName="note"/>
 <tags:addNote/>
 <tags:addCategory/>
-<ul id="myMenu" class="contextMenu">
+<ul id="categoryMenu" class="contextMenu">
+    <li class="create">
+        <a href="#add">Add subcategories</a>
+    </li>
     <li class="edit">
-        <a href="#edit">Edit</a>
-    </li>
-    <li class="cut separator">
-        <a href="#cut">Cut</a>
-    </li>
-    <li class="copy">
-        <a href="#copy">Copy</a>
-    </li>
-    <li class="paste">
-        <a href="#paste">Paste</a>
+        <a href="#update">Update</a>
     </li>
     <li class="delete">
         <a href="#delete">Delete</a>
     </li>
-    <li class="quit separator">
-        <a href="#quit">Quit</a>
-    </li>
+
 </ul>
+
+<ul id="subCategoryMenu" class="contextMenu">
+
+    <li class="edit">
+        <a href="#update">Update</a>
+    </li>
+    <li class="delete">
+        <a href="#delete">Delete</a>
+    </li>
+
+</ul>
+
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     $('#createNote').on('hidden', function () {
@@ -130,16 +134,32 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#categoryTable li").contextMenu({
-                    menu:'myMenu'
+        $("#categoryTable li.categoriesTree").contextMenu({
+                    menu:'categoryMenu'
+                },
+                function (action, el, pos) {
+                    if (action == "delete") {
+                        initDialog($(el).attr("id"), "category");
+                    } else {
+
+                        alert(
+                                $(el).attr("id") +
+                                        action
+                        );
+                    }
+                });
+
+        $("#categoryTable li.file").contextMenu({
+                    menu:'subCategoryMenu'
                 },
                 function (action, el, pos) {
                     alert(
-                            $(el).attr("id")
+                            "sub " + $(el).attr("id")
                     );
                 });
 
-    });
+    })
+    ;
 </script>
 </body>
 </html>

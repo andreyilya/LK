@@ -45,12 +45,6 @@ public class NoteController {
         return URLs.INDEX_REDIRECT;
     }
 
-    @RequestMapping(value = URLs.ADD_CATEGORY, method = RequestMethod.POST)
-    public String addCategory(@ModelAttribute(Parameters.CATEGORY) Category category,
-                       BindingResult result) {
-        return URLs.INDEX_REDIRECT;
-    }
-
 
     @RequestMapping(value = URLs.ADD_NOTE, method = RequestMethod.POST)
     public
