@@ -22,7 +22,8 @@ public class SubCategory implements Identifiable {
     private Long id;
     private String name;
     private Category category;
-    private double price;
+    private Double usdPrice;
+    private Double rubPrice;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,7 +46,6 @@ public class SubCategory implements Identifiable {
 
     @ManyToOne
     @JoinColumn(name="category_id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
     public Category getCategory() {
         return category;
     }
@@ -55,11 +55,20 @@ public class SubCategory implements Identifiable {
     }
 
     @Column
-    public Double getPrice() {
-        return price;
+    public Double getUsdPrice() {
+        return usdPrice;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setUsdPrice(Double usdPrice) {
+        this.usdPrice = usdPrice;
     }
+
+	@Column
+	public Double getRubPrice() {
+		return rubPrice;
+	}
+
+	public void setRubPrice(Double rubPrice) {
+		this.rubPrice = rubPrice;
+	}
 }

@@ -35,5 +35,10 @@ public final class URLs {
 	public static final String GET_CATEGORY = "/getCategory/{categoryId}";
 	public static final String DELETE_CATEGORY = "/deleteCategory/{categoryId}";
 
+	public static final String ADD_SUB_CATEGORY = "/addSubCategory";
+	public static final String UPDATE_SUB_CATEGORY = "updateSubCategory";
+	public static final String GET_SUB_CATEGORY = "/getSubCategory/{subCategoryId}";
+	public static final String DELETE_SUB_CATEGORY = "/deleteSubCategory/{subCategoryId}";
+
 
 }

@@ -19,11 +19,11 @@
 
 <a href="<c:url value="/logout" />">
     <spring:message code="label.logout"/>
-</a>
-
+</a>|
+<a href="index">Notes</a>
 <h2><spring:message code="label.title"/></h2>
 
-<p><a href="index">Notes</a></p>
+
 
 <h3><spring:message code="label.users"/></h3>
 

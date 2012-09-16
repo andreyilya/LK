@@ -237,11 +237,11 @@ function addRowCategory(form, response) {
             getValue(form, "name") +
             "</label></li>";
     row = row.replace(/ROW_ID/g, id);
-    $("#categoryTable li:last").after(row);
+    $("li.categoriesTree:last").after(row);
 }
 
 function updateRowCategory(form) {
-    var id="#deleteCategory\\/" + getValue(form,"id");
+    var id = "#deleteCategory\\/" + getValue(form, "id");
     var leaf = $(id).children("label");
     leaf.html(getValue(form, "name"))
 }
@@ -281,8 +281,12 @@ function initContextMenu() {
                 menu:'subCategoryMenu'
             },
             function (action, el, pos) {
-                alert(
-                        "sub " + $(el).attr("id")
-                );
+                if (action == "delete") {
+                    initDialog($(el).attr("id"), "subCategory");
+                } else {
+                    alert(
+                            "sub " + $(el).attr("id")
+                    );
+                }
             });
 }

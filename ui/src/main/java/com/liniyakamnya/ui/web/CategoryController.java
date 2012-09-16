@@ -49,7 +49,10 @@ public class CategoryController {
 	public
 	@ResponseBody
 	ResponseEntity<String> getCategory(@PathVariable(CATEGORY_ID) Long categoryId) {
-		Category category = categoryEntityService.findById(categoryId);
+		Category category = new Category();
+		Category findedCategory = categoryEntityService.findById(categoryId);
+		category.setName(findedCategory.getName());
+		category.setId(findedCategory.getId());
 		return Json.createJsonResponse(category);
 	}
 

@@ -31,5 +31,7 @@ public final class Parameters {
     public static final String CATEGORY = "category";
 
     public static final String SUB_CATEGORY_DAO = "subCategoryDao";
+    public static final String SUB_CATEGORY_SERVICE = "subCategoryService";
+	public static final String SUB_CATEGORY = "subCategory";
 
 }

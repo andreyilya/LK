@@ -22,13 +22,13 @@
 
 <a href="<c:url value="/logout" />">
     <spring:message code="label.logout"/>
-</a>
-
-<h2><spring:message code="label.title"/></h2>
-
+</a> |
 <sec:authorize ifAnyGranted="ROLE_ADMIN">
     <a href="admin">Admin page</a>
 </sec:authorize>
+
+<h2><spring:message code="label.title"/></h2>
+
 <h3><spring:message code="label.contacts"/></h3>
 
 <div class="notes">
@@ -85,7 +85,7 @@
                             <ol>
                                 <c:forEach items="${category.subCategories}" var="subCategory">
 
-                                    <li id="sub${subCategory.id}" class="file">${subCategory.name}</li>
+                                    <li id="deleteSubCategory/${subCategory.id}" class="file">${subCategory.name}</li>
 
                                 </c:forEach>
                             </ol>

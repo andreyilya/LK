@@ -21,8 +21,14 @@ public class CategoryEntityService  extends AbstractEntityService<Category> {
     @Named(Parameters.CATEGORY_DAO)
     private EntityDAO<Category> categoryEntityDAO;
 
+	@Override
+	public Long update(Category entity) {
+		Category oldCategory = findById(entity.getId());
+		oldCategory.setName(entity.getName());
+		return super.update(oldCategory);
+	}
 
-    @Override
+	@Override
     public EntityDAO<Category> getEntityDAO() {
         return categoryEntityDAO;
     }
