@@ -40,7 +40,7 @@ public class CategoryController {
 	@RequestMapping(value = URLs.UPDATE_CATEGORY, method = RequestMethod.POST)
 	public
 	@ResponseBody
-	String updateNote(@ModelAttribute(Parameters.CATEGORY) Category category,
+	String updateCategory(@ModelAttribute(Parameters.CATEGORY) Category category,
 					  BindingResult result) {
 		return categoryEntityService.update(category).toString();
 	}
