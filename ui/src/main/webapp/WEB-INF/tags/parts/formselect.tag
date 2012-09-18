@@ -13,6 +13,9 @@
         <spring:message code="${label}"/>
     </label>
     <div class="controls">
-        <form:select path="${path}" items="${items}" itemLabel="${itemLabel}" itemValue="${itemValue}" id="${id}"/>
+        <form:select path="${path}"  id="${id}">
+            <option value="-1" label="Please Select"></option>
+            <form:options items="${items}" itemLabel="${itemLabel}" itemValue="${itemValue}"/>
+        </form:select>
     </div>
 </div>

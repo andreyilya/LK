@@ -55,7 +55,14 @@ public class NoteController {
     @ResponseBody
     String addNote(@ModelAttribute(NOTE) Note note,
                    BindingResult result) {
+        validateCategoryId(note);
         return noteEntityService.safeOrUpdate(note).toString();
+    }
+
+    private void validateCategoryId(Note note) {
+        if (note.getCategory().getId() < 0) {
+            note.setCategory(null);
+        }
     }
 
     @RequestMapping(value = URLs.UPDATE_NOTE, method = RequestMethod.POST)
@@ -63,6 +70,7 @@ public class NoteController {
     @ResponseBody
     String updateNote(@ModelAttribute(NOTE) Note note,
                       BindingResult result) {
+        validateCategoryId(note);
         return noteEntityService.update(note).toString();
     }
 
