@@ -95,6 +95,7 @@ function ajaxAddUpdateNote() {
                 } else {
                     updateRowNote($(addNote).serializeArray());
                 }
+                noteMenu();
             }
         }, 'json');
 }
@@ -115,13 +116,12 @@ function createNoteCell(form, response) {
         "<td>DATE</td>" +
         "<td>PRICE</td> " +
         "<td>CATEGORY</td> " +
+        "<td>CATEGORY</td> " +
         "<td>NUMBER</td> " +
         "<td>STATUS</td> " +
         "<td>CUSTOMER_NAME</td> " +
         "<td>CUSTOMER_PHONE</td> " +
-        "<td>OTHERS</td> " +
-        "<td><div><a href='#' onclick=\"initDialog('ROW_ID','ID')\" class='deleteLink'>Удалить</a></div>" +
-        "<div><a href='#' onclick=\"initNoteUpdate('ID');\" class='deleteLink'>Update</a></div></td>";
+        "<td>OTHERS</td> ";
     var date = new Date();
     var mm = date.getMonth() + 1;
     mm = (mm < 10) ? '0' + mm : mm;
@@ -130,7 +130,7 @@ function createNoteCell(form, response) {
     row = row.replace(/ID/g, response);
     row = row.replace(/DATE/g, dateString);
     row = row.replace("PRICE", getValue(form, "price"));
-    row = row.replace("CATEGORY", $("#noteCategory option:selected").text());
+    row = row.replace(/CATEGORY/g, $("#noteCategory option:selected").text());
     row = row.replace("NUMBER", getValue(form, "number"));
     row = row.replace("STATUS", getValue(form, "status"));
     row = row.replace("CUSTOMER_NAME", getValue(form, "customerName"));
@@ -258,7 +258,7 @@ function ajaxAddUpdateCategory() {
                 } else {
                     updateRowCategory($(addCategory).serializeArray());
                 }
-                initContextMenu();
+                categoryMenu();
             }
         }, 'json');
 }
@@ -290,7 +290,7 @@ function ajaxAddUpdateSubCategory() {
                 } else {
                     updateRowSubCategory($(addSubCategory).serializeArray());
                 }
-                initContextMenu();
+                subCategoryMenu();
             }
         }, 'json');
 }
@@ -340,6 +340,14 @@ function clearForm(form) {
 
 
 function initContextMenu() {
+    categoryMenu();
+
+    subCategoryMenu();
+
+    noteMenu();
+}
+
+function categoryMenu(){
     $("#categoryTable li.categoriesTree").contextMenu({
             menu:'categoryMenu'
         },
@@ -352,7 +360,9 @@ function initContextMenu() {
                 initSubCategoryCreate($(el).attr("id"));
             }
         });
+}
 
+function subCategoryMenu() {
     $("#categoryTable li.file").contextMenu({
             menu:'subCategoryMenu'
         },
@@ -361,6 +371,21 @@ function initContextMenu() {
                 initDialog($(el).attr("id"), "subCategory");
             } else {
                 initSubCategoryUpdate($(el).attr("id"))
+            }
+        });
+}
+
+function noteMenu() {
+    $("#noteTable tr").contextMenu({
+            menu:'subCategoryMenu'
+        },
+        function (action, el, pos) {
+            var rowId = $(el).attr("id");
+            var id = rowId.split('/')[1];
+            if (action == "delete") {
+                initDialog(rowId, id);
+            } else {
+                initNoteUpdate(id)
             }
         });
 }

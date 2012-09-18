@@ -46,7 +46,6 @@
             <th><spring:message code="label.customerName"/></th>
             <th><spring:message code="label.customersPhone"/></th>
             <th><spring:message code="label.others"/></th>
-            <th><spring:message code="label.delete"/></th>
         </tr>
         <c:if test="${!empty noteList}">
             <c:forEach items="${noteList}" var="note">
@@ -61,12 +60,6 @@
                     <td>${note.customerName}</td>
                     <td>${note.customersPhone}</td>
                     <td>${note.others}</td>
-                    <td>
-                        <div><a href="#" onclick="initDialog('deleteNote/${note.id}','${note.id}')"
-                                class="deleteLink"><spring:message code="label.delete"/></a></div>
-                        <div><a href="#" onclick="initNoteUpdate('${note.id}');"
-                                ><spring:message code="label.update"/></a></div>
-                    </td>
                 </tr>
             </c:forEach>
         </c:if>
@@ -122,14 +115,21 @@
 </ul>
 
 <ul id="subCategoryMenu" class="contextMenu">
-
     <li class="edit">
         <a href="#update">Update</a>
     </li>
     <li class="delete">
         <a href="#delete">Delete</a>
     </li>
+</ul>
 
+<ul id="noteMenu" class="contextMenu">
+    <li class="edit">
+        <a href="#update">Update</a>
+    </li>
+    <li class="delete">
+        <a href="#delete">Delete</a>
+    </li>
 </ul>
 
 <script src="resources/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
