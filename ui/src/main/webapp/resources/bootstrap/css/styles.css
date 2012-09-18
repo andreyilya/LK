@@ -22,19 +22,19 @@ body {
 }
 
 /* CSS Tree menu styles */
-ol.tree {
+div.categories ol.tree {
     padding: 0 0 0 30px;
     width: 300px;
 }
 
-li {
+div.categories li {
     position: relative;
     margin-left: -15px;
     list-style: none;
     margin-bottom: 10px;
 }
 
-li.file a {
+div.categories li.file a {
     background: url(../img/document.png) 0 0 no-repeat;
     color: #fff;
     padding-left: 21px;
@@ -42,36 +42,36 @@ li.file a {
     display: block;
 }
 
-li.file a[href *= '.pdf'] {
+div.categories li.file a[href *= '.pdf'] {
     background: url(../img/document.png) 0 0 no-repeat;
 }
 
-li.file a[href *= '.html'] {
+div.categories li.file a[href *= '.html'] {
     background: url(../img/document.png) 0 0 no-repeat;
 }
 
-li.file a[href $= '.css'] {
+div.categories li.file a[href $= '.css'] {
     background: url(../img/document.png) 0 0 no-repeat;
 }
 
-li.file a[href $= '.js'] {
+div.categories li.file a[href $= '.js'] {
     background: url(../img/document.png) 0 0 no-repeat;
 }
 
-li.file {
+div.categories li.file {
     background:  #EEE 0 0 no-repeat;
     padding: 3px;
     border-radius: 5px;
     border: solid 1px #888;
 }
 
-input[type="radio"], input[type="checkbox"] {
+div.categories input[type="radio"], div.categories input[type="checkbox"] {
     margin: 16px 0 0 2px;
     line-height: normal;
     cursor: pointer;
 }
 
-li input {
+div.categories li input {
     position: absolute;
     left: 0;
     margin: 15px 0 0 2px;
@@ -83,20 +83,20 @@ li input {
     top: 0;
 }
 
-li input + ol {
+div.categories li input + ol {
     background: url(../img/right.png) 47px 0 no-repeat;
     margin: -1.9em 0 0 -44px; /* 15px */
     height: 1em;
     width: 59px;
 }
 
-li input + ol > li {
+div.categories li input + ol > li {
     display: none;
     margin-left: -14px !important;
     padding-left: 1px;
 }
 
-li label {
+div.categories li label {
     background: url(../img/c.png) #CCC 19px 5px no-repeat;
     cursor: pointer;
     display: block;
@@ -107,7 +107,7 @@ li label {
     border: solid 1px #AAA;
 }
 
-li input:checked + ol {
+div.categories li input:checked + ol {
     background: url(../img/down.png) 47px 5px no-repeat;
     margin: -2em 0 0 -45px;
     padding: 2em 0 0 60px;
@@ -115,17 +115,17 @@ li input:checked + ol {
     width: 0px;
 }
 
-li input:checked + ol > li {
+div.categories li input:checked + ol > li {
     cursor: pointer;
     display: table;
     margin: 0 0 0.125em; /* 2px */
 }
 
-li input:checked + ol > li:last-child {
+div.categories li input:checked + ol > li:last-child {
     margin: 0 0 0.063em; /* 1px */
 }
 
-li input:checked + ol li {
+div.categories li input:checked + ol li {
     position: relative;
     left: 30px;
 }
