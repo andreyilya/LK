@@ -6,9 +6,9 @@ import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -21,14 +21,14 @@ import javax.servlet.http.HttpServlet;
  * Time: 22:15
  */
 public class StartupServlet extends HttpServlet {
-    @Autowired
+    @Inject
     private RoleConfigurator roleEntityDAO;
 
-    @Autowired
+    @Inject
     @Named(value = Parameters.ROLE_DAO)
     private EntityDAO<Role> rolesEntityDAO;
 
-    @Autowired
+    @Inject
     @Named(value = Parameters.USER_SERVICE)
     private EntityService<User> userEntityService;
 

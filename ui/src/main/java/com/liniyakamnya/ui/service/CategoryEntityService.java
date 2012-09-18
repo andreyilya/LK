@@ -4,10 +4,10 @@ import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.Category;
 import com.liniyakamnya.ui.utils.Parameters;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -17,7 +17,7 @@ import javax.inject.Named;
 @Service(Parameters.CATEGORY_SERVICE)
 @Transactional
 public class CategoryEntityService  extends AbstractEntityService<Category> {
-    @Autowired
+    @Inject
     @Named(Parameters.CATEGORY_DAO)
     private EntityDAO<Category> categoryEntityDAO;
 

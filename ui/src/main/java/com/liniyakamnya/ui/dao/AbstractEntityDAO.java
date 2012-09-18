@@ -6,8 +6,9 @@ import com.liniyakamnya.ui.entities.Identifiable;
 import org.apache.log4j.Logger;
 import org.hibernate.ObjectNotFoundException;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.inject.Inject;
 
 /**
  * @author a.radkov
@@ -19,7 +20,7 @@ public abstract class AbstractEntityDAO<T extends Identifiable> implements Entit
     private static final String POINT_SEPARATOR = "\\.";
     private static final String ALL = ".all";
     private static final Logger LOGGER = Logger.getLogger(AbstractEntityDAO.class);
-    @Autowired
+    @Inject
     private SessionFactory sessionFactory;
 
     @Override

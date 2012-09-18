@@ -5,8 +5,9 @@ import com.liniyakamnya.ui.entities.SubCategory;
 import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
 import com.liniyakamnya.ui.utils.URLs;
+
+import javax.inject.Inject;
 import javax.inject.Named;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -26,19 +27,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class SubCategoryController {
 	private static final String SUB_CATEGORY_ID = "subCategoryId";
 
-	@Autowired
+	@Inject
 	@Named(Parameters.SUB_CATEGORY_SERVICE)
 	private EntityService<SubCategory> subCategoryEntityService;
 
-	@Autowired
+	@Inject
 	@Named(Parameters.CATEGORY_SERVICE)
 	private EntityService<Category> categoryEntityService;
 
 	@RequestMapping(value = URLs.ADD_SUB_CATEGORY, method = RequestMethod.POST)
 	public
 	@ResponseBody
-	String addCategory(@ModelAttribute(Parameters.CATEGORY) SubCategory subCategory,
+	String addSubCategory(@ModelAttribute(Parameters.CATEGORY) SubCategory subCategory,
 					   BindingResult result) {
+        Category category = categoryEntityService.findById(subCategory.getCategory().getId());
+        subCategory.setCategory(category);
 		return subCategoryEntityService.safeOrUpdate(subCategory).toString();
 	}
 

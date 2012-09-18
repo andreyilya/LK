@@ -2,9 +2,13 @@ package com.liniyakamnya.ui.dao;
 
 import com.liniyakamnya.ui.entities.User;
 import java.util.List;
+
+import com.liniyakamnya.ui.utils.Parameters;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.inject.Inject;
+import javax.inject.Named;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -16,7 +20,8 @@ import static org.junit.Assert.assertNotNull;
  */
 
 public class UserEntityDAOTest {
-	@Autowired
+	@Inject
+    @Named(Parameters.USER_DAO)
 	private static EntityDAO entityDAO;
 	private User user;
 

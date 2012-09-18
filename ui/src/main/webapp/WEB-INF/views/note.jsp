@@ -103,6 +103,7 @@
 <tags:deleteEntity entityName="note"/>
 <tags:addNote/>
 <tags:addCategory/>
+<tags:addSubCategory/>
 <ul id="categoryMenu" class="contextMenu">
     <li class="create">
         <a href="#add">Add subcategories</a>

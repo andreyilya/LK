@@ -1,9 +1,9 @@
 package com.liniyakamnya.ui.service;
 
 import com.liniyakamnya.ui.entities.Identifiable;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Inject;
 import java.util.List;
 
 /**
@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Transactional
 public abstract class AbstractEntityService<T extends Identifiable> implements EntityService<T> {
-    @Autowired
+    @Inject
     private EmailService emailService;
 
     @Override

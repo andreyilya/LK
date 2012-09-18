@@ -4,10 +4,10 @@ import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.Note;
 import com.liniyakamnya.ui.utils.Parameters;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -19,7 +19,7 @@ import javax.inject.Named;
 @Service(Parameters.NOTE_SERVICE)
 @Transactional
 public class NoteEntityService extends AbstractEntityService<Note> {
-    @Autowired
+    @Inject
     @Named(Parameters.NOTE_DAO)
     private EntityDAO<Note> noteEntityDAO;
 

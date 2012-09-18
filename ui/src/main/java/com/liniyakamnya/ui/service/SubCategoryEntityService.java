@@ -5,8 +5,9 @@ import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.Category;
 import com.liniyakamnya.ui.entities.SubCategory;
 import com.liniyakamnya.ui.utils.Parameters;
+
+import javax.inject.Inject;
 import javax.inject.Named;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,11 +18,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Service(Parameters.SUB_CATEGORY_SERVICE)
 @Transactional
 public class SubCategoryEntityService extends AbstractEntityService<SubCategory> {
-    @Autowired
+    @Inject
     @Named(Parameters.SUB_CATEGORY_DAO)
     private EntityDAO<SubCategory> subCategoryEntityDAO;
 
-	@Autowired
+	@Inject
 	@Named(Parameters.CATEGORY_DAO)
 	private EntityDAO<Category> categoryEntityDAO;
 

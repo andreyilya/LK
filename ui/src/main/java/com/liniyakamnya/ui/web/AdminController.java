@@ -1,6 +1,5 @@
 package com.liniyakamnya.ui.web;
 
-import com.google.gson.Gson;
 import com.liniyakamnya.ui.dao.EntityDAO;
 import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.Role;
@@ -8,9 +7,6 @@ import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.service.EntityService;
 import com.liniyakamnya.ui.utils.Parameters;
 import com.liniyakamnya.ui.utils.URLs;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -20,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.Map;
 
@@ -35,11 +32,11 @@ public class AdminController {
     private static final String USER = "user";
     private static final String USER_ID = "userId";
 
-    @Autowired
+    @Inject
     @Named(Parameters.USER_SERVICE)
     private EntityService<User> userEntityService;
 
-    @Autowired
+    @Inject
     @Named(Parameters.ROLE_DAO)
     private EntityDAO<Role> roleEntityDAO;
 

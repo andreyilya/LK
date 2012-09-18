@@ -6,10 +6,10 @@ import com.liniyakamnya.ui.entities.Role;
 import com.liniyakamnya.ui.entities.User;
 import com.liniyakamnya.ui.utils.Parameters;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
@@ -19,11 +19,11 @@ import javax.inject.Named;
 @Service(Parameters.USER_SERVICE)
 @Transactional
 public class UserEntityService extends AbstractEntityService<User> {
-    @Autowired
+    @Inject
     @Named(Parameters.USER_DAO)
     private EntityDAO<User> userEntityDAO;
 
-    @Autowired
+    @Inject
     @Named(Parameters.ROLE_DAO)
     private EntityDAO<Role> roleEntityDAO;
 
