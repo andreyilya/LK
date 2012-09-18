@@ -9,7 +9,14 @@
         <div class="modal-body form-horizontal">
             <form:hidden path="id" id="hiddenSubCategoryId"/>
             <form:hidden path="category.id" id="hiddenSubCategoryCategoryId"/>
-            <parts:formfield label="label.firstname" value="name" id="subCategoryName"/>
+            <div class="control-group">
+                <label class="control-label" for="subCategoryName">
+                    <spring:message code="label.firstname"/>
+                </label>
+                <div class="controls">
+                    <form:input path="name" id="subCategoryName"/>
+                </div>
+            </div>
             <parts:formfield label="label.others" value="usdPrice"/>
             <parts:formfield label="label.others" value="rubPrice"/>
         </div>

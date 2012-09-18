@@ -136,7 +136,10 @@
 <script type="text/javascript">
     $('#createNote').on('hidden', function () {
         clearForm($('#addNote'));
+    });$('#createCategory').on('hidden', function () {
         clearForm($('#addCategory'));
+    });
+    $('#createSubCategory').on('hidden', function () {
         clearForm($('#addSubCategory'));
     });
 </script>

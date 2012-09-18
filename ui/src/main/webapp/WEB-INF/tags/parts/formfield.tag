@@ -4,12 +4,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ attribute name="label" required="true" rtexprvalue="true" %>
 <%@ attribute name="value" required="true" rtexprvalue="true" %>
-<%@ attribute name="id" required="false" rtexprvalue="true" %>
 <div class="control-group">
     <label class="control-label" for="${value}">
         <spring:message code="${label}"/>
     </label>
     <div class="controls">
-            <form:input path="${value}" id="${id}"/>
+            <form:input path="${value}"/>
     </div>
 </div>
