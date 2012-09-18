@@ -269,15 +269,29 @@ function ajaxAddUpdateSubCategory() {
         }, 'json');
 }
 
-function addRowSubCategory(form, response){
+function addRowSubCategory(form, response) {
     var id = "deleteSubCategory/" + response;
-    var categoryId = "#deleteCategory\\/" + getValue(form,"category.id");
+    const categoryIdNum = getValue(form, "category.id");
+    var categoryId = "#deleteCategory\\/" + categoryIdNum;
     var row = "<li id='ROW_ID' class='file'>" +
         getValue(form, "name") +
         "</li>";
     row = row.replace(/ROW_ID/g, id);
     var selector = categoryId + " li.file:last";
-    $(selector).after(row);
+    if ($(selector).length > 0) {
+        $(selector).after(row);
+    } else {
+        var leafs =
+            "<label for='CATEGORY_ID'>CATEGORY_NAME</label>"+
+            "<input type='checkbox' id='CATEGORY_ID'/>"+
+            "<ol>" +
+                "LEAF"+
+            "</ol>";
+        leafs = leafs.replace("/CATEGORY_ID/g", "s" + categoryIdNum);
+        leafs = leafs.replace("CATEGORY_NAME",$(categoryId + " label").text());
+        leafs = leafs.replace("LEAF", row);
+        $(categoryId).html(leafs);
+    }
 }
 
 
