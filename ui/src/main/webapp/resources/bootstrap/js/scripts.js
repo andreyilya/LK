@@ -201,7 +201,9 @@ function initNoteUpdateDialog(response) {
     $('#hiddenId').attr('value', response.id);
     $('#price').attr('value', response.price);
     $('#status').attr('value', response.status);
-    $("#noteCategory option:contains(" +response.category.name +")").attr("selected","selected");
+    if (response.category != null) {
+        $("#noteCategory option:contains(" + response.category.name + ")").attr("selected", "selected");
+    }
     $('#customerName').attr('value', response.customerName);
     $('#customersPhone').attr('value', response.customersPhone);
     $('#others').attr('value', response.others);
@@ -306,19 +308,19 @@ function addRowSubCategory(form, response) {
         $(selector).after(row);
     } else {
         var leafs =
-            "<label for='CATEGORY_ID'>CATEGORY_NAME</label>"+
-            "<input type='checkbox' id='CATEGORY_ID'/>"+
-            "<ol>" +
-                "LEAF"+
-            "</ol>";
+            "<label for='CATEGORY_ID'>CATEGORY_NAME</label>" +
+                "<input type='checkbox' id='CATEGORY_ID'/>" +
+                "<ol>" +
+                "LEAF" +
+                "</ol>";
         leafs = leafs.replace("/CATEGORY_ID/g", "s" + categoryIdNum);
-        leafs = leafs.replace("CATEGORY_NAME",$(categoryId + " label").text());
+        leafs = leafs.replace("CATEGORY_NAME", $(categoryId + " label").text());
         leafs = leafs.replace("LEAF", row);
         $(categoryId).html(leafs);
     }
 }
 
-function updateRowSubCategory(form){
+function updateRowSubCategory(form) {
     var id = "#deleteSubCategory\\/" + getValue(form, "id");
     var leaf = $(id);
     leaf.html(getValue(form, "name"))

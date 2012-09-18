@@ -35,7 +35,7 @@ public class NoteController {
     @RequestMapping(URLs.INDEX)
     public String listNotes(Map<String, Object> map) {
         map.put(Parameters.NOTE, new Note());
-		map.put(Parameters.CATEGORY, new Category());
+        map.put(Parameters.CATEGORY, new Category());
         SubCategory subCategory = new SubCategory();
         subCategory.setCategory(new Category());
         map.put(Parameters.SUB_CATEGORY, subCategory);
@@ -80,7 +80,9 @@ public class NoteController {
     @ResponseBody
     ResponseEntity<String> getNote(@PathVariable(NOTE_ID) Long noteId) {
         Note note = noteEntityService.findById(noteId);
-        note.getCategory().setSubCategories(null);
+        if (note.getCategory() != null) {
+            note.getCategory().setSubCategories(null);
+        }
         return Json.createJsonResponse(note);
     }
 }
