@@ -56,7 +56,7 @@ public class CategoryController {
     }
 
     @RequestMapping(value = URLs.DELETE_CATEGORY)
-    public String deleteCategory(@PathVariable(CATEGORY_ID) Long categoryId) {
+    public @ResponseBody String deleteCategory(@PathVariable(CATEGORY_ID) Long categoryId) {
         categoryEntityService.delete(categoryId);
         return URLs.INDEX_REDIRECT;
     }

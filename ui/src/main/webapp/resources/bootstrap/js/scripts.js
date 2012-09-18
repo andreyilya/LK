@@ -246,6 +246,13 @@ function addRowCategory(form, response) {
     $("li.categoriesTree:last").after(row);
 }
 
+function updateRowCategory(form) {
+    //TODO: update names in note table too
+    var id = "#deleteCategory\\/" + getValue(form, "id");
+    var leaf = $(id).children("label");
+    leaf.html(getValue(form, "name"))
+}
+
 function ajaxAddUpdateSubCategory() {
     var type = $('#addSubCategory').attr('action');
     $.post(type, $("#addSubCategory").serialize(),
@@ -253,7 +260,7 @@ function ajaxAddUpdateSubCategory() {
             if (response > 0) {
                 $('#createSubCategory').modal('hide');
                 if (type == 'addSubCategory') {
-                    //addRowSubCategory($(addCategory).serializeArray(), response);
+                    addRowSubCategory($(addSubCategory).serializeArray(), response);
                 } else {
                     // updateRowSubCategory($(addCategory).serializeArray());
                 }
@@ -262,11 +269,17 @@ function ajaxAddUpdateSubCategory() {
         }, 'json');
 }
 
-function updateRowCategory(form) {
-    var id = "#deleteCategory\\/" + getValue(form, "id");
-    var leaf = $(id).children("label");
-    leaf.html(getValue(form, "name"))
+function addRowSubCategory(form, response){
+    var id = "deleteSubCategory/" + response;
+    var categoryId = "#deleteCategory\\/" + getValue(form,"category.id");
+    var row = "<li id='ROW_ID' class='file'>" +
+        getValue(form, "name") +
+        "</li>";
+    row = row.replace(/ROW_ID/g, id);
+    var selector = categoryId + " li.file:last";
+    $(selector).after(row);
 }
+
 
 function clearForm(form) {
     form.find(':input').each(function () {

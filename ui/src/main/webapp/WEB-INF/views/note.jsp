@@ -133,6 +133,7 @@
     $('#createNote').on('hidden', function () {
         clearForm($('#addNote'));
         clearForm($('#addCategory'));
+        clearForm($('#addSubCategory'));
     });
 </script>
 <script type="text/javascript">

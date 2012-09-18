@@ -117,7 +117,7 @@ div.categories li input:checked + ol {
 
 div.categories li input:checked + ol > li {
     cursor: pointer;
-    display: table;
+    display: table-caption;
     margin: 0 0 0.125em; /* 2px */
 }
 
