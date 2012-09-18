@@ -8,6 +8,8 @@
     <form:form id="addNote" method="post" action="add" onsubmit='return false;' commandName="note">
         <div class="modal-body form-horizontal">
             <form:hidden path="id" id="hiddenId"/>
+            <parts:formselect path="category.id" id="noteCategory" items="${categoryList}"
+                              itemLabel="name" itemValue="id" label="label.category"/>
             <parts:formfield label="label.price" value="price"/>
             <parts:formfield label="label.number" value="number"/>
             <parts:formfield label="label.status" value="status"/>

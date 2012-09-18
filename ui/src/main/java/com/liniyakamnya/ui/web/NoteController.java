@@ -80,6 +80,7 @@ public class NoteController {
     @ResponseBody
     ResponseEntity<String> getNote(@PathVariable(NOTE_ID) Long noteId) {
         Note note = noteEntityService.findById(noteId);
+        note.getCategory().setSubCategories(null);
         return Json.createJsonResponse(note);
     }
 }

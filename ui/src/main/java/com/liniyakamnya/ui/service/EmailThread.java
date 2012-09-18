@@ -6,12 +6,14 @@ import com.liniyakamnya.ui.email.EmailSender;
 import com.liniyakamnya.ui.entities.Actions;
 import com.liniyakamnya.ui.entities.User;
 import org.apache.commons.mail.EmailException;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 public class EmailThread implements Runnable {
     private final EntityDAO<User> entityDAO;
     private final Actions action;
+    private static final Logger LOGGER = Logger.getLogger(EmailThread.class);
 
     public EmailThread(EntityDAO<User> entityDAO, Actions action) {
         this.entityDAO = entityDAO;
@@ -33,9 +35,9 @@ public class EmailThread implements Runnable {
                 }
             }
         } catch (EmailException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
         } catch (NullPointerException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
         }
     }
 }

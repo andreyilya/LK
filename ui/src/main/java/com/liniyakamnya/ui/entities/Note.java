@@ -55,7 +55,7 @@ public class Note implements Identifiable {
         this.createdDate = createdDate;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     public Category getCategory() {
         return category;
     }
@@ -64,7 +64,7 @@ public class Note implements Identifiable {
         this.category = category;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     public SubCategory getSubCategory() {
         return subCategory;
     }

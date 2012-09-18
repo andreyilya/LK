@@ -114,6 +114,7 @@ function createNoteCell(form, response) {
     var row = "<td>ID</td>" +
         "<td>DATE</td>" +
         "<td>PRICE</td> " +
+        "<td>CATEGORY</td> " +
         "<td>NUMBER</td> " +
         "<td>STATUS</td> " +
         "<td>CUSTOMER_NAME</td> " +
@@ -129,6 +130,7 @@ function createNoteCell(form, response) {
     row = row.replace(/ID/g, response);
     row = row.replace(/DATE/g, dateString);
     row = row.replace("PRICE", getValue(form, "price"));
+    row = row.replace("CATEGORY", $("#noteCategory option:selected").text());
     row = row.replace("NUMBER", getValue(form, "number"));
     row = row.replace("STATUS", getValue(form, "status"));
     row = row.replace("CUSTOMER_NAME", getValue(form, "customerName"));
