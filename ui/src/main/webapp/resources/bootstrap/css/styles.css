@@ -129,3 +129,13 @@ div.categories li input:checked + ol li {
     position: relative;
     left: 30px;
 }
+
+li.categoriesTree {
+    display: table-caption;
+    min-width: 250px;
+
+}
+
+.categories{
+    overflow-x: auto;
+}
