@@ -40,6 +40,7 @@
             <th><spring:message code="label.createdDate"/></th>
             <th><spring:message code="label.price"/></th>
             <th><spring:message code="label.category"/></th>
+            <th><spring:message code="label.subcategory"/></th>
             <th><spring:message code="label.number"/></th>
             <th><spring:message code="label.status"/></th>
             <th><spring:message code="label.customerName"/></th>
@@ -53,6 +54,7 @@
                     <td>${note.id}</td>
                     <td>${note.createdDate}</td>
                     <td>${note.price}</td>
+                    <td>${note.category.name}</td>
                     <td>${note.category.name}</td>
                     <td>${note.number}</td>
                     <td>${note.status}</td>
