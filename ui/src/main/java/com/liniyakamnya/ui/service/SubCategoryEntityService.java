@@ -34,7 +34,16 @@ public class SubCategoryEntityService extends AbstractEntityService<SubCategory>
 		categoryEntityDAO.update(category);
 	}
 
-	@Override
+    @Override
+    public Long update(SubCategory entity) {
+        SubCategory subCategory = findById(entity.getId());
+        subCategory.setUsdPrice(entity.getUsdPrice());
+        subCategory.setRubPrice(entity.getRubPrice());
+        subCategory.setName(entity.getName());
+        return super.update(subCategory);
+    }
+
+    @Override
     public EntityDAO<SubCategory> getEntityDAO() {
         return subCategoryEntityDAO;
     }

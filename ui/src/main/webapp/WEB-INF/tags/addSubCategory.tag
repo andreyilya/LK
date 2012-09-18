@@ -9,7 +9,7 @@
         <div class="modal-body form-horizontal">
             <form:hidden path="id" id="hiddenSubCategoryId"/>
             <form:hidden path="category.id" id="hiddenSubCategoryCategoryId"/>
-            <parts:formfield label="label.firstname" value="name"/>
+            <parts:formfield label="label.firstname" value="name" id="subCategoryName"/>
             <parts:formfield label="label.others" value="usdPrice"/>
             <parts:formfield label="label.others" value="rubPrice"/>
         </div>

@@ -176,6 +176,16 @@ function initCategoryUpdate(elId) {
 
 }
 
+function initSubCategoryUpdate(elId) {
+    var id = elId.split('/')[1];
+    var url = "getSubCategory/" + id;
+    $.get(url, function (response) {
+        initSubCategoryUpdateDialog(response);
+        $('#createSubCategory').modal('show');
+    }, 'json');
+
+}
+
 function initSubCategoryCreate(id) {
     var categoryId = id.split('/')[1];
     $("#hiddenSubCategoryCategoryId").attr("value", categoryId);
@@ -200,6 +210,17 @@ function initCategoryUpdateDialog(response) {
     setType($('#addCategory'), 'updateCategory');
     $('#hiddenCategoryId').attr('value', response.id);
     $('#name').attr('value', response.name);
+}
+
+
+function initSubCategoryUpdateDialog(response) {
+    $('#addSubCategory').trigger('reset');
+
+    setType($('#addSubCategory'), 'updateSubCategory');
+    $('#hiddenSubCategoryId').attr('value', response.id);
+    $('#subCategoryName').attr('value', response.name);
+    $('#usdPrice').attr('value', response.usdPrice);
+    $('#rubPrice').attr('value', response.rubPrice);
 }
 
 function initUpdateDialog(response) {
@@ -262,7 +283,7 @@ function ajaxAddUpdateSubCategory() {
                 if (type == 'addSubCategory') {
                     addRowSubCategory($(addSubCategory).serializeArray(), response);
                 } else {
-                    // updateRowSubCategory($(addCategory).serializeArray());
+                    updateRowSubCategory($(addSubCategory).serializeArray());
                 }
                 initContextMenu();
             }
@@ -294,6 +315,11 @@ function addRowSubCategory(form, response) {
     }
 }
 
+function updateRowSubCategory(form){
+    var id = "#deleteSubCategory\\/" + getValue(form, "id");
+    var leaf = $(id);
+    leaf.html(getValue(form, "name"))
+}
 
 function clearForm(form) {
     form.find(':input').each(function () {
@@ -329,9 +355,7 @@ function initContextMenu() {
             if (action == "delete") {
                 initDialog($(el).attr("id"), "subCategory");
             } else {
-                alert(
-                    "sub " + $(el).attr("id")
-                );
+                initSubCategoryUpdate($(el).attr("id"))
             }
         });
 }

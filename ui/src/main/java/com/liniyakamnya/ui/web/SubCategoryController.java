@@ -8,6 +8,7 @@ import com.liniyakamnya.ui.utils.URLs;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -25,46 +26,49 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class SubCategoryController {
-	private static final String SUB_CATEGORY_ID = "subCategoryId";
+    private static final String SUB_CATEGORY_ID = "subCategoryId";
 
-	@Inject
-	@Named(Parameters.SUB_CATEGORY_SERVICE)
-	private EntityService<SubCategory> subCategoryEntityService;
+    @Inject
+    @Named(Parameters.SUB_CATEGORY_SERVICE)
+    private EntityService<SubCategory> subCategoryEntityService;
 
-	@Inject
-	@Named(Parameters.CATEGORY_SERVICE)
-	private EntityService<Category> categoryEntityService;
+    @Inject
+    @Named(Parameters.CATEGORY_SERVICE)
+    private EntityService<Category> categoryEntityService;
 
-	@RequestMapping(value = URLs.ADD_SUB_CATEGORY, method = RequestMethod.POST)
-	public
-	@ResponseBody
-	String addSubCategory(@ModelAttribute(Parameters.CATEGORY) SubCategory subCategory,
-					   BindingResult result) {
+    @RequestMapping(value = URLs.ADD_SUB_CATEGORY, method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String addSubCategory(@ModelAttribute(Parameters.CATEGORY) SubCategory subCategory,
+                          BindingResult result) {
         Category category = categoryEntityService.findById(subCategory.getCategory().getId());
         subCategory.setCategory(category);
-		return subCategoryEntityService.safeOrUpdate(subCategory).toString();
-	}
+        return subCategoryEntityService.safeOrUpdate(subCategory).toString();
+    }
 
-	@RequestMapping(value = URLs.UPDATE_SUB_CATEGORY, method = RequestMethod.POST)
-	public
-	@ResponseBody
-	String updateSubCategory(@ModelAttribute(Parameters.SUB_CATEGORY) SubCategory subCategory,
-							 BindingResult result) {
-		return subCategoryEntityService.update(subCategory).toString();
-	}
+    @RequestMapping(value = URLs.UPDATE_SUB_CATEGORY, method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String updateSubCategory(@ModelAttribute(Parameters.SUB_CATEGORY) SubCategory subCategory,
+                             BindingResult result) {
+        return subCategoryEntityService.update(subCategory).toString();
+    }
 
-	@RequestMapping(value = URLs.GET_SUB_CATEGORY)
-	public
-	@ResponseBody
-	ResponseEntity<String> getSubCategory(@PathVariable(SUB_CATEGORY_ID) Long subCategoryId) {
-		SubCategory subCategory = subCategoryEntityService.findById(subCategoryId);
-		return Json.createJsonResponse(subCategory);
-	}
+    @RequestMapping(value = URLs.GET_SUB_CATEGORY)
+    public
+    @ResponseBody
+    ResponseEntity<String> getSubCategory(@PathVariable(SUB_CATEGORY_ID) Long subCategoryId) {
+        SubCategory findedSubCategory = subCategoryEntityService.findById(subCategoryId);
+        findedSubCategory.setCategory(null);
+        return Json.createJsonResponse(findedSubCategory);
+    }
 
-	@RequestMapping(value = URLs.DELETE_SUB_CATEGORY)
-	public @ResponseBody String deleteSubCategory(@PathVariable(SUB_CATEGORY_ID) Long subCategoryId) {
+    @RequestMapping(value = URLs.DELETE_SUB_CATEGORY)
+    public
+    @ResponseBody
+    String deleteSubCategory(@PathVariable(SUB_CATEGORY_ID) Long subCategoryId) {
 
-		subCategoryEntityService.delete(subCategoryId);
-		return URLs.INDEX_REDIRECT;
-	}
+        subCategoryEntityService.delete(subCategoryId);
+        return URLs.INDEX_REDIRECT;
+    }
 }
