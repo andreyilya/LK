@@ -201,6 +201,7 @@ function initNoteUpdateDialog(response) {
     $('#hiddenId').attr('value', response.id);
     $('#price').attr('value', response.price);
     $('#status').attr('value', response.status);
+    $("#noteCategory option:contains(" +response.category.name +")").attr("selected","selected");
     $('#customerName').attr('value', response.customerName);
     $('#customersPhone').attr('value', response.customersPhone);
     $('#others').attr('value', response.others);
