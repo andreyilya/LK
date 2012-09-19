@@ -115,7 +115,7 @@ function createNoteCell(form, response) {
     var row = "<td>ID</td>" +
         "<td>DATE</td>" +
         "<td>PRICE</td> " +
-        "<td>CATEGORY</td> " +
+        "<td class='category'>CATEGORY</td> " +
         "<td>CATEGORY</td> " +
         "<td>NUMBER</td> " +
         "<td>STATUS</td> " +
@@ -273,10 +273,15 @@ function addRowCategory(form, response) {
 }
 
 function updateRowCategory(form) {
-    //TODO: update names in note table too
     var id = "#deleteCategory\\/" + getValue(form, "id");
     var leaf = $(id).children("label");
-    leaf.html(getValue(form, "name"))
+    var newName = getValue(form, "name");
+    var categories = $("." + leaf.html());
+    leaf.html(newName);
+    for (var i = 0; i < categories.length; i++) {
+        $(categories[i]).attr("class", newName);
+        $(categories[i]).html(newName);
+    }
 }
 
 function ajaxAddUpdateSubCategory() {
@@ -347,7 +352,7 @@ function initContextMenu() {
     noteMenu();
 }
 
-function categoryMenu(){
+function categoryMenu() {
     $("#categoryTable li.categoriesTree").contextMenu({
             menu:'categoryMenu'
         },

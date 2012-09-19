@@ -53,7 +53,7 @@
                     <td>${note.id}</td>
                     <td>${note.createdDate}</td>
                     <td>${note.price}</td>
-                    <td>${note.category.name}</td>
+                    <td class="${note.category.name}">${note.category.name}</td>
                     <td>${note.category.name}</td>
                     <td>${note.number}</td>
                     <td>${note.status}</td>
